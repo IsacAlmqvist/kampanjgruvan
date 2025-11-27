@@ -15,24 +15,17 @@ export const SidebarPresenter = observer(function SidebarRender(props) {
             <SidebarView
                 stores = {props.model.allStores}
                 setCurrentSearch={(searchInput) => {props.model.setCurrentSearch(searchInput)}}
-                selectedStores = {props.selectedStores}
+                selectedStores = {props.model.selectedStores}
                 scrapeStore={handleScrapeClick}
-                addStore={addStore}
-                searchInput={props.searchInput}
+                addStore={(store) => props.model.addStore(store)}
+                searchInput={props.model.searchInput}
+                removeSelected={(store) => props.model.removeStore(store)}
             />
         </>
         
     );
 
-    function update() {
-        props.model.myValue++;
-        console.log("updated value " + props.model.myValue);
-    }
     function handleScrapeClick(){
         props.model.scrapeStore();
-    }
-
-    function addStore(store) {
-        props.model.addStore();
     }
 });

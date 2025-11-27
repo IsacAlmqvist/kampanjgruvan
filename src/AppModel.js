@@ -64,13 +64,19 @@ export const model = {
     //     this.currentStore = store;
     // },
 
+    // scrape all the stores that are selected
     async scrapeStore(){
-        await this.getStoreData(this.currentStore);
+        await Promise.all(
+            this.selectedStores.map(store => this.getStoreData(store))
+        );
     },
 
     addStore(store) {
-        this.selectedStores.some((i) => i === store) && (
+        this.selectedStores.some(i => i === store) || (
             this.selectedStores = [...this.selectedStores, store]);
+        console.log(this.selectedStores);
+    },
+    removeStore(store) {
+        this.selectedStores = this.selectedStores.filter(i => i !== store);
     }
-
 }

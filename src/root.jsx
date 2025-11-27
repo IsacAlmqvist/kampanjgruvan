@@ -5,10 +5,10 @@ import { ArticlesPresenter } from "./presenters/articlesPresenter";
 const Root = observer (
     function Root(props) {
         return (
-        <>
+        <div className="root">
             <ArticlesPresenter model = {props.model}/>
             <SidebarPresenter model = {props.model}/>
-        </>
+        </div>
         ); 
     }
 );

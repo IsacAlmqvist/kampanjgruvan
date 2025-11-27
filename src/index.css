@@ -3,3 +3,10 @@
 .select-stores {
     max-width: 500px;
 }
+.root {
+    display: flex;
+}
+.sidebar {
+    width: 300px;
+    background-color: rgb(218, 218, 218);
+}
