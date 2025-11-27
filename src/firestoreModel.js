@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { doc, setDoc, getDoc, getFirestore } from "firebase/firestore";
+import { doc, setDoc, getDoc, getFirestore, deleteDoc } from "firebase/firestore";
 import { firebaseConfig } from "./firebaseConfig";
 
 const app = initializeApp(firebaseConfig);
@@ -15,21 +15,27 @@ export function connectToPersistence(model, reactionFunction){
 
     getDoc(firestoreDoc).then(loadDataACB).catch(function errorACB(err){console.log(err)});
 
-    function loadDataACB(doc) {
-        model.currentStore = doc.data()?.currentStore || null;       
-        model.ready = true;
+    async function loadDataACB(doc) {
+        const snapShot = doc.data()?.storesData || [];
+        const currentWeek = model.getWeek();
+        if(snapShot[0] && snapShot[0]?.week !== currentWeek){
+            await deleteDoc(firestoreDoc);
+        } else {
+            model.storesData = snapShot;      
+            model.ready = true;
+        }
     }
 
     reactionFunction(
         function watchtThesePropsACB(){ return [
-            model.currentStore,
+            model.storesData,
         ]},
         function saveModelSideEffectACB(){
             if(model.ready) {
+                console.log(model.storesData);
                 setDoc(firestoreDoc, {
-                    currentStore: model.currentStore
+                    storesData: model.storesData
                 }, {merge:true});
-                console.log("updated firebase: " + model.currentStore);
             }
         }
     )

@@ -1,12 +1,12 @@
 const API_KEY = "D6SXE7M8TPOJSS7WU4V1CRCBO2B4O8C03VJHCS4P616W904JH5M00N1XAQTT1EJ5RJUE6MGRB41FB431"
-
+const baseIcaUrl = "https://www.ica.se/erbjudanden/"
 export async function fetchWithScrapingBee(url) {
     try {
         const apiKey = API_KEY;
         const scrapingBeeUrl = `https://app.scrapingbee.com/api/v1/?api_key=${apiKey}&url=${encodeURIComponent(url)}&render_js=true`;
         
-        console.log('Fetching from ScrapingBee...');
-        
+        console.log('Fetching from ScrapingBee..., with url: ' + scrapingBeeUrl);
+
         const response = await fetch(scrapingBeeUrl);
         
         if (!response.ok) {
@@ -77,7 +77,8 @@ export async function extractArticlesFromOffersContainer(url) {
 }
 
 
-export async function scrapeIca(url){
+export async function scrapeIca(storeName){
+    const url = baseIcaUrl + storeName;
     const articlesRaw = await extractArticlesFromOffersContainer(url);
 
     console.log(articlesRaw);
@@ -110,5 +111,7 @@ export async function scrapeIca(url){
         console.log("text: ", element.text);
         console.log("price: ", element.price);
     });
+
+    return newStoreData;
 
 }

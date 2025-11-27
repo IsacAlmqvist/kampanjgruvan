@@ -1,6 +1,6 @@
 import { observable, configure, reaction } from "mobx";
 import { model } from "./AppModel";
-import { connectToPersistence } from "../firestoreModel";
+import { connectToPersistence } from "./firestoreModel";
 
 configure({ enforceActions: "never" });
 
