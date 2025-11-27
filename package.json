@@ -1,0 +1,37 @@
+{
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "serve": "vite preview"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-react": "latest",
+        "vite": "latest"
+    },
+    "dependencies": {
+        "bootstrap": "^5.3.8",
+        "firebase": "^12.6.0",
+        "mobx": "latest",
+        "mobx-react-lite": "latest",
+        "puppeteer": "^24.31.0",
+        "react": "latest",
+        "react-dom": "latest",
+        "react-router-dom": "latest"
+    },
+    "name": "dh2642-project",
+    "version": "1.0.0",
+    "main": "firebaseConfig.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Joelfriis/DH2642-Project.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Joelfriis/DH2642-Project/issues"
+    },
+    "homepage": "https://github.com/Joelfriis/DH2642-Project#readme",
+    "description": ""
+}
