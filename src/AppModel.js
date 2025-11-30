@@ -20,7 +20,7 @@ export const model = {
     ],
 
     currentStore: null,
- 
+
 
     getWeek() {
         const now = new Date();

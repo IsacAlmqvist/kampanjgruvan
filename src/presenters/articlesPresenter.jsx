@@ -3,7 +3,10 @@ import { ArticlesView } from "../views/articlesView";
 export const ArticlesPresenter = observer(function SidebarRender(props) {
  return (
     <>
-     <ArticlesView/>
+        <ArticlesView 
+            data={props.model.storesData}
+            selected={props.model.selectedStores}
+        />
     </>
     );
 

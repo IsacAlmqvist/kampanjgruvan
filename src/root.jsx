@@ -6,8 +6,8 @@ const Root = observer (
     function Root(props) {
         return (
         <div className="root">
-            <ArticlesPresenter model = {props.model}/>
             <SidebarPresenter model = {props.model}/>
+            <ArticlesPresenter model = {props.model}/>
         </div>
         ); 
     }

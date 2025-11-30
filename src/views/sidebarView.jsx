@@ -1,17 +1,10 @@
 import { observer } from "mobx-react-lite";
+import { Utils } from "../utilities";
 
 export const SidebarView = observer(function SidebarRender(props) {
 
     async function handleScrapeClickACB() {
         props.scrapeStore();
-    }
-
-    function renderStoresCB(store) {
-        return (
-            <option key={store} value={store}>
-                {store}
-            </option>
-        );
     }
 
     return (
@@ -45,7 +38,7 @@ export const SidebarView = observer(function SidebarRender(props) {
                 key={store}
                 className="list-group-item d-flex justify-content-between align-items-center mx-2"
             >
-                {formatStoreName(store)}
+                {Utils.formatStoreName(store)}
                 <button
                     className="text-danger p-0"
                     onClick={() => props.removeSelected(store)}
@@ -66,17 +59,10 @@ export const SidebarView = observer(function SidebarRender(props) {
                 onClick={() => props.addStore(store)}
                 className="list-group-item"
             >
-                {formatStoreName(store)}
+                {Utils.formatStoreName(store)}
             </li> 
         )   
         : null )
-    }
-
-    function formatStoreName(store) {
-        return (store.replace(/\/$/, "")
-                .replace(/-\d+$/, "")
-                .replace(/-/g, " ")
-                .replace(/\b\w/g, c => c.toUpperCase()));
     }
 
 })
