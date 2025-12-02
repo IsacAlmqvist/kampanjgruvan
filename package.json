@@ -10,6 +10,7 @@
         "vite": "latest"
     },
     "dependencies": {
+        "@google/generative-ai": "^0.24.1",
         "@tailwindcss/vite": "^4.1.17",
         "bootstrap": "^5.3.8",
         "firebase": "^12.6.0",
