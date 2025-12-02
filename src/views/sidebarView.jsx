@@ -28,6 +28,7 @@ export const SidebarView = observer(function SidebarRender(props) {
             </ul>
 
             <button className="btn btn-primary m-2" onClick={handleScrapeClickACB}>SCRAPE</button>
+            <button className="btn btn-primary m-2" onClick={props.getCategoriesTestACB}>LLM-TEST</button>
             
         </div>
     );

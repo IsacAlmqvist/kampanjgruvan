@@ -1,5 +1,5 @@
 # TODO
-- [ ] Desing the article boxes
+- [ ] Design the article boxes
 
 - [ ] Make each erticale have and id (maybe firebase auto id?) for array rendering
 
@@ -15,6 +15,8 @@
 
 - [ ] User data (maybe only selected stores and keep scraped info public to save credits)
     - [ ] Google authentication
+    - [ ] To let all users update the scraped data, use cloudflare worker to run scraping safely on backend
+    - [ ] Also use cloudflare worker for LLM calls
 
 - [ ] Category selection and sorting
 
