@@ -1,12 +1,12 @@
 import { observer } from "mobx-react-lite";
-import { SidebarPresenter } from "./presenters/sidebarPresenter";
+import { HeaderPresenter } from "./presenters/HeaderPresenter";
 import { ArticlesPresenter } from "./presenters/articlesPresenter";
 
 const Root = observer (
     function Root(props) {
         return (
         <div className="root">
-            <SidebarPresenter model = {props.model}/>
+            <HeaderPresenter model = {props.model}/>
             <ArticlesPresenter model = {props.model}/>
         </div>
         ); 

@@ -6,6 +6,8 @@ export const model = {
 
     searchInput: "",
 
+    searchFocus: false,
+
     selectedStores: [],
 
     storesData: [],
@@ -77,6 +79,7 @@ export const model = {
         console.log(this.selectedStores);
     },
     removeStore(store) {
+        console.log(store);
         this.selectedStores = this.selectedStores.filter(i => i !== store);
     }
 }

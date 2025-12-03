@@ -9,5 +9,4 @@ export const ArticlesPresenter = observer(function SidebarRender(props) {
         />
     </>
     );
-
 });
