@@ -4,7 +4,7 @@ import { Utils } from "../utilities";
 export const LikedStoresView = observer(function LikedStoresRender(props) {
     
     return (
-        <div className="d-flex flex-wrap gap-1 bg-secondary p-2">
+        <div className="flex flex-wrap gap-1 bg-blue-500 p-2">
             {props.selectedStores.map(renderSelectedCB)}
         </div>
     )

@@ -3,7 +3,7 @@ import { Utils } from "../utilities";
 
 export const StoreSearchResultsView = observer(function StoreSearchResultsRender(props) {
     
-    // styling done by Gemini with prompt (with a lot of adjustments afterwards): 
+    // styling done by Gemini with prompt (with adjustments afterwards): 
     // can you help me style this so that the search results are in boxes, 
     // like 4 per row, with some shadow, with a like button in them ( i can do the logic of that) 
     // and that the button is wide with an up arrow
@@ -11,7 +11,7 @@ export const StoreSearchResultsView = observer(function StoreSearchResultsRender
         <div className="w-full p-4 bg-gray-50 flex flex-col">
             
             {/* Grid Container: 1 column on mobile, 4 columns on medium screens+ */}
-            <div className="gap-6 w-full max-w-7xl mx-auto mb-8
+            <div className="gap-6 w-full mx-auto mb-8
                 grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] 
                 grid-cols-1
                 sm:grid-cols-2

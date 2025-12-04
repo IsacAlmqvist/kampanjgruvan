@@ -16,8 +16,6 @@ export async function fetchWithScrapingBee(url) {
         
         const text = await response.text();
 
-        console.log(text);
-        
         // Check if we got an error message from ScrapingBee
         if (text.includes('Unauthorized') || text.includes('Invalid API key')) {
             throw new Error('Invalid ScrapingBee API key');
@@ -58,7 +56,7 @@ export async function extractArticlesFromOffersContainer(url) {
         const articles = offersContainer.querySelectorAll('article');
         
         // Extract data from each article
-        const articlesData = Array.from(articles).map((article, index) => {
+        const articlesData = Array.from(articles).slice(0,100).map((article, index) => {
 
             const parts = [];
             article.querySelectorAll("*").forEach(el => {
@@ -67,7 +65,6 @@ export async function extractArticlesFromOffersContainer(url) {
                     if (t) parts.push(t);
                 }
             });
-
 
             const mainImage = article.querySelector('.offer-card__image-inner');
             if (mainImage && mainImage.src) {
@@ -88,7 +85,6 @@ export async function extractArticlesFromOffersContainer(url) {
         return [];
     }
 }
-
 
 export async function scrapeIca(storeName){
     const url = baseIcaUrl + storeName;

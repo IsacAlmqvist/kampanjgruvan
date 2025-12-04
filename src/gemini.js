@@ -37,6 +37,7 @@ export async function categorizeItems(storeData) {
   `;
 
   try {
+
     const result = await model.generateContent(prompt);
     
     // parse response
