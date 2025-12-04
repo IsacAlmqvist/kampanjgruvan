@@ -1,10 +1,14 @@
 import { observer } from "mobx-react-lite";
 import { Utils } from "../utilities";
+import { useNavigate } from 'react-router-dom';
 
 export const SidebarView = observer(function SidebarRender(props) {
 
+    const navigate = useNavigate();
+
     async function handleScrapeClickACB() {
         props.scrapeStore();
+        navigate("/articles");
     }
 
     return (

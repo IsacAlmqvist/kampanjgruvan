@@ -4,7 +4,7 @@ import { observer } from "mobx-react-lite";
 
 import { categorizeItems } from "../gemini";
 
-export const SidebarPresenter = observer(function SidebarRender(props) {
+export const Sidebar = observer(function SidebarRender(props) {
 
     return (
         <>
