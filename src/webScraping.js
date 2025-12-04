@@ -15,6 +15,8 @@ export async function fetchWithScrapingBee(url) {
         }
         
         const text = await response.text();
+
+        console.log(text);
         
         // Check if we got an error message from ScrapingBee
         if (text.includes('Unauthorized') || text.includes('Invalid API key')) {
@@ -65,6 +67,16 @@ export async function extractArticlesFromOffersContainer(url) {
                     if (t) parts.push(t);
                 }
             });
+
+
+            const mainImage = article.querySelector('.offer-card__image-inner');
+            if (mainImage && mainImage.src) {
+                parts.push(mainImage.src);
+                if (mainImage.alt) {
+                    parts.push(mainImage.alt);
+                }
+            }
+
             return parts;
         });
         
@@ -86,6 +98,8 @@ export async function scrapeIca(storeName){
 
     articlesRaw.forEach((array, index) => {
 
+        console.log(array);
+
         const article = {
             id: index,
             text: ""       
@@ -101,6 +115,8 @@ export async function scrapeIca(storeName){
             }
             article.text += element;
         }
+        article.mainImgSrc = array[array.length-2];
+        article.mainImgAlt = array[array.length-1];
         newStoreData.push(article);
     });
     

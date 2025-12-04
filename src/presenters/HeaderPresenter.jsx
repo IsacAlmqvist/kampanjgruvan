@@ -6,7 +6,7 @@ import { observer } from "mobx-react-lite";
 
 import { categorizeItems } from "../gemini";
 
-export const HeaderPresenter = observer(function HeaderRender(props) {
+export const Header = observer(function HeaderRender(props) {
 
     return (
         <>

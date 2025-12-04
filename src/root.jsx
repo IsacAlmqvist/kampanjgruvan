@@ -1,13 +1,30 @@
 import { observer } from "mobx-react-lite";
-import { HeaderPresenter } from "./presenters/HeaderPresenter";
-import { ArticlesPresenter } from "./presenters/articlesPresenter";
+import { Sidebar } from "./presenters/sidebarPresenter";
+import { Articles } from "./presenters/articlesPresenter";
+import { Header } from "./presenters/HeaderPresenter";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 
 const Root = observer (
+
     function Root(props) {
+
+
+    const router = createHashRouter([
+        {
+            path: "/",
+            element: <Articles model = {props.model}/>
+        },
+        {
+            path: "/articles",
+            element: <Articles model = {props.model}/>
+        }
+    ]);
+
         return (
         <div className="root">
-            <HeaderPresenter model = {props.model}/>
-            <ArticlesPresenter model = {props.model}/>
+            {/* <div className="sidebar"><Sidebar model={props.model} /></div> */}
+            <div className=""><Header model={props.model} /></div>
+            <div className="mainContent"><RouterProvider router={router} /></div>
         </div>
         ); 
     }
