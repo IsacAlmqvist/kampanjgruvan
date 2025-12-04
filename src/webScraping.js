@@ -1,5 +1,6 @@
 const API_KEY = "D6SXE7M8TPOJSS7WU4V1CRCBO2B4O8C03VJHCS4P616W904JH5M00N1XAQTT1EJ5RJUE6MGRB41FB431"
 const baseIcaUrl = "https://www.ica.se/erbjudanden/"
+
 export async function fetchWithScrapingBee(url) {
     try {
         const apiKey = API_KEY;
@@ -81,13 +82,12 @@ export async function scrapeIca(storeName){
     const url = baseIcaUrl + storeName;
     const articlesRaw = await extractArticlesFromOffersContainer(url);
 
-    console.log(articlesRaw);
-
     const newStoreData = [];
 
-    articlesRaw.forEach(array => {
+    articlesRaw.forEach((array, index) => {
 
         const article = {
+            id: index,
             text: ""       
         }
 
@@ -104,13 +104,13 @@ export async function scrapeIca(storeName){
         newStoreData.push(article);
     });
     
-    newStoreData.forEach(element => {
-        console.log("\n");
-        console.log("title: ", element.title);
-        console.log("descripton: ", element.descripton);
-        console.log("text: ", element.text);
-        console.log("price: ", element.price);
-    });
+    // newStoreData.forEach(element => {
+    //     console.log("\n");
+    //     console.log("title: ", element.title);
+    //     console.log("descripton: ", element.descripton);
+    //     console.log("text: ", element.text);
+    //     console.log("price: ", element.price);
+    // });
 
     return newStoreData;
 

@@ -11,8 +11,16 @@ export const StoreSearchResultsView = observer(function StoreSearchResultsRender
         <div className="w-full p-4 bg-gray-50 flex flex-col">
             
             {/* Grid Container: 1 column on mobile, 4 columns on medium screens+ */}
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6 w-full max-w-7xl mx-auto mb-8">
-                {props.stores.map(renderSearchResultCB)}
+            <div className="gap-6 w-full max-w-7xl mx-auto mb-8
+                grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] 
+                grid-cols-1
+                sm:grid-cols-2
+                md:grid-cols-3 
+                lg:grid-cols-4">
+                {props.stores
+                    .filter(store => matchesSearch(store))
+                    .slice(0, 8)
+                    .map(renderSearchResultCB)}
             </div>
 
             <button 
@@ -37,12 +45,15 @@ export const StoreSearchResultsView = observer(function StoreSearchResultsRender
         </div>
     )
 
-    function renderSearchResultCB(store) {
+    function matchesSearch(storeName) {
         const query = props.searchInput?.toLowerCase() || "";
-        const liked = props.selectedStores.find(item => item === store);
 
-        // If it doesn't match, return null
-        if (!store.includes(query)) return null;
+        return storeName.includes(query);
+    }
+
+    function renderSearchResultCB(store) {
+
+        const liked = props.selectedStores.find(item => item.name === store);
 
         return (
             <div

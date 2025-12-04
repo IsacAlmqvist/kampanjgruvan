@@ -7,8 +7,6 @@ const db = getFirestore(app);
 
 export function connectToPersistence(model, reactionFunction){
 
-    console.log("initial store: " + model.currentStore);
-
     model.ready = false;
 
     const firestoreDoc = doc(db, "modelCollection", "modelDocument");
@@ -38,7 +36,6 @@ export function connectToPersistence(model, reactionFunction){
         ]},
         function saveModelSideEffectACB(){
             if(model.ready) {
-                console.log(model.storesData);
                 setDoc(firestoreDoc, {
                     storesData: model.storesData,
                     selectedStores: model.selectedStores
