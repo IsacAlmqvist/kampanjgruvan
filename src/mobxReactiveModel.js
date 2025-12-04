@@ -7,3 +7,5 @@ configure({ enforceActions: "never" });
 export const reactiveModel = observable(model);
 
 connectToPersistence(reactiveModel, reaction);
+
+window.myModel= reactiveModel;

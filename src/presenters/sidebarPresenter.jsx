@@ -1,5 +1,4 @@
 import { SidebarView } from "../views/sidebarView";
-import { ChooseLocalStoresView } from "../views/chooseLocalStoresView";
 import { observer } from "mobx-react-lite";
 
 import { categorizeItems } from "../gemini";

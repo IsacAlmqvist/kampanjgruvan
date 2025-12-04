@@ -1,17 +1,21 @@
 # TODO
 - [ ] Design the article boxes
 
-- [ ] Make each erticale have and id (maybe firebase auto id?) for array rendering
+- [ ] Do something with the model.ready thing
+
+- [X] Make each erticale have and id (maybe firebase auto id?) for array rendering
+
+- [ ] Scrape the correct name for each store that includes ÅÄÖ, (maybe a logo as well)
 
 - [ ] The app starts scraping as soon as you add the store to your list and show suspense
-    - [ ] some async work, spam protection, show loading
+    - [X] some async work, spam protection, show loading
     - [ ] make sure there is no double scraping or interrupt 
 
 - [ ] Search function for the items
 
-- [ ] Send the new store info to GPT after scraping
-    - [ ] Set up the api
-    - [ ] Query for categories and keyworks for all articles
+- [X] Send the new store info to GPT after scraping
+    - [X] Set up the api
+    - [X] Query for categories and keyworks for all articles
 
 - [ ] User data (maybe only selected stores and keep scraped info public to save credits)
     - [ ] Google authentication

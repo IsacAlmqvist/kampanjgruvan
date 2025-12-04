@@ -1,10 +1,17 @@
+import pLimit from "p-limit";
+import { categorizeItems } from "./gemini";
 import { scrapeIca } from "./webScraping";
+
+const limit = pLimit(5);
+const running = new Map();
 
 export const model = {
 
     ready: true,
 
     searchInput: "",
+
+    searchFocus: false,
 
     selectedStores: [],
 
@@ -14,9 +21,10 @@ export const model = {
         "ica-kvantum-liljeholmen-1003417/",
         "ica-aspudden-1003601/",
         "maxi-ica-stormarknad-lindhagen-1003418/",
-        "ica-nara-rosendal-1004328/"
-        // "coop-liljeholmen/",
-        // "coop-midsommarkransen/"
+        "ica-nara-rosendal-1004328/",
+        "ica-supermarket-lysekil-1004460/",
+        "ica-supermarket-brommaplan-1004577/",
+        "ica-nara-alvsjo-1004436/"
     ],
 
     currentStore: null,
@@ -39,44 +47,73 @@ export const model = {
         }
         console.log(storesDataObject);
         this.storesData = [...this.storesData, storesDataObject];
-        console.log(this.storesData);
     },
 
-    async getStoreData(storeName) {
+    async getData(storeName) {
+        return limit(async () => {
+            console.log("scraping: " + storeName);
 
-        if(this.storesData.some((store) => store.storeName === storeName))
-        {
-            console.log("store: " + storeName + " already scraped!")
-        } else {
-            console.log(storeName);
-            const articles = await scrapeIca(storeName);    
+            const articles = await scrapeIca(storeName); 
+            console.log("scraped!");   
+            const processed = await categorizeItems(articles);
+            console.log("processed!");
+
             const week = this.getWeek();
 
-            this.setStoreData(storeName, week, articles);
-        }
+            this.setStoreData(storeName, week, processed);
+        })
+    },
+
+    async safeScrape(storeName) {
+
+        if(this.storesData.some((store) => store.storeName === storeName)) {
+            console.log("store: " + storeName + " already scraped!")
+            return;
+        };
+
+        if (running.has(storeName)) {
+            console.log("scrape already running:", storeName);
+            return running.get(storeName);
+        };
+
+        const p = this.getData(storeName)
+            .finally(() => {running.delete(storeName)});
+
+        running.set(storeName, p);
+
+        return p;
     },
 
     setCurrentSearch(searchInput) {
         this.searchInput = searchInput;
     },
 
-    // setCurrentStore(store){
-    //     this.currentStore = store;
-    // },
+    async addStore(store) {
+        const existing = this.selectedStores.some(i => i.name === store);
+        if(existing) return;
 
-    // scrape all the stores that are selected
-    async scrapeStore(){
-        await Promise.all(
-            this.selectedStores.map(store => this.getStoreData(store))
-        );
-    },
+        this.selectedStores = [
+            ...this.selectedStores,
+            { name: store, status: "loading" }
+        ];
 
-    addStore(store) {
-        this.selectedStores.some(i => i === store) || (
-            this.selectedStores = [...this.selectedStores, store]);
-        console.log(this.selectedStores);
+        try {
+            await this.safeScrape(store); // this is where the magic happens
+
+            this.selectedStores = this.selectedStores.map(s =>
+                s.name === store ? { ...s, status: "ready" } : s
+            );
+        } catch (error) {
+            console.error(error);
+
+            // removes store (eventually we want to show error popup)
+            this.selectedStores = this.selectedStores.filter(s =>
+                s.name !== store 
+            );
+        }
+        
     },
     removeStore(store) {
-        this.selectedStores = this.selectedStores.filter(i => i !== store);
+        this.selectedStores = this.selectedStores.filter(s => s.name !== store);
     }
 }

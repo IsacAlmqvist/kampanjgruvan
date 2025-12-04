@@ -15,8 +15,8 @@ const model = genAI.getGenerativeModel({
 export async function categorizeItems(storeData) {
 
   // extract the essencial info of the item to pass to LLM
-  const foodItems = storeData.articles.map((item, id) => {
-    return { id: id, details: item.title + ". " + item.details };
+  const foodItems = storeData.map(item => {
+    return { id: item.id, details: item.title + ". " + item.details };
   })
 
   const prompt = `
@@ -33,7 +33,7 @@ export async function categorizeItems(storeData) {
     2. The food items are in SWEDISH.
     3. If an item does not fit well, use the closest match or 'Non-Food'.
     4. Return a JSON Array of objects.
-    5. Each object must have: "ID", "category".
+    5. Each object must have: "id", "category".
   `;
 
   try {
@@ -41,9 +41,15 @@ export async function categorizeItems(storeData) {
     
     // parse response
     const responseText = result.response.text();
-    const structuredData = JSON.parse(responseText);
+    const categorized = JSON.parse(responseText);
+ 
+    const finalData = storeData.map(article => {
+      const match = categorized.find(c => c.id === article.id);
+      return { ...article, category: match?.category ?? "Unknown" };
+    });
 
-    return structuredData;
+    console.log(finalData);
+    return finalData;
 
   } catch (error) {
     console.error("Error:", error);
