@@ -27,24 +27,13 @@ export const ArticlesView = observer(function SidebarRender(props) {
 
     function renderStoresCB(store, index) { // index is temp, need firestore id later
 
-        console.log("______________________________________________");
-        console.log(props.selected);
         const selectedStoreNames = props.selected?.map(s => s.name) ?? [];
-        console.log(selectedStoreNames);
-        console.log("______________________________________________");
         if (!selectedStoreNames.includes(store.storeName)) return null;
 
         return (
-            // <div key={index}
-            //     className=""
-            // >
-            //     <h3>{Utils.formatStoreName(store.storeName)}</h3>
-            //     <div className="">
-            //         {store.articles.map(renderArticlesCB)}
-            //     </div>
-            // </div> 
-
-            <ScrollAreaHorizontal articles = {store.articles}/>
+            <div key={index}>
+                <ScrollAreaHorizontal storeData = {store}/>
+            </div>
         );
     }
 

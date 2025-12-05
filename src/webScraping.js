@@ -1,4 +1,4 @@
-const API_KEY = "D6SXE7M8TPOJSS7WU4V1CRCBO2B4O8C03VJHCS4P616W904JH5M00N1XAQTT1EJ5RJUE6MGRB41FB431"
+const API_KEY = import.meta.env.VITE_SCRAPINGBEE_API_KEY
 const baseIcaUrl = "https://www.ica.se/erbjudanden/"
 
 export async function fetchWithScrapingBee(url) {

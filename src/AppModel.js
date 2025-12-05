@@ -6,12 +6,18 @@ const limit = pLimit(5);
 const running = new Map();
 
 export const model = {
+    user: null,
+
+    setUser(u) {
+        this.user = u;
+    },
 
     ready: true,
 
     searchInput: "",
+    itemSearchInput: "",
 
-    searchFocus: false,
+    filterCategory: "Visa Alla",
 
     selectedStores: [],
 
@@ -27,7 +33,23 @@ export const model = {
         "ica-nara-alvsjo-1004436/"
     ],
 
-    currentStore: null,
+    searchFocus: false,
+
+    setSearchFocus(newValue) {
+        this.searchFocus = newValue;
+    },
+
+    // Sidebar props
+    filterFocus: false,
+    setFilterFocus(newValue) {
+        this.filterFocus = newValue;
+    },
+    setCurrentItemSearch(input) {
+        this.itemSearchInput = input;
+    },
+    setFilterCategory(category) {
+        this.filterCategory = category;
+    },
 
 
     getWeek() {

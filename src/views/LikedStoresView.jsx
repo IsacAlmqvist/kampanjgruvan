@@ -4,7 +4,8 @@ import { Utils } from "../utilities";
 export const LikedStoresView = observer(function LikedStoresRender(props) {
     
     return (
-        <div className="flex flex-wrap gap-1 bg-blue-500 p-2">
+        <div className="flex flex-wrap gap-2 p-2 bg-gray-50
+                shadow-inner-sm">
             {props.selectedStores.map(renderSelectedCB)}
         </div>
     )
@@ -32,10 +33,6 @@ export const LikedStoresView = observer(function LikedStoresRender(props) {
                 </button>
             </div>
         )
-    }
-
-    async function onScrapeClickACB() {
-        props.onScrapeStore();
     }
 
 })

@@ -39,23 +39,26 @@ export function ScrollAreaHorizontal(props) {
 */
 
 
-export function ScrollAreaHorizontal({ articles }) {
+export function ScrollAreaHorizontal({ storeData }) {
     return (
-        <ScrollArea 
-            className="w-full rounded-md border"
-            style={{ 
-                overflowX: 'auto',
-                WebkitOverflowScrolling: 'touch'
-            }}
-        >
-            <div className="flex w-max space-x-4 p-4">
-                {articles.map(renderArticlesCB)}
-            </div>
-            <Scrollbar orientation="horizontal" className="flex h-2.5 touch-none select-none">
-                <Thumb className="relative flex-1 rounded-full bg-border" />
-            </Scrollbar>
-            <Corner />
-        </ScrollArea>
+        <div>
+            {storeData.storeName}
+            <ScrollArea 
+                className="w-full rounded-md border"
+                style={{ 
+                    overflowX: 'auto',
+                    WebkitOverflowScrolling: 'touch'
+                }}
+            >
+                <div className="flex w-max space-x-4 p-4">
+                    {storeData.articles.map(renderArticlesCB)}
+                </div>
+                <Scrollbar orientation="horizontal" className="flex h-2.5 touch-none select-none">
+                    <Thumb className="relative flex-1 rounded-full bg-border" />
+                </Scrollbar>
+                <Corner />
+            </ScrollArea>
+        </div>
     )
 
     function renderArticlesCB(article) {
