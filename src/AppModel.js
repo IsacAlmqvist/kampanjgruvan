@@ -6,6 +6,11 @@ const limit = pLimit(5);
 const running = new Map();
 
 export const model = {
+    user: null,
+
+    setUser(u) {
+        this.user = u;
+    },
 
     ready: true,
 
