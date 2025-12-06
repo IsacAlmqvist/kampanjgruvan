@@ -11,7 +11,7 @@ import { categories } from "../constData";
 export const FilterView = observer(function FilterRender(props) {
 
     return (
-        <div className="relative w-full -mb-[12px]">
+        <div className="relative w-full -mb-[18px]">
 
             {/* DROPDOWN PANEL */}
             <div
