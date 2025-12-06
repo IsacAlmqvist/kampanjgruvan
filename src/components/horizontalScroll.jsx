@@ -25,27 +25,51 @@ export function ScrollAreaHorizontal({ storeData }) {
     )
 
     function renderArticlesCB(article) {
+        // Function to insert line breaks in long text
+        const formatLongText = (text, maxLength = 50) => {
+            if (!text) return "";
+            
+            // If text is too long, find a good breaking point
+            if (text.length > maxLength) {
+                // Try to break at the last space before maxLength
+                const breakPoint = text.lastIndexOf(' ', maxLength);
+                if (breakPoint > 0) {
+                    return text.substring(0, breakPoint) + '\n' + text.substring(breakPoint + 1);
+                }
+                // If no space found, force break at maxLength
+                return text.substring(0, maxLength) + '\n' + text.substring(maxLength);
+            }
+            return text;
+        };
+
+        // Get formatted text for title and alt
+        const formattedTitle = formatLongText(article.title, 40);
+        const formattedAlt = formatLongText(article.mainImgAlt || article.title, 40);
+
         return (
             <div
               key={article.id}
-              className="flex-shrink-0 w-30 rounded-lg border border-gray-400 
-                p-4 flex flex-col items-center bg-white shadow-md"
+              className="flex-shrink-0 w-48 rounded-lg border border-gray-400 
+                p-4 flex flex-col items-center bg-white shadow-md min-h-[280px]"
             >
               <img
                 src={article.mainImgSrc}
-                alt={article.mainImgAlt || article.title}
-                className="w-full object-cover rounded-md mb-2"
+                alt={formattedAlt}
+                className="w-full h-32 object-cover rounded-md mb-3"
               />
-              <span className="text-sm text-center font-medium mb-1 truncate">
-                {article.title}
-              </span>
-              <span className="text-xs text-gray-500 mb-2">{article.price}</span>
-              <button
-                className="px-2 py-1 text-white bg-blue-500 rounded hover:bg-blue-600 text-xs"
-                onClick={() => onAddItem?.(article)}
-              >
-                +
-              </button>
+              <div className="flex flex-col items-center flex-grow w-full">
+                <span className="text-sm text-center font-medium mb-1 whitespace-pre-line min-h-[2.5em]">
+                  {formattedTitle}
+                </span>
+                <span className="text-xs text-gray-500 mb-3 mt-auto">{article.price}</span>
+                <button
+                  className="px-3 py-1.5 text-white bg-blue-500 rounded hover:bg-blue-600 
+                    text-sm font-medium min-w-[60px]"
+                  onClick={() => onAddItem?.(article)}
+                >
+                  +
+                </button>
+              </div>
             </div>
         )
     }
