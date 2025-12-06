@@ -6,7 +6,7 @@ export const HeaderView = observer(function HeaderRender(props) {
     return (
         <div 
             onFocus={props.setSearchFocus}
-            className="flex justify-between gap-3 w-full p-3 bg-blue-200"
+            className="flex justify-between gap-3 w-full p-3 bg-green-100"
         >
 
             <h3>KampanjGruvan</h3>

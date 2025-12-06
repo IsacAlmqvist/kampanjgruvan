@@ -10,13 +10,7 @@ export const ArticlesView = observer(function SidebarRender(props) {
     const navigate = useNavigate();
 
     return (
-        <div className="flex gap-6 w-full max-w-7xl mx-auto mb-8
-            grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] 
-            grid-cols-1
-            sm:grid-cols-2
-            md:grid-cols-3 
-            lg:grid-cols-4"
-        >
+        <div>
             {props.data.map(renderStoresCB)}
         </div>
     );
