@@ -2,14 +2,11 @@ import { observer } from "mobx-react-lite";
 import { Filter } from "./presenters/FilterPresenter";
 import { Articles } from "./presenters/articlesPresenter";
 import { Header } from "./presenters/HeaderPresenter";
+import { Login } from "./presenters/loginPagePresenter";
 import { Cart } from "./presenters/cartPresenter";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 
-const Root = observer (
-
-    function Root(props) {
-
-
+const Root = observer(function Root(props) {
     const router = createHashRouter([
         {
             path: "/",
@@ -39,15 +36,17 @@ const Root = observer (
                     <Cart model = {props.model}/>
                 </>
             )
+        },
+        {
+            
         }
     ]);
 
-        return (
+    return (
         <div className="root">
             <RouterProvider router={router} />
         </div>
-        ); 
-    }
-);
+    ); 
+});
 
 export { Root }
