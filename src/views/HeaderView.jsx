@@ -1,7 +1,6 @@
 import { observer } from "mobx-react-lite";
-import { useNavigate } from "react-router-dom";
 import { logout } from "../firestoreModel"
-
+import { useNavigate } from "react-router-dom";
 
 export const HeaderView = observer(function HeaderRender(props) {
 
@@ -33,9 +32,6 @@ export const HeaderView = observer(function HeaderRender(props) {
                 </svg>
             </div>
 
-
-            <button onClick={props.user ? logout : ()=> navigate("/login")}>
-
             <div className="flex-grow order-last md:order-2 mx-auto my-auto min-w-[90%] md:min-w-[10%]">
                 <div className="relative">
                     <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400">
@@ -55,13 +51,12 @@ export const HeaderView = observer(function HeaderRender(props) {
             </div>
 
             <button 
-                onClick={props.user ? logout : loginWithGoogle}
+                onClick={props.user ? logout : ()=> navigate("/login")}
                 className="ml-auto order-3 px-3 py-2 my-auto bg-green-400 text-gray-700 
                     font-semibold rounded-lg shadow-md text-sm
                     hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-green-300
                     active:bg-green-600 transition-colors duration-150"
             >
-
                 {props.user ? "Logga ut" : "Logga in"}
             </button>   
 
