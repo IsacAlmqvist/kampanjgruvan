@@ -36,6 +36,9 @@ const Root = observer(function Root(props) {
                     <Cart model = {props.model}/>
                 </>
             )
+        },
+        {
+            
         }
     ]);
 
