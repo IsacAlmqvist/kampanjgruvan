@@ -6,6 +6,7 @@ export const Articles = observer(function ArticlesRender(props) {
         <ArticlesView 
             data={props.model.storesData}
             selected={props.model.selectedStores}
+            handleAddItemToCart={(item, store) => props.model.addCartItem(item, store)}
         />
     </>
     );

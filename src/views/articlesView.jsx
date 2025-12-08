@@ -1,7 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { Utils } from "../utilities";
 import { useNavigate } from 'react-router-dom';
-import { HorizontalList } from "../components/horizontalList"
 import { ScrollAreaHorizontal } from "../components/horizontalScroll";
 
 
@@ -26,7 +24,7 @@ export const ArticlesView = observer(function SidebarRender(props) {
 
         return (
             <div key={index}>
-                <ScrollAreaHorizontal storeData = {store}/>
+                <ScrollAreaHorizontal storeData = {store} onAddCartItem={(item, store) => props.handleAddItemToCart(item, store)}/>
             </div>
         );
     }
