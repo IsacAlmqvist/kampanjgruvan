@@ -14,7 +14,7 @@ export function ScrollAreaHorizontal({ storeData }) {
                 }}
             >
                 <div className="flex w-max space-x-4 p-2">
-                    {storeData.articles.map(renderArticlesCB)}
+                    {storeData.articles?.map(renderArticlesCB)}
                 </div>
                 <Scrollbar orientation="horizontal" className="flex h-2.5 touch-none select-none">
                     <Thumb className="relative flex-1 rounded-full bg-gray-300" />
