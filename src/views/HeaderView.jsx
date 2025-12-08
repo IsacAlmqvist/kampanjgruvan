@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite";
-import { loginWithGoogle, logout } from "../firestoreModel"
 import { useNavigate } from "react-router-dom";
+import { logout } from "../firestoreModel"
+
 
 export const HeaderView = observer(function HeaderRender(props) {
 
@@ -28,7 +29,7 @@ export const HeaderView = observer(function HeaderRender(props) {
                 </input>
             </div>
 
-            <button onClick={props.user ? logout : loginWithGoogle}>
+            <button onClick={props.user ? logout : ()=> navigate("/login")}>
                 {props.user ? "Logga ut" : "Logga in"}
             </button>   
 
