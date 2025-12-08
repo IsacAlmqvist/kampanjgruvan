@@ -14,6 +14,8 @@ export const model = {
 
     ready: true,
 
+    cartItems: [],
+
     searchInput: "",
     itemSearchInput: "",
 
@@ -137,5 +139,13 @@ export const model = {
     },
     removeStore(store) {
         this.selectedStores = this.selectedStores.filter(s => s.name !== store);
+    },
+
+    addCartItem(article, store) {
+        const newItem = {store: store, article: article};
+        this.cartItems = [...this.cartItems, newItem];
+    },
+    removeCartItem(id) {
+        this.cartItems = this.cartItems.filter(i => i.article.id !== id);
     }
 }
