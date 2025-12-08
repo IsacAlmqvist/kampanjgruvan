@@ -28,6 +28,8 @@ export async function logout() {
 export function setupAuthListener(model, reactionFunction) {
     onAuthStateChanged(auth, user => {
         model.setUser(user);
+        console.log("in FIREBASE");
+        console.log(model.user);
 
         // Call connect once on login or guest mode
         connectToPersistence(model, reactionFunction, user ? user.uid : null);
