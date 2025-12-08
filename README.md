@@ -13,6 +13,7 @@ Moving forward we will implement:
 - a way to query the Gemini api based on your shopping list (recipe, cheapest store etc.)
 
 File structure:
+```
 src/
   components/
     horizontalScroll.jsx
@@ -44,5 +45,6 @@ src/
   root.jsx
   utilities.js
   webScraping.js
+```
 
 The root of the soruce file consists of our model, the api functions (scrapingBee and Gemini), the reactive model setup, the root of the app, and some utility functions and constant data. The app is divided into a few differnt presenters, each one responsible for one or a couple different views. 
