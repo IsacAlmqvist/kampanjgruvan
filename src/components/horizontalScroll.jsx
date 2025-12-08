@@ -47,7 +47,7 @@ export function ScrollAreaHorizontal({ storeData, onAddCartItem }) {
                 </span>
                 <span className="text-xs text-gray-500 mb-3 mt-auto">{article.price}</span>
                 <button
-                  className="px-3 py-1.5 text-white bg-blue-500 rounded hover:bg-blue-600 
+                  className="px-3 py-1.5 text-white bg-green-300 rounded active:scale-97 hover:bg-green-200 
                     text-sm font-medium min-w-[60px]"
                   onClick={() => onAddCartItem(article, storeData.storeName)}
                 >
