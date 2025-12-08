@@ -57,6 +57,7 @@ export function connectToPersistence(model, reactionFunction, uid){
         if (uid) {
             const userSnap = await getDoc(userDoc);
             model.selectedStores = userSnap.data()?.selectedStores || [];
+            model.cartItems = userSnap.data()?.cartItems || [];
         } else {
             model.selectedStores = [];
             console.log("not logged in!");
@@ -74,6 +75,7 @@ export function connectToPersistence(model, reactionFunction, uid){
         function watchtThesePropsACB(){ return [
             model.storesData,
             model.selectedStores,
+            model.cartItems,
             uid
         ]},
         function saveModelSideEffectACB(){
@@ -85,7 +87,8 @@ export function connectToPersistence(model, reactionFunction, uid){
 
             if (uid) {
                 setDoc(userDoc, {
-                    selectedStores: model.selectedStores
+                    selectedStores: model.selectedStores,
+                    cartItems: model.cartItems
                 }, { merge: true });
             }
         }
