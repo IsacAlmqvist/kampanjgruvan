@@ -9,6 +9,8 @@ export async function fetchWithScrapingBee(url) {
         console.log('Fetching from ScrapingBee..., with url: ' + scrapingBeeUrl);
 
         const response = await fetch(scrapingBeeUrl);
+
+        console.log(response);
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status} - ${response.statusText}`);
