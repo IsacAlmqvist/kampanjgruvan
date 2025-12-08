@@ -3,29 +3,45 @@ import { Filter } from "./presenters/FilterPresenter";
 import { Articles } from "./presenters/articlesPresenter";
 import { Header } from "./presenters/HeaderPresenter";
 import { Login } from "./presenters/loginPagePresenter";
+import { Cart } from "./presenters/cartPresenter";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 
 const Root = observer(function Root(props) {
     const router = createHashRouter([
         {
             path: "/",
-            element: <Articles model={props.model} />
+            element: (
+                <>
+                    <Header model = {props.model}/>
+                    <Filter model = {props.model}/>
+                    <Articles model = {props.model}/>
+                </>
+            )
         },
         {
             path: "/articles",
-            element: <Articles model={props.model} />
+            element: (
+                <>
+                    <Header model = {props.model}/>
+                    <Filter model = {props.model}/>
+                    <Articles model = {props.model}/>
+                </>
+            )        
         },
         {
-            path: "/login",
-            element: <Login model={props.model} />
+            path: "/cart",
+            element: (
+                <>
+                    <Header model = {props.model}/>
+                    <Cart model = {props.model}/>
+                </>
+            )
         }
     ]);
 
     return (
         <div className="root">
-            <Header model={props.model} />
-            <Filter model={props.model}/>
-            <div className="mainContent"><RouterProvider router={router} /></div>
+            <RouterProvider router={router} />
         </div>
     ); 
 });

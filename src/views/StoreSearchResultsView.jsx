@@ -60,6 +60,9 @@ export const StoreSearchResultsView = observer(function StoreSearchResultsRender
                 key={store} 
                 className="flex flex-row justify-between bg-white rounded-2xl shadow-md hover:shadow-xl 
                     hover:-translate-y-1 transition-all duration-300 overflow-hidden border border-gray-100"
+                onClick={() => {
+                    liked ? props.removeSelected(store) : props.addStore(store)
+                }}
             >
                 <div 
                     className="ms-2 p-3 cursor-pointer items-center flex"
@@ -73,9 +76,6 @@ export const StoreSearchResultsView = observer(function StoreSearchResultsRender
                     className="p-4 bg-gray-50 hover:bg-gray-200 border-t border-gray-100
                         w-[30%] flex items-center justify-center gap-2 text-pink-400 
                         py-3 rounded-xl transition-colors duration-200"
-                    onClick={() => {
-                        liked ? props.removeSelected(store) : props.addStore(store)
-                    }}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 flex-shrink-0" fill={liked ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
                         <path strokeLinecap="round" strokeLinejoin="round" 
