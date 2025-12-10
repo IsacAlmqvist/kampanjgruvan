@@ -22,10 +22,10 @@ export const HeaderView = observer(function HeaderRender(props) {
                 <svg width="200" height="66" viewBox="0 0 200 66" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="30" cy="30" r="20" fill="#34D399" />
 
-                    <line x1="20" y1="25" x2="40" y2="25" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                    <line x1="25" y1="20" x2="25" y2="40" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="20" y1="25" x2="40" y2="25" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+                    <line x1="25" y1="20" x2="25" y2="40" stroke="white" strokeWidth="3" strokeLinecap="round"/>
 
-                    <text x="70" y="30" font-family="Arial, sans-serif" font-size="24" fill="#10B981" font-weight="bold">
+                    <text x="70" y="30" fontFamily="Arial, sans-serif" fontSize="24" fill="#10B981" fontWeight="bold">
                         <tspan x="70" dy="0">Kampanj</tspan>
                         <tspan x="110" dy="26">Gruvan</tspan>
                     </text>
