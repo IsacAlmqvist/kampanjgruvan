@@ -24,7 +24,11 @@ export const ArticlesView = observer(function SidebarRender(props) {
 
         return (
             <div key={index}>
-                <ScrollAreaHorizontal storeData = {store} onAddCartItem={(item, store) => props.handleAddItemToCart(item, store)}/>
+                <ScrollAreaHorizontal 
+                    storeData = {store} 
+                    onAddCartItem={(item, store) => props.handleAddItemToCart(item, store)}
+                    filterCategories={props.filterCategories}    
+                />
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import { ScrollArea, Scrollbar, Thumb, Corner } from "@radix-ui/react-scroll-area"
 import { Utils } from "../utilities";
 
-export function ScrollAreaHorizontal({ storeData, onAddCartItem }) {
+export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategories }) {
     return (
         <div className="w-[95%] my-3 mx-auto">
             <h2 className="font-semibold text-lg">{Utils.formatStoreName(storeData.storeName)}</h2>
@@ -29,6 +29,10 @@ export function ScrollAreaHorizontal({ storeData, onAddCartItem }) {
         // Get formatted text for title and alt
         const formattedTitle = Utils.formatLongText(article.title, 40);
         const formattedAlt = Utils.formatLongText(article.mainImgAlt || article.title, 40);
+
+        if(!(filterCategories[0] === "Visa Alla" || filterCategories.includes(article.category))) {
+          return null;
+        }
 
         return (
             <div

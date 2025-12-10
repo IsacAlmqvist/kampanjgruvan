@@ -35,7 +35,7 @@ export const FilterView = observer(function FilterRender(props) {
 
                     <div className="flex flex-wrap gap-2">
                         {["Visa Alla", ...categories].map((cat) => {
-                            const active = props.filterCategory === cat;
+                            const active = props.filterCategories.includes(cat);
 
                             return (
                                 <button
@@ -44,7 +44,7 @@ export const FilterView = observer(function FilterRender(props) {
                                     className={`
                                         px-3 py-2 
                                         rounded-lg text-md font-medium
-                                        border transition-all duration-200
+                                        border transition-all duration-100
 
                                         ${active
                                             ? "bg-green-100 border-green-400 text-green-700 shadow-inner"

@@ -19,7 +19,7 @@ export const model = {
     searchInput: "",
     itemSearchInput: "",
 
-    filterCategory: "Visa Alla",
+    filterCategories: ["Visa Alla"],
 
     selectedStores: [],
 
@@ -50,7 +50,19 @@ export const model = {
         this.itemSearchInput = input;
     },
     setFilterCategory(category) {
-        this.filterCategory = category;
+        let newArr = [...this.filterCategories];
+
+        if(category === "Visa Alla") {
+            newArr = [category];
+        } else {
+            newArr.includes(category) ?
+                newArr = newArr.filter(c => c !== category)
+                    :
+                newArr = [...newArr, category];
+            newArr = newArr.filter(c => c !== "Visa Alla");
+        }
+
+        this.filterCategories = newArr;
     },
 
 
