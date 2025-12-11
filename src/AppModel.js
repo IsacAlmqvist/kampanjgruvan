@@ -1,6 +1,8 @@
 import pLimit from "p-limit";
 import { categorizeItems } from "./gemini";
 import { scrapeIca } from "./webScraping";
+import { allIcaStores } from "./constData";
+import { loadStore } from "./firestoreModel";
 
 const limit = pLimit(5);
 const running = new Map();
@@ -25,15 +27,7 @@ export const model = {
 
     storesData: [],
 
-    allStores: [
-        "ica-kvantum-liljeholmen-1003417/",
-        "ica-aspudden-1003601/",
-        "maxi-ica-stormarknad-lindhagen-1003418/",
-        "ica-nara-rosendal-1004328/",
-        "ica-supermarket-lysekil-1004460/",
-        "ica-supermarket-brommaplan-1004577/",
-        "ica-nara-alvsjo-1004436/"
-    ],
+    allStores: allIcaStores,
 
     searchFocus: false,
 
@@ -74,90 +68,121 @@ export const model = {
         return week;
     },
 
-    setStoreData(storeName, week, articles) {
+    setStoreData(store, week, articles) {
 
-        const storesDataObject = {
-            storeName: storeName,
-            week: week,
-            articles: articles
-        }
+        
         console.log(storesDataObject);
         this.storesData = [...this.storesData, storesDataObject];
     },
 
-    async getData(storeName) {
+    async getData(store) {
         return limit(async () => {
-            console.log("scraping: " + storeName);
+            console.log("scraping: " + store.name);
 
-            const articles = await scrapeIca(storeName); 
+            const articles = await scrapeIca(store.url); 
             console.log("scraped!");   
             const processed = await categorizeItems(articles);
             console.log("processed!");
 
             const week = this.getWeek();
 
-            this.setStoreData(storeName, week, processed);
+            const storesDataObject = {
+                id: store.id,
+                name: store.name,
+                week: week,
+                articles: articles
+            }
+            return storesDataObject;
         })
     },
 
-    async safeScrape(storeName) {
+    async safeScrape(store) {
 
-        if(this.storesData.some((store) => store.storeName === storeName)) {
+        if(this.storesData.some((s) => s.id === store.id)) {
             console.log("store: " + storeName + " already scraped!")
-            return;
+            return this.storesData.find(s => s.id === store.id);
         };
 
-        if (running.has(storeName)) {
-            console.log("scrape already running:", storeName);
-            return running.get(storeName);
+        if (running.has(store)) {
+            console.log("scrape already running:", store.name);
+            return running.get(store);
         };
 
-        const p = this.getData(storeName)
-            .finally(() => {running.delete(storeName)});
+        const p = this.getData(store)
+            .finally(() => {running.delete(store)});
 
-        running.set(storeName, p);
+        running.set(store, p);
 
-        return p;
+        return p; // promise that resolves to the storeData
+    },
+
+    async scrapeInit(store) {
+        try {
+            const result = await this.safeScrape(store); // this is where the magic happens
+
+            this.selectedStores = this.selectedStores.map(s =>
+                s.id === store.id ? { ...s, status: "ready" } : s
+            );
+            return result;
+        } catch (error) {
+            console.error(error);
+
+            // removes store (eventually we want to show error popup)
+            this.selectedStores = this.selectedStores.filter(s =>
+                s.id !== store.id 
+            );
+            return null;
+        }
+    },
+
+    async addStore(store) {
+
+        this.selectedStores = [{ ...store, status:"loading" }, ...this.selectedStores];
+
+        await loadStore(this, store);
+
+        this.selectedStores = this.selectedStores.map(s =>
+            s.id === store.id ? { ...s, status: "ready" } : s
+        );
     },
 
     setCurrentSearch(searchInput) {
         this.searchInput = searchInput;
     },
 
-    async addStore(store) {
-        const existing = this.selectedStores.some(i => i.name === store);
-        if(existing) return;
-
-        this.selectedStores = [
-            ...this.selectedStores,
-            { name: store, status: "loading" }
-        ];
-
-        try {
-            await this.safeScrape(store); // this is where the magic happens
-
-            this.selectedStores = this.selectedStores.map(s =>
-                s.name === store ? { ...s, status: "ready" } : s
-            );
-        } catch (error) {
-            console.error(error);
-
-            // removes store (eventually we want to show error popup)
-            this.selectedStores = this.selectedStores.filter(s =>
-                s.name !== store 
-            );
-        }
-        
-    },
     removeStore(store) {
-        this.selectedStores = this.selectedStores.filter(s => s.name !== store);
+        this.selectedStores = this.selectedStores.filter(s => s.id !== store.id);
+        this.storesData = this.storesData.filter(s => s.id !== store.id);
     },
 
-    addCartItem(article, store) {
-        const newItem = {store: store, article: article};
-        this.cartItems = [...this.cartItems, newItem];
+    addCartItem(article, storeName) {
+
+        const maxId = this.cartItems.length > 0 
+            ? Math.max(...this.cartItems.map(i => i.id)) 
+            : 0;
+
+        const newItem = {
+            id: maxId + 1,
+            amount: 1,
+            storeName: storeName, 
+            article: article
+        };
+
+        this.cartItems = [newItem, ...this.cartItems];
     },
-    removeCartItem(id) {
-        this.cartItems = this.cartItems.filter(i => i.article.id !== id);
-    }
+
+    // +1 or -1, removes if = 0
+    updateCartAmount(itemId, increment) {
+        this.cartItems = this.cartItems.reduce((acc, item) => {
+            if (item.id === itemId) {
+                const newAmount = item.amount + increment;
+                if (newAmount > 0) {
+                    acc.push({ ...item, amount: newAmount });
+                }
+            } else {
+                acc.push(item);
+            }
+            return acc;
+        }, []);
+    },
 }

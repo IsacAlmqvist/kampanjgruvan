@@ -1,10 +1,10 @@
 import { ScrollArea, Scrollbar, Thumb, Corner } from "@radix-ui/react-scroll-area"
 import { Utils } from "../utilities";
 
-export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategories }) {
+export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategories, cartItems, onUpdateCartAmount, filterSearch }) {
     return (
         <div className="w-[95%] my-3 mx-auto">
-            <h2 className="font-semibold text-lg">{Utils.formatStoreName(storeData.storeName)}</h2>
+            <h2 className="font-semibold text-lg">{storeData.name}</h2>
 
             <ScrollArea 
                 className="w-full"
@@ -34,6 +34,10 @@ export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategorie
           return null;
         }
 
+        const cartItem = cartItems.find(
+          item => item.storeName === storeData.name && item.article.id === article.id //same article from same store
+        );
+
         return (
             <div
               key={article.id}
@@ -50,13 +54,34 @@ export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategorie
                   {formattedTitle}
                 </span>
                 <span className="text-xs text-gray-500 mb-3 mt-auto">{article.price}</span>
-                <button
-                  className="px-3 py-1.5 text-white bg-green-300 rounded active:scale-97 hover:bg-green-200 
-                    text-sm font-medium min-w-[60px]"
-                  onClick={() => onAddCartItem(article, storeData.storeName)}
-                >
-                  +
-                </button>
+
+              {/* if item already in cart, let user increment or decrement amount */}
+              {!cartItem ? (
+                  <button
+                    className="px-3 py-1.5 text-white bg-green-300 rounded active:scale-97 hover:bg-green-200 
+                      text-sm font-medium min-w-[60px]"
+                    onClick={() => onAddCartItem(article, storeData.name)}
+                  >
+                    +
+                  </button>
+                ) : (
+                  <div className="flex items-center gap-2">
+                    <button
+                      className="px-2 py-1 bg-gray-200 rounded"
+                      onClick={() => onUpdateCartAmount(cartItem.id, -1)}
+                    >
+                      -
+                    </button>
+                    <span className="px-2">{cartItem.amount}</span>
+                    <button
+                      className="px-2 py-1 bg-green-200 rounded"
+                      onClick={() => onUpdateCartAmount(cartItem.id, 1)}
+                    >
+                      +
+                    </button>
+                  </div>
+                )}
+
               </div>
             </div>
         )

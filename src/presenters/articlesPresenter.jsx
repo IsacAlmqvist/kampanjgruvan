@@ -7,7 +7,10 @@ export const Articles = observer(function ArticlesRender(props) {
             data={props.model.storesData}
             selected={props.model.selectedStores}
             handleAddItemToCart={(item, store) => props.model.addCartItem(item, store)}
+            handleUpdateCartAmount={(id, increment) => props.model.updateCartAmount(id, increment)}
             filterCategories={props.model.filterCategories}
+            filterSearch={props.model.itemSearchInput}
+            cartItems={props.model.cartItems}
         />
     </>
     );

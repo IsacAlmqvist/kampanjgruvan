@@ -17,17 +17,15 @@ export const Header = observer(function HeaderRender(props) {
                 user={props.model.user}
                 cartItems={props.model.cartItems}
             />
-            {props.model.searchFocus ? 
-                <StoreSearchResultsView 
-                    addStore={(store) => props.model.addStore(store)}
-                    stores = {props.model.allStores}
-                    searchInput = {props.model.searchInput}
-                    setSearchFocus = {() => props.model.setSearchFocus(false)}
-                    selectedStores = {props.model.selectedStores}
-                    removeSelected = {(store) => props.model.removeStore(store)}
-                />
-                : null
-            }
+            <StoreSearchResultsView 
+                addStore={(store) => props.model.addStore(store)}
+                stores = {props.model.allStores}
+                searchInput = {props.model.searchInput}
+                setSearchFocus = {() => props.model.setSearchFocus(false)}
+                selectedStores = {props.model.selectedStores}
+                removeSelected = {(store) => props.model.removeStore(store)}
+                searchFocus = {props.model.searchFocus}
+            />
             {props.model.selectedStores.length ?
                 <LikedStoresView
                     selectedStores = {props.model.selectedStores}

@@ -36,25 +36,33 @@ export async function categorizeItems(storeData) {
     5. Each object must have: "id", "category".
   `;
 
+  let categorized = [];
+
   try {
 
     const result = await model.generateContent(prompt);
     
     // parse response
     const responseText = result.response.text();
-    const categorized = JSON.parse(responseText);
- 
-    const finalData = storeData.map(article => {
-      const match = categorized.find(c => c.id === article.id);
-      return { ...article, category: match?.category ?? "Unknown" };
-    });
-
-    console.log(finalData);
-    return finalData;
+    categorized = JSON.parse(responseText);
 
   } catch (error) {
     console.error("Error:", error);
+    return storeData.map(article => ({
+      ...article, category: "Unknown"
+    }));
   }
 
-  return null;
+  // if json parse went wrong
+  if (!Array.isArray(categorized)) categorized = [];
+
+  const itemMap = new Map(categorized.map(c => [c.id, c.category]));
+
+  const finalData = storeData.map(article => ({
+    ...article,
+    category: itemMap.get(article.id) ?? "Unknown"
+  }));
+
+  return finalData;
+
 }
