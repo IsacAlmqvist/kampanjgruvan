@@ -9,7 +9,7 @@ export const ArticlesView = observer(function SidebarRender(props) {
 
     return (
         <div>
-            {props.data.map(renderStoresCB)}
+            {props.selected.map(renderStoresCB)}
         </div>
     );
 
@@ -17,17 +17,25 @@ export const ArticlesView = observer(function SidebarRender(props) {
         navigate(`/?action=details&id=${article.id}`);
     }
 
-    function renderStoresCB(store, index) { // index is temp, need firestore id later
+    function renderStoresCB(store) {
 
-        const selectedStoreNames = props.selected?.map(s => s.name) ?? [];
-        if (!selectedStoreNames.includes(store.storeName)) return null;
+        if(store.status === "loading") return <>loading...</>;
+        if(store.status === "scraping") return <>scraping...</>;
+
+        const storeData = props.data.find(s => s.id === store.id);
+        console.log(storeData);
+
+        if (!storeData) return <>Could not load data</>;
 
         return (
-            <div key={index}>
+            <div key={store.id}>
                 <ScrollAreaHorizontal 
-                    storeData = {store} 
+                    storeData = {storeData} 
                     onAddCartItem={(item, store) => props.handleAddItemToCart(item, store)}
-                    filterCategories={props.filterCategories}    
+                    onUpdateCartAmount={(id, increment) => props.handleUpdateCartAmount(id, increment)}
+                    filterCategories={props.filterCategories}
+                    filterSearch={props.filterSearch}   
+                    cartItems={props.cartItems} 
                 />
             </div>
         );

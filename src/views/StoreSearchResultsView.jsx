@@ -1,5 +1,4 @@
 import { observer } from "mobx-react-lite";
-import { Utils } from "../utilities";
 
 export const StoreSearchResultsView = observer(function StoreSearchResultsRender(props) {
     
@@ -8,56 +7,64 @@ export const StoreSearchResultsView = observer(function StoreSearchResultsRender
     // like 4 per row, with some shadow, with a like button in them ( i can do the logic of that) 
     // and that the button is wide with an up arrow
     return (
-        <div className="w-full p-4 bg-gray-50 flex flex-col">
+        <div 
+            className={
+                `w-full bg-gray-50 flex flex-col transition-all duration-200 overflow-hidden
+                ${props.searchFocus ? "max-h-[1000px]" : "max-h-0"}`
+            }
+        >
             
             {/* Grid Container: 1 column on mobile, 4 columns on medium screens+ */}
-            <div className="gap-6 w-full mx-auto mb-8
-                grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] 
-                grid-cols-1
-                sm:grid-cols-2
-                md:grid-cols-3 
-                lg:grid-cols-4">
-                {props.stores
-                    .filter(store => matchesSearch(store))
-                    .slice(0, 8)
-                    .map(renderSearchResultCB)}
+            <div className="p-4">
+                <div className="gap-6 w-full mx-auto
+                    grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))]
+                    grid-cols-1
+                    sm:grid-cols-2
+                    md:grid-cols-3
+                    lg:grid-cols-4">
+                    {props.stores
+                        .filter(store => matchesSearch(store.name))
+                        .slice(0, 8)
+                        .map(renderSearchResultCB)}
+                </div>
             </div>
 
-            <button 
-                className="w-[80%] max-w-7xl mx-auto mt-auto py-2 bg-white border border-gray-200 text-gray-500 rounded-xl 
-                    shadow-sm hover:bg-gray-100 hover:text-gray-800 transition-all 
-                    duration-200 flex items-center justify-center group"
-                onClick={props.setSearchFocus}
-            >
-                <span className="font-semibold mr-2">Stäng</span>
-
-                <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    strokeWidth={2.5} 
-                    stroke="currentColor" 
-                    className="w-5 h-5 group-hover:-translate-y-1 transition-transform"
+            <div className="pt-2 pb-4">
+                <button
+                    className="w-[80%] max-w-7xl mx-auto mt-auto py-2 bg-white border border-gray-200 text-gray-500 rounded-xl
+                        shadow-sm hover:bg-gray-100 hover:text-gray-800 transition-all
+                        duration-200 flex items-center justify-center group"
+                    onClick={props.setSearchFocus}
                 >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                </svg>
-            </button>
+                    <span className="font-semibold mr-2">Stäng</span>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2.5}
+                        stroke="currentColor"
+                        className="w-5 h-5 group-hover:-translate-y-1 transition-transform"
+                    >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    </svg>
+                </button>
+            </div>
         </div>
     )
 
     function matchesSearch(storeName) {
         const query = props.searchInput?.toLowerCase() || "";
 
-        return storeName.includes(query);
+        return storeName.toLowerCase().includes(query);
     }
 
     function renderSearchResultCB(store) {
 
-        const liked = props.selectedStores.find(item => item.name === store);
+        const liked = props.selectedStores.find(item => item.id === store.id);
 
         return (
             <div
-                key={store} 
+                key={store.id} 
                 className="flex flex-row justify-between bg-white rounded-2xl shadow-md hover:shadow-xl 
                     hover:-translate-y-1 transition-all duration-300 overflow-hidden border border-gray-100"
                 onClick={() => {
@@ -68,7 +75,7 @@ export const StoreSearchResultsView = observer(function StoreSearchResultsRender
                     className="ms-2 p-3 cursor-pointer items-center flex"
                 >
                     <h3 className="fs-5 font-bold text-gray-800 tracking-tight">
-                        {Utils.formatStoreName(store)}
+                        {store.name}
                     </h3>
                 </div>
                 

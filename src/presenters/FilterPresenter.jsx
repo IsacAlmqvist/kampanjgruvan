@@ -13,6 +13,7 @@ export const Filter = observer(function FilterRender(props) {
             setCurrentItemSearch={(searchInput) => {props.model.setCurrentItemSearch(searchInput)}}
             filterCategories={props.model.filterCategories}
             setFilterCategory={(c) => props.model.setFilterCategory(c)}
+            setSearchFocus = {() => props.model.setSearchFocus(false)}
         /> 
     );
 });

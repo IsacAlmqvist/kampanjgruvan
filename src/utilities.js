@@ -1,11 +1,11 @@
 export const Utils = {
 
-    formatStoreName(store) {
-        return (store?.replace(/\/$/, "")
-                .replace(/-\d+$/, "")
-                .replace(/-/g, " ")
-                .replace(/\b\w/g, c => c.toUpperCase()));
-    },
+    // formatStoreName(store) {
+    //     return (store?.replace(/\/$/, "")
+    //             .replace(/-\d+$/, "")
+    //             .replace(/-/g, " ")
+    //             .replace(/\b\w/g, c => c.toUpperCase()));
+    // },
 
     // Function to insert line breaks in long text
     formatLongText(text, maxLength = 50) {

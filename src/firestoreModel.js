@@ -29,48 +29,45 @@ export async function logout() {
 export function setupAuthListener(model, reactionFunction) {
     onAuthStateChanged(auth, user => {
         model.setUser(user);
-        console.log("in FIREBASE");
-        console.log(model.user);
 
         // Call connect once on login or guest mode
         connectToPersistence(model, reactionFunction, user ? user.uid : null);
     });
 }
 
-export function connectToPersistence(model, reactionFunction, uid){
+export async function connectToPersistence(model, reactionFunction, uid){
 
     model.ready = false;
 
-    const publicDoc = doc(db, "modelCollection", "publicData");
-    const userDoc = uid ? doc(db, "modelCollection", uid) : null;
+    const userDoc = uid ? doc(db, "userData", uid) : null;
 
-    getDoc(publicDoc).then(loadPublicDataACB).catch(function errorACB(err){console.log(err)});
-
-    async function loadPublicDataACB(doc) {
-        const data = doc.data();
-        const storesData = data?.storesData || [];
-
-        console.log("loading data...");
-
-        const currentWeek = model.getWeek();
-
-        // load user data if already logged in
-        if (uid) {
+    if (uid) {
+        try {
             const userSnap = await getDoc(userDoc);
             model.selectedStores = userSnap.data()?.selectedStores || [];
             model.cartItems = userSnap.data()?.cartItems || [];
-        } else {
-            model.selectedStores = [];
-            console.log("not logged in!");
+        } catch (err) {
+            console.log("Error loading user data:", err);
         }
-
-        if(storesData[0] && storesData[0]?.week !== currentWeek){
-            await deleteDoc(publicDoc);
-        } else {
-            model.storesData = storesData;      
-        }
-        model.ready = true;
+    } else {
+        model.selectedStores = [];
+        console.log("not logged in!");
     }
+
+    if (model.selectedStores.length > 0) {
+        await Promise.all(
+            model.selectedStores.map(store => {
+                loadStore(model, store);
+                model.selectedStores = model.selectedStores.map(s =>
+                    s.id === store.id ? { ...s, status: "ready" } : s
+                );
+            })
+        );
+    } else {
+        // TODO: load 2-3 first docs in public data
+    }
+
+    model.ready = true;
 
     reactionFunction(
         function watchtThesePropsACB(){ return [
@@ -82,10 +79,6 @@ export function connectToPersistence(model, reactionFunction, uid){
         function saveModelSideEffectACB(){
             if(!model.ready) return;
 
-            setDoc(publicDoc, {
-                storesData: model.storesData,
-            }, {merge:true});
-
             if (uid) {
                 setDoc(userDoc, {
                     selectedStores: model.selectedStores,
@@ -94,4 +87,31 @@ export function connectToPersistence(model, reactionFunction, uid){
             }
         }
     )
+}
+
+export async function loadStore(model, store) {
+
+    model.selectedStores = model.selectedStores.map(s =>
+        s.id === store.id ? { ...s, status: "loading" } : s
+    );
+
+    const storeDoc = doc(db, "publicData", store.id);
+    const storeSnap = await getDoc(storeDoc);
+    const loadedData = storeSnap.exists() ? storeSnap.data() : null;
+
+    if(!loadedData) {
+        model.selectedStores = model.selectedStores.map(s =>
+            s.id === store.id ? { ...s, status: "scraping" } : s
+        );
+        const scrapeResult = await model.scrapeInit(store);
+        model.storesData = [scrapeResult, ...model.storesData];
+        await setDoc(storeDoc, scrapeResult, { merge: true });
+    } else {
+        model.storesData = [loadedData, ...model.storesData];
+    }
+
+    // const currentWeek = model.getWeek();
+    // if(storesData[0] && storesData[0]?.week !== currentWeek){
+    //     await deleteDoc(publicDoc);
+    // } else {
 }
