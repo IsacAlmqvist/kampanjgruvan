@@ -68,13 +68,6 @@ export const model = {
         return week;
     },
 
-    setStoreData(store, week, articles) {
-
-        
-        console.log(storesDataObject);
-        this.storesData = [...this.storesData, storesDataObject];
-    },
-
     async getData(store) {
         return limit(async () => {
             console.log("scraping: " + store.name);
@@ -90,7 +83,7 @@ export const model = {
                 id: store.id,
                 name: store.name,
                 week: week,
-                articles: articles
+                articles: processed
             }
             return storesDataObject;
         })
