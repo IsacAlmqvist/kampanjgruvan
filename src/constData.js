@@ -6448,3 +6448,4634 @@ export const allIcaStores = [
     "url": "ica-nara-baner-1004414/"
   }
 ]
+
+export const allCoopStores = [
+  {
+    "id": "598",
+    "name": "Coop Krylbo",
+    "url": "/butiker-erbjudanden/coop/coop-krylbo/"
+  },
+  {
+    "id": "3788",
+    "name": "Coop Askersund",
+    "url": "/butiker-erbjudanden/coop/coop-askersund/"
+  },
+  {
+    "id": "3785",
+    "name": "Coop City Hallsberg",
+    "url": "/butiker-erbjudanden/coop/coop-city-hallsberg/"
+  },
+  {
+    "id": "3739",
+    "name": "Coop Tibro",
+    "url": "/butiker-erbjudanden/coop/coop-tibro/"
+  },
+  {
+    "id": "3742",
+    "name": "Coop Mariestad Marieforsleden",
+    "url": "/butiker-erbjudanden/coop/coop-mariestad-marieforsleden/"
+  },
+  {
+    "id": "3562",
+    "name": "Coop Vara",
+    "url": "/butiker-erbjudanden/coop/coop-vara/"
+  },
+  {
+    "id": "3565",
+    "name": "Coop Borås Sjöbotorg",
+    "url": "/butiker-erbjudanden/coop/coop-boras-sjobotorg/"
+  },
+  {
+    "id": "3566",
+    "name": "Coop Ulricehamn",
+    "url": "/butiker-erbjudanden/coop/coop-ulricehamn/"
+  },
+  {
+    "id": "3571",
+    "name": "Coop Uddevalla Göteborgsvägen",
+    "url": "/butiker-erbjudanden/coop/coop-uddevalla-goteborgsvagen/"
+  },
+  {
+    "id": "3575",
+    "name": "Coop Göteborg Marklandsgatan",
+    "url": "/butiker-erbjudanden/coop/coop-goteborg-marklandsgatan/"
+  },
+  {
+    "id": "3578",
+    "name": "Coop Bohus",
+    "url": "/butiker-erbjudanden/coop/coop-bohus/"
+  },
+  {
+    "id": "3579",
+    "name": "Coop Mjörnbotorget",
+    "url": "/butiker-erbjudanden/coop/coop-mjornbotorget/"
+  },
+  {
+    "id": "3881",
+    "name": "Coop Oxelösund",
+    "url": "/butiker-erbjudanden/coop/coop-oxelosund/"
+  },
+  {
+    "id": "3870",
+    "name": "Coop Bråddgatan",
+    "url": "/butiker-erbjudanden/coop/coop-braddgatan/"
+  },
+  {
+    "id": "3630",
+    "name": "Coop Engelbrektsgatan Trelleborg",
+    "url": "/butiker-erbjudanden/coop/coop-engelbrektsgatan-trelleborg/"
+  },
+  {
+    "id": "3880",
+    "name": "Coop Vingåkersvägen Katrineholm",
+    "url": "/butiker-erbjudanden/coop/coop-vingakersvagen-katrineholm/"
+  },
+  {
+    "id": "3648",
+    "name": "Coop Slottsstaden",
+    "url": "/butiker-erbjudanden/coop/coop-slottsstaden/"
+  },
+  {
+    "id": "3659",
+    "name": "Coop Värpinge Lund",
+    "url": "/butiker-erbjudanden/coop/coop-varpinge-lund/"
+  },
+  {
+    "id": "3661",
+    "name": "Coop Bjuv",
+    "url": "/butiker-erbjudanden/coop/coop-bjuv/"
+  },
+  {
+    "id": "3667",
+    "name": "Coop Nybrovägen",
+    "url": "/butiker-erbjudanden/coop/coop-nybrovagen/"
+  },
+  {
+    "id": "3811",
+    "name": "Coop Fyllinge",
+    "url": "/butiker-erbjudanden/coop/coop-fyllinge/"
+  },
+  {
+    "id": "3678",
+    "name": "Coop Råtorp",
+    "url": "/butiker-erbjudanden/coop/coop-ratorp/"
+  },
+  {
+    "id": "3679",
+    "name": "Coop Strand",
+    "url": "/butiker-erbjudanden/coop/coop-strand/"
+  },
+  {
+    "id": "3864",
+    "name": "Coop Fiskaregatan Vimmerby",
+    "url": "/butiker-erbjudanden/coop/coop-fiskaregatan-vimmerby/"
+  },
+  {
+    "id": "3681",
+    "name": "Coop Folkparksvägen",
+    "url": "/butiker-erbjudanden/coop/coop-folkparksvagen/"
+  },
+  {
+    "id": "3682",
+    "name": "Coop Västervik Vapengränd",
+    "url": "/butiker-erbjudanden/coop/coop-vastervik-vapengrand/"
+  },
+  {
+    "id": "3684",
+    "name": "Coop Östermalmshallen",
+    "url": "/butiker-erbjudanden/coop/coop-ostermalmshallen/"
+  },
+  {
+    "id": "3687",
+    "name": "Coop Vaggeryd",
+    "url": "/butiker-erbjudanden/coop/coop-vaggeryd/"
+  },
+  {
+    "id": "3689",
+    "name": "Coop Hagaberg",
+    "url": "/butiker-erbjudanden/coop/coop-hagaberg/"
+  },
+  {
+    "id": "3863",
+    "name": "Coop Åsavägen",
+    "url": "/butiker-erbjudanden/coop/coop-asavagen/"
+  },
+  {
+    "id": "3696",
+    "name": "Coop Funkabo",
+    "url": "/butiker-erbjudanden/coop/coop-funkabo/"
+  },
+  {
+    "id": "3697",
+    "name": "Coop Kalmar Sandåsgatan",
+    "url": "/butiker-erbjudanden/coop/coop-kalmar-sandasgatan/"
+  },
+  {
+    "id": "3702",
+    "name": "Coop Nydalavägen",
+    "url": "/butiker-erbjudanden/coop/coop-nydalavagen/"
+  },
+  {
+    "id": "3703",
+    "name": "Coop Nybro",
+    "url": "/butiker-erbjudanden/coop/coop-nybro/"
+  },
+  {
+    "id": "3704",
+    "name": "Coop Växjö Emil Lindells Väg",
+    "url": "/butiker-erbjudanden/coop/coop-vaxjo-emil-lindells-vag/"
+  },
+  {
+    "id": "3708",
+    "name": "Coop Västra Vallgatan",
+    "url": "/butiker-erbjudanden/coop/coop-vastra-vallgatan/"
+  },
+  {
+    "id": "3711",
+    "name": "Coop Värnamo Fredsgatan",
+    "url": "/butiker-erbjudanden/coop/coop-varnamo-fredsgatan/"
+  },
+  {
+    "id": "3712",
+    "name": "Coop Gislaved",
+    "url": "/butiker-erbjudanden/coop/coop-gislaved/"
+  },
+  {
+    "id": "3723",
+    "name": "Coop Kallebäck",
+    "url": "/butiker-erbjudanden/coop/coop-kalleback/"
+  },
+  {
+    "id": "3724",
+    "name": "Coop Göteborg Andra Långgatan",
+    "url": "/butiker-erbjudanden/coop/coop-goteborg-andra-langgatan/"
+  },
+  {
+    "id": "3729",
+    "name": "Coop Svalöv",
+    "url": "/butiker-erbjudanden/coop/coop-svalov/"
+  },
+  {
+    "id": "3716",
+    "name": "Coop Markaryd",
+    "url": "/butiker-erbjudanden/coop/coop-markaryd/"
+  },
+  {
+    "id": "3755",
+    "name": "Coop Bredden",
+    "url": "/butiker-erbjudanden/coop/coop-bredden/"
+  },
+  {
+    "id": "3761",
+    "name": "Coop Bredsand",
+    "url": "/butiker-erbjudanden/coop/coop-bredsand/"
+  },
+  {
+    "id": "1231",
+    "name": "Stora Coop Kristinehamn",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-kristinehamn/"
+  },
+  {
+    "id": "1437",
+    "name": "Stora Coop Ersboda",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-ersboda/"
+  },
+  {
+    "id": "1438",
+    "name": "Stora Coop Härnösand",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-harnosand/"
+  },
+  {
+    "id": "631",
+    "name": "Stora Coop Örnsköldsvik",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-ornskoldsvik/"
+  },
+  {
+    "id": "1546",
+    "name": "Stora Coop Boden",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-boden/"
+  },
+  {
+    "id": "1570",
+    "name": "Stora Coop Piteå",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-pitea/"
+  },
+  {
+    "id": "2206",
+    "name": "Stora Coop Karlshamn",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-karlshamn/"
+  },
+  {
+    "id": "1182",
+    "name": "Stora Coop Överby",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-overby/"
+  },
+  {
+    "id": "1930",
+    "name": "Stora Coop Östersund",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-ostersund/"
+  },
+  {
+    "id": "1958",
+    "name": "Stora Coop Vinsta",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-vinsta/"
+  },
+  {
+    "id": "657",
+    "name": "Stora Coop Bromma",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-bromma/"
+  },
+  {
+    "id": "1929",
+    "name": "Stora Coop Norremark",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-norremark/"
+  },
+  {
+    "id": "3225",
+    "name": "Stora Coop Visby",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-visby/"
+  },
+  {
+    "id": "1344",
+    "name": "Stora Coop Valbo",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-valbo/"
+  },
+  {
+    "id": "1551",
+    "name": "Stora Coop Storheden",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-storheden/"
+  },
+  {
+    "id": "1938",
+    "name": "Stora Coop Sisjön",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-sisjon/"
+  },
+  {
+    "id": "661",
+    "name": "Stora Coop Skara",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-skara/"
+  },
+  {
+    "id": "656",
+    "name": "Stora Coop Backaplan",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-backaplan/"
+  },
+  {
+    "id": "655",
+    "name": "Stora Coop Bäckebol",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-backebol/"
+  },
+  {
+    "id": "3795",
+    "name": "Coop Forum Marieberg",
+    "url": "/butiker-erbjudanden/stora-coop/coop-forum-marieberg/"
+  },
+  {
+    "id": "1436",
+    "name": "Stora Coop Sörböle",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-sorbole/"
+  },
+  {
+    "id": "1539",
+    "name": "Stora Coop Kiruna",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-kiruna/"
+  },
+  {
+    "id": "2275",
+    "name": "Stora Coop Västberga",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-vastberga/"
+  },
+  {
+    "id": "2677",
+    "name": "Stora Coop Varberg",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-varberg/"
+  },
+  {
+    "id": "3853",
+    "name": "Stora Coop Stadion",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-stadion/"
+  },
+  {
+    "id": "2246",
+    "name": "Stora Coop Häggvik",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-haggvik/"
+  },
+  {
+    "id": "28",
+    "name": "Stora Coop Huddinge",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-huddinge/"
+  },
+  {
+    "id": "1954",
+    "name": "Stora Coop Märsta",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-marsta/"
+  },
+  {
+    "id": "676",
+    "name": "Stora Coop Nolhaga Skövde",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-nolhaga-skovde/"
+  },
+  {
+    "id": "2278",
+    "name": "Stora Coop Kungsbacka",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-kungsbacka/"
+  },
+  {
+    "id": "2696",
+    "name": "Stora Coop Lund",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-lund/"
+  },
+  {
+    "id": "1225",
+    "name": "Stora Coop Bergvik",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-bergvik/"
+  },
+  {
+    "id": "1544",
+    "name": "Stora Coop Kalix",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-kalix-/"
+  },
+  {
+    "id": "3147",
+    "name": "Stora Coop Sundby Park",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-sundby-park/"
+  },
+  {
+    "id": "1839",
+    "name": "Stora Coop Hudiksvall",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-hudiksvall/"
+  },
+  {
+    "id": "643",
+    "name": "Stora Coop Boländerna",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-bolanderna/"
+  },
+  {
+    "id": "2703",
+    "name": "Stora Coop Danderyd",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-danderyd/"
+  },
+  {
+    "id": "3460",
+    "name": "Stora Coop Jönköping",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-jonkoping/"
+  },
+  {
+    "id": "1850",
+    "name": "Stora Coop Gällivare",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-gallivare/"
+  },
+  {
+    "id": "675",
+    "name": "Stora Coop Nyköping",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-nykoping/"
+  },
+  {
+    "id": "3478",
+    "name": "Stora Coop Norrteljeporten",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-norrteljeporten/"
+  },
+  {
+    "id": "18",
+    "name": "Stora Coop Stuvsta",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-stuvsta/"
+  },
+  {
+    "id": "89",
+    "name": "Stora Coop Orminge",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-orminge/"
+  },
+  {
+    "id": "1927",
+    "name": "Stora Coop Värmdö",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-varmdo/"
+  },
+  {
+    "id": "640",
+    "name": "Stora Coop Södertälje",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-sodertalje/"
+  },
+  {
+    "id": "3854",
+    "name": "Stora Coop Råå Hbg",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-raa-helsingborg/"
+  },
+  {
+    "id": "3852",
+    "name": "Stora Coop Väla Hbg",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-vala-helsingborg/"
+  },
+  {
+    "id": "2666",
+    "name": "Stora Coop Strängnäs",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-strangnas/"
+  },
+  {
+    "id": "659",
+    "name": "Stora Coop Eskilstuna",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-eskilstuna/"
+  },
+  {
+    "id": "652",
+    "name": "Stora Coop Borås",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-boras/"
+  },
+  {
+    "id": "1876",
+    "name": "Stora Coop Bollnäs",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-bollnas/"
+  },
+  {
+    "id": "1227",
+    "name": "Stora Coop Palmviken Arvika",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-palmviken/"
+  },
+  {
+    "id": "1253",
+    "name": "Stora Coop Styckåsen",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-styckasen/"
+  },
+  {
+    "id": "1975",
+    "name": "Stora Coop Hammarö",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-hammaro/"
+  },
+  {
+    "id": "2814",
+    "name": "Stora Coop Åkersberga",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-akersberga/"
+  },
+  {
+    "id": "677",
+    "name": "Stora Coop Enköping",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-enkoping/"
+  },
+  {
+    "id": "1926",
+    "name": "Stora Coop Örnäset",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-ornaset/"
+  },
+  {
+    "id": "1024",
+    "name": "Stora Coop Finspång",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-finspang/"
+  },
+  {
+    "id": "3778",
+    "name": "Stora Coop Stenby Västerås",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-stenby-vasteras/"
+  },
+  {
+    "id": "639",
+    "name": "Stora Coop Rotebro",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-rotebro/"
+  },
+  {
+    "id": "2239",
+    "name": "Stora Coop Sundsvall",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-sundsvall/"
+  },
+  {
+    "id": "3805",
+    "name": "Stora Coop Halmstad",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-halmstad/"
+  },
+  {
+    "id": "3150",
+    "name": "Stora Coop Norra Backa",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-norra-backa/"
+  },
+  {
+    "id": "3494",
+    "name": "Stora Coop Välsviken",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-valsviken/"
+  },
+  {
+    "id": "2235",
+    "name": "Stora Coop Ludvika",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-ludvika/"
+  },
+  {
+    "id": "3498",
+    "name": "Stora Coop Kungsängen",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-kungsangen/"
+  },
+  {
+    "id": "2303",
+    "name": "Stora Coop Garnisonen Linköping",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-garnisonen-linkoping/"
+  },
+  {
+    "id": "3506",
+    "name": "Stora Coop Falun",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-falun/"
+  },
+  {
+    "id": "3516",
+    "name": "Stora Coop Tomtebo",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-tomtebo/"
+  },
+  {
+    "id": "3522",
+    "name": "Stora Coop Flygstaden",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-flygstaden/"
+  },
+  {
+    "id": "3532",
+    "name": "Stora Coop Tumba",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-tumba/"
+  },
+  {
+    "id": "3851",
+    "name": "Stora Coop Trelleborg",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-trelleborg/"
+  },
+  {
+    "id": "3594",
+    "name": "Stora Coop Torp",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-torp/"
+  },
+  {
+    "id": "3618",
+    "name": "Stora Coop Storlien",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-storlien/"
+  },
+  {
+    "id": "3719",
+    "name": "Stora Coop Arninge",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-arninge/"
+  },
+  {
+    "id": "3759",
+    "name": "Stora Coop Härlöv",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-harlov/"
+  },
+  {
+    "id": "3767",
+    "name": "Stora Coop Ljusdal",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-ljusdal/"
+  },
+  {
+    "id": "3857",
+    "name": "Stora Coop Burlöv",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-burlov/"
+  },
+  {
+    "id": "1166",
+    "name": "Coop Konsum Frillesås",
+    "url": "/butiker-erbjudanden/coop-konsum/coop-konsum-frillesas/"
+  },
+  {
+    "id": "1129",
+    "name": "Coop Österport",
+    "url": "/butiker-erbjudanden/coop/coop-osterport/"
+  },
+  {
+    "id": "25",
+    "name": "Coop Västerhaninge Centrum",
+    "url": "/butiker-erbjudanden/coop-konsum/coop-vasterhaninge-c/"
+  },
+  {
+    "id": "212",
+    "name": "Coop Västertorg",
+    "url": "/butiker-erbjudanden/coop/coop-konsum-vastertorg"
+  },
+  {
+    "id": "1230",
+    "name": "Coop Säffle",
+    "url": "/butiker-erbjudanden/coop-extra/coop-saffle/"
+  },
+  {
+    "id": "1229",
+    "name": "Coop Filipstad",
+    "url": "/butiker-erbjudanden/coop/coop-filipstad/"
+  },
+  {
+    "id": "3849",
+    "name": "Coop Tomelilla",
+    "url": "/butiker-erbjudanden/coop/coop-tomelilla/"
+  },
+  {
+    "id": "3766",
+    "name": "Coop Hofors",
+    "url": "/butiker-erbjudanden/coop/coop-hofors/"
+  },
+  {
+    "id": "3850",
+    "name": "Coop Forum Jägersro",
+    "url": "/butiker-erbjudanden/coop-forum/coop-forum-jagersro/"
+  },
+  {
+    "id": "1289",
+    "name": "Stora Coop Karlskoga",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-karlskoga/"
+  },
+  {
+    "id": "636",
+    "name": "Stora Coop Haninge",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-haninge/"
+  },
+  {
+    "id": "2477",
+    "name": "Stora Coop Hus&Trädgård Skellefteå",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-hem-tradgard-skelleftea/"
+  },
+  {
+    "id": "3848",
+    "name": "Coop Köpenhamnsvägen",
+    "url": "/butiker-erbjudanden/coop/coop-kopenhamnsvagen/"
+  },
+  {
+    "id": "1363",
+    "name": "Coop Älvkarleby",
+    "url": "/butiker-erbjudanden/coop/coop-alvkarleby/"
+  },
+  {
+    "id": "1260",
+    "name": "Coop Årjäng",
+    "url": "/butiker-erbjudanden/coop/coop-arjang/"
+  },
+  {
+    "id": "1373",
+    "name": "Coop Bergvik",
+    "url": "/butiker-erbjudanden/coop/coop-bergvik/"
+  },
+  {
+    "id": "1571",
+    "name": "Coop Haparanda",
+    "url": "/butiker-erbjudanden/coop/coop-extra-haparanda/"
+  },
+  {
+    "id": "1232",
+    "name": "Coop Sunne",
+    "url": "/butiker-erbjudanden/coop/coop-sunne/"
+  },
+  {
+    "id": "1228",
+    "name": "Coop Hagfors",
+    "url": "/butiker-erbjudanden/coop/coop-hagfors/"
+  },
+  {
+    "id": "1187",
+    "name": "Coop Bengtsfors",
+    "url": "/butiker-erbjudanden/coop/coop-bengtsfors/"
+  },
+  {
+    "id": "1194",
+    "name": "Coop Hunnebostrand",
+    "url": "/butiker-erbjudanden/coop/coop-hunnebostrand/"
+  },
+  {
+    "id": "1198",
+    "name": "Coop Grebbestad",
+    "url": "/butiker-erbjudanden/coop/coop-grebbestad/"
+  },
+  {
+    "id": "1212",
+    "name": "Coop Sjuntorp",
+    "url": "/butiker-erbjudanden/coop/coop-sjuntorp/"
+  },
+  {
+    "id": "1216",
+    "name": "Coop Ed",
+    "url": "/butiker-erbjudanden/coop/coop-ed/"
+  },
+  {
+    "id": "1331",
+    "name": "Coop Grycksbo",
+    "url": "/butiker-erbjudanden/coop/coop-grycksbo/"
+  },
+  {
+    "id": "1329",
+    "name": "Coop Bjursås",
+    "url": "/butiker-erbjudanden/coop/coop-bjursas/"
+  },
+  {
+    "id": "1365",
+    "name": "Coop Enen",
+    "url": "/butiker-erbjudanden/coop/coop-enen/"
+  },
+  {
+    "id": "1368",
+    "name": "Coop Storvik",
+    "url": "/butiker-erbjudanden/coop/coop-storvik/"
+  },
+  {
+    "id": "1351",
+    "name": "Coop Forsbacka",
+    "url": "/butiker-erbjudanden/coop/coop-forsbacka/"
+  },
+  {
+    "id": "1345",
+    "name": "Coop Ljusne",
+    "url": "/butiker-erbjudanden/coop/coop-ljusne/"
+  },
+  {
+    "id": "1374",
+    "name": "Coop Kilafors",
+    "url": "/butiker-erbjudanden/coop/coop-kilafors/"
+  },
+  {
+    "id": "1562",
+    "name": "Coop Arjeplog",
+    "url": "/butiker-erbjudanden/coop/coop-arjeplog/"
+  },
+  {
+    "id": "1569",
+    "name": "Coop Råneå",
+    "url": "/butiker-erbjudanden/coop/coop-konsum-ranea/"
+  },
+  {
+    "id": "1559",
+    "name": "Coop Pajala",
+    "url": "/butiker-erbjudanden/coop/coop-pajala/"
+  },
+  {
+    "id": "917",
+    "name": "Coop Skutskär",
+    "url": "/butiker-erbjudanden/coop/coop-skutskar/"
+  },
+  {
+    "id": "1192",
+    "name": "Coop Färgelanda",
+    "url": "/butiker-erbjudanden/coop/coop-fargelanda/"
+  },
+  {
+    "id": "187",
+    "name": "Coop Klintehamn",
+    "url": "/butiker-erbjudanden/coop/coop-klintehamn/"
+  },
+  {
+    "id": "188",
+    "name": "Coop Roma",
+    "url": "/butiker-erbjudanden/coop/coop-roma/"
+  },
+  {
+    "id": "189",
+    "name": "Coop Ljugarn",
+    "url": "/butiker-erbjudanden/coop/coop-ljugarn/"
+  },
+  {
+    "id": "190",
+    "name": "Coop Hemse",
+    "url": "/butiker-erbjudanden/coop/coop-hemse/"
+  },
+  {
+    "id": "191",
+    "name": "Coop Lärbro",
+    "url": "/butiker-erbjudanden/coop/coop-larbro/"
+  },
+  {
+    "id": "194",
+    "name": "Coop Slite",
+    "url": "/butiker-erbjudanden/coop/coop-slite/"
+  },
+  {
+    "id": "1140",
+    "name": "Coop Eslöv",
+    "url": "/butiker-erbjudanden/coop/coop-eslov/"
+  },
+  {
+    "id": "1099",
+    "name": "Coop Mörrum",
+    "url": "/butiker-erbjudanden/coop/coop-morrum/"
+  },
+  {
+    "id": "1110",
+    "name": "Coop Degeberga",
+    "url": "/butiker-erbjudanden/coop/coop-degeberga/"
+  },
+  {
+    "id": "1113",
+    "name": "Coop Rödeby",
+    "url": "/butiker-erbjudanden/coop/coop-rodeby/"
+  },
+  {
+    "id": "1120",
+    "name": "Coop Kallinge",
+    "url": "/butiker-erbjudanden/coop/coop-kallinge/"
+  },
+  {
+    "id": "1128",
+    "name": "Coop Asarum",
+    "url": "/butiker-erbjudanden/coop/coop-asarum/"
+  },
+  {
+    "id": "164",
+    "name": "Coop Gråbo",
+    "url": "/butiker-erbjudanden/coop/coop-grabo/"
+  },
+  {
+    "id": "964",
+    "name": "Coop Kungsberga",
+    "url": "/butiker-erbjudanden/coop/coop-kungsberga/"
+  },
+  {
+    "id": "1036",
+    "name": "Coop Bergslagshallen",
+    "url": "/butiker-erbjudanden/coop/coop-bergslagshallen/"
+  },
+  {
+    "id": "1188",
+    "name": "Coop Åmål Mellanbrogatan",
+    "url": "/butiker-erbjudanden/coop/coop-amal/"
+  },
+  {
+    "id": "1189",
+    "name": "Coop Kungshamn",
+    "url": "/butiker-erbjudanden/coop/coop-kungshamn/"
+  },
+  {
+    "id": "1196",
+    "name": "Coop Brastad",
+    "url": "/butiker-erbjudanden/coop/coop-brastad/"
+  },
+  {
+    "id": "1203",
+    "name": "Coop Munkedal",
+    "url": "/butiker-erbjudanden/coop/coop-munkedal/"
+  },
+  {
+    "id": "1211",
+    "name": "Coop Strömslund",
+    "url": "/butiker-erbjudanden/coop/coop-stromslund/"
+  },
+  {
+    "id": "1338",
+    "name": "Coop Nian",
+    "url": "/butiker-erbjudanden/coop/coop-nian/"
+  },
+  {
+    "id": "1349",
+    "name": "Coop Sandviken",
+    "url": "/butiker-erbjudanden/coop/coop-sandviken/"
+  },
+  {
+    "id": "1354",
+    "name": "Coop Krysset",
+    "url": "/butiker-erbjudanden/coop/coop-krysset/"
+  },
+  {
+    "id": "1565",
+    "name": "Coop Björkskatan",
+    "url": "/butiker-erbjudanden/coop/coop-bjorkskatan/"
+  },
+  {
+    "id": "1597",
+    "name": "Coop Sveafältet",
+    "url": "/butiker-erbjudanden/coop/coop-sveafaltet/"
+  },
+  {
+    "id": "1361",
+    "name": "Coop Triangeln Gävle",
+    "url": "/butiker-erbjudanden/coop/coop-triangeln-gavle/"
+  },
+  {
+    "id": "334",
+    "name": "Coop Österbymo",
+    "url": "/butiker-erbjudanden/coop/coop-osterbymo/"
+  },
+  {
+    "id": "1362",
+    "name": "Coop Karlholm",
+    "url": "/butiker-erbjudanden/coop/coop-karlholm/"
+  },
+  {
+    "id": "1360",
+    "name": "Coop Hallen",
+    "url": "/butiker-erbjudanden/coop/coop-hallen/"
+  },
+  {
+    "id": "1221",
+    "name": "Coop Åsensbruk",
+    "url": "/butiker-erbjudanden/coop/coop-asensbruk/"
+  },
+  {
+    "id": "1048",
+    "name": "Coop Torup",
+    "url": "/butiker-erbjudanden/coop/coop-torup/"
+  },
+  {
+    "id": "1049",
+    "name": "Coop Unnaryd",
+    "url": "/butiker-erbjudanden/coop/coop-unnaryd/"
+  },
+  {
+    "id": "268",
+    "name": "Coop Älmhult",
+    "url": "/butiker-erbjudanden/coop/coop-almhult/"
+  },
+  {
+    "id": "274",
+    "name": "Coop Gnosjö",
+    "url": "/butiker-erbjudanden/coop/coop-gnosjo/"
+  },
+  {
+    "id": "1053",
+    "name": "Coop Kosta",
+    "url": "/butiker-erbjudanden/coop/coop-kosta/"
+  },
+  {
+    "id": "1067",
+    "name": "Coop Överum",
+    "url": "/butiker-erbjudanden/coop/coop-overum/"
+  },
+  {
+    "id": "278",
+    "name": "Coop Åseda",
+    "url": "/butiker-erbjudanden/coop/coop-aseda/"
+  },
+  {
+    "id": "280",
+    "name": "Coop Bankeryd",
+    "url": "/butiker-erbjudanden/coop/coop-bankeryd/"
+  },
+  {
+    "id": "281",
+    "name": "Coop Sävsjö",
+    "url": "/butiker-erbjudanden/coop/coop-savsjo/"
+  },
+  {
+    "id": "283",
+    "name": "Coop Habo",
+    "url": "/butiker-erbjudanden/coop/coop-habo/"
+  },
+  {
+    "id": "285",
+    "name": "Coop Gränna",
+    "url": "/butiker-erbjudanden/coop/coop-granna/"
+  },
+  {
+    "id": "287",
+    "name": "Coop Aneby",
+    "url": "/butiker-erbjudanden/coop/coop-aneby/"
+  },
+  {
+    "id": "288",
+    "name": "Coop Lessebo",
+    "url": "/butiker-erbjudanden/coop/coop-lessebo/"
+  },
+  {
+    "id": "1805",
+    "name": "Coop Nässjö",
+    "url": "/butiker-erbjudanden/coop/coop-nassjo/"
+  },
+  {
+    "id": "1889",
+    "name": "Coop Oxtorget",
+    "url": "/butiker-erbjudanden/coop/coop-oxtorget/"
+  },
+  {
+    "id": "310",
+    "name": "Coop Torsås",
+    "url": "/butiker-erbjudanden/coop/coop-torsas/"
+  },
+  {
+    "id": "314",
+    "name": "Coop Norrliden",
+    "url": "/butiker-erbjudanden/coop/coop-norrliden/"
+  },
+  {
+    "id": "325",
+    "name": "Coop Mullsjö",
+    "url": "/butiker-erbjudanden/coop/coop-mullsjo/"
+  },
+  {
+    "id": "327",
+    "name": "Coop Dalviksringen",
+    "url": "/butiker-erbjudanden/coop/coop-dalviksringen/"
+  },
+  {
+    "id": "338",
+    "name": "Coop Ekenässjön",
+    "url": "/butiker-erbjudanden/coop/coop-ekenassjon/"
+  },
+  {
+    "id": "1075",
+    "name": "Coop Högö",
+    "url": "/butiker-erbjudanden/coop/coop-hogo/"
+  },
+  {
+    "id": "1081",
+    "name": "Coop Påskallavik",
+    "url": "/butiker-erbjudanden/coop/coop-paskallavik/"
+  },
+  {
+    "id": "1083",
+    "name": "Coop Figeholm",
+    "url": "/butiker-erbjudanden/coop/coop-figeholm/"
+  },
+  {
+    "id": "1085",
+    "name": "Coop Kristdala",
+    "url": "/butiker-erbjudanden/coop/coop-kristdala/"
+  },
+  {
+    "id": "1087",
+    "name": "Coop Högsby",
+    "url": "/butiker-erbjudanden/coop/coop-hogsby/"
+  },
+  {
+    "id": "1158",
+    "name": "Coop Veberöd",
+    "url": "/butiker-erbjudanden/coop/coop-veberod/"
+  },
+  {
+    "id": "1163",
+    "name": "Coop Getinge",
+    "url": "/butiker-erbjudanden/coop/coop-getinge/"
+  },
+  {
+    "id": "1207",
+    "name": "Coop Styrsö",
+    "url": "/butiker-erbjudanden/coop/coop-styrso/"
+  },
+  {
+    "id": "1223",
+    "name": "Coop Hajom",
+    "url": "/butiker-erbjudanden/coop/coop-hajom/"
+  },
+  {
+    "id": "1240",
+    "name": "Stora Coop Kil",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-kil/"
+  },
+  {
+    "id": "1233",
+    "name": "Coop Forshaga",
+    "url": "/butiker-erbjudanden/coop/coop-forshaga/"
+  },
+  {
+    "id": "1239",
+    "name": "Coop Lesjöfors",
+    "url": "/butiker-erbjudanden/coop/coop-lesjofors/"
+  },
+  {
+    "id": "1243",
+    "name": "Coop Norrstrand",
+    "url": "/butiker-erbjudanden/coop/coop-norrstrand/"
+  },
+  {
+    "id": "1254",
+    "name": "Coop Herrhagen",
+    "url": "/butiker-erbjudanden/coop/coop-herrhagen/"
+  },
+  {
+    "id": "1255",
+    "name": "Coop Kronoparken",
+    "url": "/butiker-erbjudanden/coop/coop-kronoparken/"
+  },
+  {
+    "id": "1263",
+    "name": "Coop Sysslebäck",
+    "url": "/butiker-erbjudanden/coop/coop-syssleback/"
+  },
+  {
+    "id": "1300",
+    "name": "Coop Fröding",
+    "url": "/butiker-erbjudanden/coop/coop-froding/"
+  },
+  {
+    "id": "1303",
+    "name": "Coop Storängen",
+    "url": "/butiker-erbjudanden/coop/coop-storangen/"
+  },
+  {
+    "id": "1333",
+    "name": "Coop Sollerön",
+    "url": "/butiker-erbjudanden/coop/coop-solleron/"
+  },
+  {
+    "id": "1441",
+    "name": "Coop Byske",
+    "url": "/butiker-erbjudanden/coop/coop-byske/"
+  },
+  {
+    "id": "1443",
+    "name": "Coop Norsjö",
+    "url": "/butiker-erbjudanden/coop/coop-norsjo/"
+  },
+  {
+    "id": "1445",
+    "name": "Coop Malå",
+    "url": "/butiker-erbjudanden/coop/coop-mala/"
+  },
+  {
+    "id": "1448",
+    "name": "Coop Tärnaby",
+    "url": "/butiker-erbjudanden/coop/coop-tarnaby/"
+  },
+  {
+    "id": "922",
+    "name": "Coop Burträsk",
+    "url": "/butiker-erbjudanden/coop/coop-burtrask/"
+  },
+  {
+    "id": "1449",
+    "name": "Coop Ålidhem",
+    "url": "/butiker-erbjudanden/coop/coop-alidhem/"
+  },
+  {
+    "id": "1450",
+    "name": "Coop Nordmaling",
+    "url": "/butiker-erbjudanden/coop/coop-nordmaling/"
+  },
+  {
+    "id": "1451",
+    "name": "Coop Storuman",
+    "url": "/butiker-erbjudanden/coop/coop-storuman/"
+  },
+  {
+    "id": "1454",
+    "name": "Coop Robertsfors",
+    "url": "/butiker-erbjudanden/coop/coop-robertsfors/"
+  },
+  {
+    "id": "1922",
+    "name": "Coop Hörnett",
+    "url": "/butiker-erbjudanden/coop/coop-hornett/"
+  },
+  {
+    "id": "1404",
+    "name": "Coop Hammarstrand",
+    "url": "/butiker-erbjudanden/coop/coop-hammarstrand/"
+  },
+  {
+    "id": "1407",
+    "name": "Coop Åre",
+    "url": "/butiker-erbjudanden/coop/coop-are/"
+  },
+  {
+    "id": "1408",
+    "name": "Coop Järpen",
+    "url": "/butiker-erbjudanden/coop/coop-jarpen/"
+  },
+  {
+    "id": "1476",
+    "name": "Coop Bjurholm",
+    "url": "/butiker-erbjudanden/coop/coop-bjurholm/"
+  },
+  {
+    "id": "1494",
+    "name": "Coop Ursviken",
+    "url": "/butiker-erbjudanden/coop/coop-ursviken/"
+  },
+  {
+    "id": "1495",
+    "name": "Coop Erikslid",
+    "url": "/butiker-erbjudanden/coop/coop-erikslid/"
+  },
+  {
+    "id": "618",
+    "name": "Coop Själevad",
+    "url": "/butiker-erbjudanden/coop/coop-sjalevad/"
+  },
+  {
+    "id": "1164",
+    "name": "Coop Knäred",
+    "url": "/butiker-erbjudanden/coop/coop-knared/"
+  },
+  {
+    "id": "921",
+    "name": "Coop Kramfors",
+    "url": "/butiker-erbjudanden/coop/coop-kramfors/"
+  },
+  {
+    "id": "1388",
+    "name": "Coop Timrå",
+    "url": "/butiker-erbjudanden/coop/coop-timra/"
+  },
+  {
+    "id": "1402",
+    "name": "Coop Strömsund",
+    "url": "/butiker-erbjudanden/coop/coop-stromsund/"
+  },
+  {
+    "id": "1412",
+    "name": "Coop Frösön",
+    "url": "/butiker-erbjudanden/coop/coop-froson/"
+  },
+  {
+    "id": "924",
+    "name": "Coop Vännäs",
+    "url": "/butiker-erbjudanden/coop/coop-vannas/"
+  },
+  {
+    "id": "918",
+    "name": "Coop Ånge",
+    "url": "/butiker-erbjudanden/coop/coop-ange/"
+  },
+  {
+    "id": "1890",
+    "name": "Coop Nacksta",
+    "url": "/butiker-erbjudanden/coop/coop-nacksta/"
+  },
+  {
+    "id": "1098",
+    "name": "Coop Lönsboda",
+    "url": "/butiker-erbjudanden/coop/coop-lonsboda/"
+  },
+  {
+    "id": "316",
+    "name": "Coop Färjestaden",
+    "url": "/butiker-erbjudanden/coop/coop-farjestaden/"
+  },
+  {
+    "id": "1131",
+    "name": "Coop Svängsta",
+    "url": "/butiker-erbjudanden/coop/coop-svangsta/"
+  },
+  {
+    "id": "1419",
+    "name": "Coop Brunflo",
+    "url": "/butiker-erbjudanden/coop/coop-brunflo/"
+  },
+  {
+    "id": "2750",
+    "name": "Coop Lysekil",
+    "url": "/butiker-erbjudanden/coop/coop-lysekil/"
+  },
+  {
+    "id": "1237",
+    "name": "Coop Åmotfors",
+    "url": "/butiker-erbjudanden/coop/coop-amotfors/"
+  },
+  {
+    "id": "272",
+    "name": "Coop Tranås",
+    "url": "/butiker-erbjudanden/coop/coop-tranas/"
+  },
+  {
+    "id": "1213",
+    "name": "Coop Hörngatan",
+    "url": "/butiker-erbjudanden/coop/coop-horngatan/"
+  },
+  {
+    "id": "1195",
+    "name": "Coop Karlstadsvägen",
+    "url": "/butiker-erbjudanden/coop/coop-karlstadsvagen/"
+  },
+  {
+    "id": "1558",
+    "name": "Coop Älvsbyn",
+    "url": "/butiker-erbjudanden/coop/coop-alvsbyn/"
+  },
+  {
+    "id": "2815",
+    "name": "Coop Värnamo",
+    "url": "/butiker-erbjudanden/coop/coop-varnamo/"
+  },
+  {
+    "id": "1080",
+    "name": "Coop Kolberga",
+    "url": "/butiker-erbjudanden/coop/coop-kolberga/"
+  },
+  {
+    "id": "1111",
+    "name": "Coop Broby",
+    "url": "/butiker-erbjudanden/coop/coop-broby/"
+  },
+  {
+    "id": "2816",
+    "name": "Coop Östra Torget",
+    "url": "/butiker-erbjudanden/coop/coop-ostra-torget/"
+  },
+  {
+    "id": "1442",
+    "name": "Coop Bureå",
+    "url": "/butiker-erbjudanden/coop/coop-burea/"
+  },
+  {
+    "id": "1242",
+    "name": "Stora Coop Torsby",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-torsby/"
+  },
+  {
+    "id": "1185",
+    "name": "Coop Rosviksgatan",
+    "url": "/butiker-erbjudanden/coop/coop-rosviksgatan/"
+  },
+  {
+    "id": "1346",
+    "name": "Coop Norrsundet",
+    "url": "/butiker-erbjudanden/coop/coop-norrsundet/"
+  },
+  {
+    "id": "1095",
+    "name": "Coop Hässleholm",
+    "url": "/butiker-erbjudanden/coop/coop-hassleholm/"
+  },
+  {
+    "id": "1104",
+    "name": "Coop Sölvesborg",
+    "url": "/butiker-erbjudanden/coop/coop-solvesborg/"
+  },
+  {
+    "id": "1118",
+    "name": "Coop Knislinge",
+    "url": "/butiker-erbjudanden/coop/coop-knislinge/"
+  },
+  {
+    "id": "1215",
+    "name": "Coop Mustadfors",
+    "url": "/butiker-erbjudanden/coop/coop-mustadfors/"
+  },
+  {
+    "id": "1190",
+    "name": "Coop Skogslyckan",
+    "url": "/butiker-erbjudanden/coop/coop-skogslyckan/"
+  },
+  {
+    "id": "1209",
+    "name": "Coop Bäckefors",
+    "url": "/butiker-erbjudanden/coop/coop-backefors/"
+  },
+  {
+    "id": "1193",
+    "name": "Coop Högsäter",
+    "url": "/butiker-erbjudanden/coop/coop-hogsater/"
+  },
+  {
+    "id": "1210",
+    "name": "Coop Fjällbacka",
+    "url": "/butiker-erbjudanden/coop/coop-fjallbacka/"
+  },
+  {
+    "id": "1066",
+    "name": "Coop Flanaden",
+    "url": "/butiker-erbjudanden/coop/coop-flanaden/"
+  },
+  {
+    "id": "229",
+    "name": "Coop Boxholm",
+    "url": "/butiker-erbjudanden/coop/coop-boxholm/"
+  },
+  {
+    "id": "231",
+    "name": "Coop Kisa",
+    "url": "/butiker-erbjudanden/coop/coop-kisa/"
+  },
+  {
+    "id": "2229",
+    "name": "Coop Stenbärsvägen Nyköping",
+    "url": "/butiker-erbjudanden/coop/coop-nykoping/"
+  },
+  {
+    "id": "21",
+    "name": "Coop Gnesta",
+    "url": "/butiker-erbjudanden/coop/coop-gnesta/"
+  },
+  {
+    "id": "22",
+    "name": "Coop Tungelsta",
+    "url": "/butiker-erbjudanden/coop/coop-tungelsta/"
+  },
+  {
+    "id": "247",
+    "name": "Coop Skarphagen",
+    "url": "/butiker-erbjudanden/coop/coop-skarphagen/"
+  },
+  {
+    "id": "44",
+    "name": "Coop Björkhagen",
+    "url": "/butiker-erbjudanden/coop/coop-bjorkhagen/"
+  },
+  {
+    "id": "47",
+    "name": "Coop Vintertullen",
+    "url": "/butiker-erbjudanden/coop/coop-vintertullen/"
+  },
+  {
+    "id": "3823",
+    "name": "Coop Värnhem",
+    "url": "/butiker-erbjudanden/coop/coop-varnhem/"
+  },
+  {
+    "id": "51",
+    "name": "Coop Farsta Strand",
+    "url": "/butiker-erbjudanden/coop/coop-farsta-strand/"
+  },
+  {
+    "id": "3825",
+    "name": "Coop Högalid",
+    "url": "/butiker-erbjudanden/coop/coop-hogalid/"
+  },
+  {
+    "id": "530",
+    "name": "Coop Hälleforsnäs",
+    "url": "/butiker-erbjudanden/coop/coop-halleforsnas/"
+  },
+  {
+    "id": "126",
+    "name": "Coop Östgötagatan",
+    "url": "/butiker-erbjudanden/coop/coop-ostgotagatan/"
+  },
+  {
+    "id": "130",
+    "name": "Coop Vendelsömalm",
+    "url": "/butiker-erbjudanden/coop/coop-vendelsomalm/"
+  },
+  {
+    "id": "143",
+    "name": "Coop Hölö",
+    "url": "/butiker-erbjudanden/coop/coop-holo/"
+  },
+  {
+    "id": "180",
+    "name": "Coop Tibble",
+    "url": "/butiker-erbjudanden/coop/coop-tibble/"
+  },
+  {
+    "id": "211",
+    "name": "Coop Ringgatan",
+    "url": "/butiker-erbjudanden/coop/coop-ringgatan/"
+  },
+  {
+    "id": "214",
+    "name": "Coop Storvreta",
+    "url": "/butiker-erbjudanden/coop/coop-storvreta/"
+  },
+  {
+    "id": "83",
+    "name": "Coop Sockenplan",
+    "url": "/butiker-erbjudanden/coop/coop-sockenplan/"
+  },
+  {
+    "id": "271",
+    "name": "Coop Eksjö",
+    "url": "/butiker-erbjudanden/coop/coop-eksjo/"
+  },
+  {
+    "id": "335",
+    "name": "Coop Tenhult",
+    "url": "/butiker-erbjudanden/coop/coop-tenhult/"
+  },
+  {
+    "id": "1853",
+    "name": "Coop Kristinedal",
+    "url": "/butiker-erbjudanden/coop/coop-kristinedal/"
+  },
+  {
+    "id": "3137",
+    "name": "Coop Älvängen",
+    "url": "/butiker-erbjudanden/coop/coop-alvangen/"
+  },
+  {
+    "id": "121",
+    "name": "Coop Spånga Torg",
+    "url": "/butiker-erbjudanden/coop/coop-spanga-torg/"
+  },
+  {
+    "id": "1274",
+    "name": "Coop Skived",
+    "url": "/butiker-erbjudanden/coop/coop-skived/"
+  },
+  {
+    "id": "1439",
+    "name": "Coop Sollefteå",
+    "url": "/butiker-erbjudanden/coop/coop-solleftea/"
+  },
+  {
+    "id": "88",
+    "name": "Coop Södertälje C",
+    "url": "/butiker-erbjudanden/coop/coop-sodertalje-c/"
+  },
+  {
+    "id": "1246",
+    "name": "Coop Molkom",
+    "url": "/butiker-erbjudanden/coop/coop-molkom/"
+  },
+  {
+    "id": "1238",
+    "name": "Coop Charlottenberg",
+    "url": "/butiker-erbjudanden/coop/coop-charlottenberg/"
+  },
+  {
+    "id": "1257",
+    "name": "Coop Koppom",
+    "url": "/butiker-erbjudanden/coop/coop-koppom/"
+  },
+  {
+    "id": "596",
+    "name": "Coop Sälen",
+    "url": "/butiker-erbjudanden/coop/coop-salen/"
+  },
+  {
+    "id": "578",
+    "name": "Coop Forssa",
+    "url": "/butiker-erbjudanden/coop/coop-forssa/"
+  },
+  {
+    "id": "574",
+    "name": "Coop Rättvik",
+    "url": "/butiker-erbjudanden/coop/coop-rattvik/"
+  },
+  {
+    "id": "573",
+    "name": "Coop Kvarnberget",
+    "url": "/butiker-erbjudanden/coop/coop-kvarnberget/"
+  },
+  {
+    "id": "572",
+    "name": "Coop Ludvika Gård",
+    "url": "/butiker-erbjudanden/coop/coop-ludvika-gard/"
+  },
+  {
+    "id": "570",
+    "name": "Coop Vansbro",
+    "url": "/butiker-erbjudanden/coop/coop-vansbro/"
+  },
+  {
+    "id": "569",
+    "name": "Coop Grängesberg",
+    "url": "/butiker-erbjudanden/coop/coop-grangesberg/"
+  },
+  {
+    "id": "568",
+    "name": "Coop Smedjebacken",
+    "url": "/butiker-erbjudanden/coop/coop-smedjebacken/"
+  },
+  {
+    "id": "567",
+    "name": "Coop Orsa",
+    "url": "/butiker-erbjudanden/coop/coop-orsa/"
+  },
+  {
+    "id": "566",
+    "name": "Coop Säter",
+    "url": "/butiker-erbjudanden/coop/coop-sater/"
+  },
+  {
+    "id": "559",
+    "name": "Coop Östervåla",
+    "url": "/butiker-erbjudanden/coop/coop-ostervala/"
+  },
+  {
+    "id": "529",
+    "name": "Coop Heby",
+    "url": "/butiker-erbjudanden/coop/coop-heby/"
+  },
+  {
+    "id": "528",
+    "name": "Coop Skinnskatteberg",
+    "url": "/butiker-erbjudanden/coop/coop-skinnskatteberg/"
+  },
+  {
+    "id": "527",
+    "name": "Coop Norberg",
+    "url": "/butiker-erbjudanden/coop/coop-norberg/"
+  },
+  {
+    "id": "520",
+    "name": "Coop Fagersta",
+    "url": "/butiker-erbjudanden/coop/coop-fagersta/"
+  },
+  {
+    "id": "203",
+    "name": "Coop Östhammar",
+    "url": "/butiker-erbjudanden/coop/coop-osthammar-centrum/"
+  },
+  {
+    "id": "202",
+    "name": "Coop Hallstavik",
+    "url": "/butiker-erbjudanden/coop/coop-hallstavik/"
+  },
+  {
+    "id": "199",
+    "name": "Coop Tierp",
+    "url": "/butiker-erbjudanden/coop/coop-tierp/"
+  },
+  {
+    "id": "198",
+    "name": "Coop Österbybruk",
+    "url": "/butiker-erbjudanden/coop/coop-osterbybruk/"
+  },
+  {
+    "id": "1997",
+    "name": "Stora Coop Östhammar",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-osthammar/"
+  },
+  {
+    "id": "2809",
+    "name": "Coop Änghagen Lidköping",
+    "url": "/butiker-erbjudanden/coop/coop-anghagen-lidkoping/"
+  },
+  {
+    "id": "2702",
+    "name": "Coop Vipans Gränd Skövde",
+    "url": "/butiker-erbjudanden/coop/coop-vipans-grand-skovde/"
+  },
+  {
+    "id": "473",
+    "name": "Coop Karlsborg",
+    "url": "/butiker-erbjudanden/coop/coop-karlsborg/"
+  },
+  {
+    "id": "472",
+    "name": "Coop Kyrkogatan Töreboda",
+    "url": "/butiker-erbjudanden/coop/coop-kyrkogatan-toreboda/"
+  },
+  {
+    "id": "474",
+    "name": "Coop Sydport Mariestad",
+    "url": "/butiker-erbjudanden/coop/coop-mariestad/"
+  },
+  {
+    "id": "471",
+    "name": "Coop Tidaholm",
+    "url": "/butiker-erbjudanden/coop/coop-tidaholm/"
+  },
+  {
+    "id": "2236",
+    "name": "Coop Falköping",
+    "url": "/butiker-erbjudanden/coop/coop-falkoping/"
+  },
+  {
+    "id": "466",
+    "name": "Coop Skene",
+    "url": "/butiker-erbjudanden/coop/coop-skene/"
+  },
+  {
+    "id": "454",
+    "name": "Coop Surte",
+    "url": "/butiker-erbjudanden/coop/coop-surte/"
+  },
+  {
+    "id": "449",
+    "name": "Coop Gamlestaden",
+    "url": "/butiker-erbjudanden/coop/coop-gamlestaden/"
+  },
+  {
+    "id": "1888",
+    "name": "Coop Eriksberg",
+    "url": "/butiker-erbjudanden/coop/coop-eriksberg/"
+  },
+  {
+    "id": "438",
+    "name": "Coop Munkebäckstorg",
+    "url": "/butiker-erbjudanden/coop/coop-munkebackstorget/"
+  },
+  {
+    "id": "2704",
+    "name": "Coop Friggagatan",
+    "url": "/butiker-erbjudanden/coop/coop-friggagatan/"
+  },
+  {
+    "id": "434",
+    "name": "Coop Landala",
+    "url": "/butiker-erbjudanden/coop/coop-landala/"
+  },
+  {
+    "id": "430",
+    "name": "Coop Avenyn",
+    "url": "/butiker-erbjudanden/coop/coop-avenyn/"
+  },
+  {
+    "id": "423",
+    "name": "Coop Stenungsund",
+    "url": "/butiker-erbjudanden/coop/coop-stenungsund/"
+  },
+  {
+    "id": "421",
+    "name": "Coop Lundby",
+    "url": "/butiker-erbjudanden/coop/coop-lundby/"
+  },
+  {
+    "id": "3793",
+    "name": "Coop Garphyttan",
+    "url": "/butiker-erbjudanden/coop/coop-garphyttan/"
+  },
+  {
+    "id": "1090",
+    "name": "Coop Virserum",
+    "url": "/butiker-erbjudanden/coop/coop-virserum/"
+  },
+  {
+    "id": "1321",
+    "name": "Coop Älvdalen",
+    "url": "/butiker-erbjudanden/coop/coop-alvdalen/"
+  },
+  {
+    "id": "1322",
+    "name": "Coop Särna",
+    "url": "/butiker-erbjudanden/coop/coop-sarna/"
+  },
+  {
+    "id": "1326",
+    "name": "Coop Idre",
+    "url": "/butiker-erbjudanden/coop/coop-idre/"
+  },
+  {
+    "id": "30",
+    "name": "Coop Tyresö Centrum",
+    "url": "/butiker-erbjudanden/coop/coop-tyreso-centrum/"
+  },
+  {
+    "id": "2273",
+    "name": "Coop Björnboda",
+    "url": "/butiker-erbjudanden/coop/coop-bjornboda/"
+  },
+  {
+    "id": "3772",
+    "name": "Coop Pilgatan Västerås",
+    "url": "/butiker-erbjudanden/coop/coop-pilgatan-vasteras/"
+  },
+  {
+    "id": "3818",
+    "name": "Coop Simrishamn",
+    "url": "/butiker-erbjudanden/coop/coop-simrishamn/"
+  },
+  {
+    "id": "3824",
+    "name": "Coop Smygehamn",
+    "url": "/butiker-erbjudanden/coop/coop-smygehamn/"
+  },
+  {
+    "id": "653",
+    "name": "Coop Kållered",
+    "url": "/butiker-erbjudanden/coop/coop-kallered/"
+  },
+  {
+    "id": "1107",
+    "name": "Coop Hasslö",
+    "url": "/butiker-erbjudanden/coop/coop-hasslo/"
+  },
+  {
+    "id": "3792",
+    "name": "Coop Änggatan",
+    "url": "/butiker-erbjudanden/coop/coop-anggatan/"
+  },
+  {
+    "id": "252",
+    "name": "Coop Värmlandsgatan",
+    "url": "/butiker-erbjudanden/coop/coop-varmlandsgatan/"
+  },
+  {
+    "id": "253",
+    "name": "Coop Trozelligatan",
+    "url": "/butiker-erbjudanden/coop/coop-trozelligatan/"
+  },
+  {
+    "id": "1281",
+    "name": "Coop Lysvik",
+    "url": "/butiker-erbjudanden/coop/coop-lysvik/"
+  },
+  {
+    "id": "442",
+    "name": "Coop Trätorget",
+    "url": "/butiker-erbjudanden/coop/coop-tratorget/"
+  },
+  {
+    "id": "2207",
+    "name": "Coop Daglivs",
+    "url": "/butiker-erbjudanden/coop/coop-daglivs/"
+  },
+  {
+    "id": "3496",
+    "name": "Coop Ingmarsö",
+    "url": "/butiker-erbjudanden/coop/coop-ingmarso/"
+  },
+  {
+    "id": "3497",
+    "name": "Coop Kronhjorten",
+    "url": "/butiker-erbjudanden/coop/coop-kronhjorten-trollhattan/"
+  },
+  {
+    "id": "104",
+    "name": "Coop Järntorget",
+    "url": "/butiker-erbjudanden/coop/coop-jarntorget/"
+  },
+  {
+    "id": "1269",
+    "name": "Coop Svanskog",
+    "url": "/butiker-erbjudanden/coop/coop-svanskog/"
+  },
+  {
+    "id": "1369",
+    "name": "Coop Kungsgården",
+    "url": "/butiker-erbjudanden/coop/coop-kungsgarden/"
+  },
+  {
+    "id": "1383",
+    "name": "Coop Hassela",
+    "url": "/butiker-erbjudanden/coop/coop-hassela/"
+  },
+  {
+    "id": "1604",
+    "name": "Coop Sangis",
+    "url": "/butiker-erbjudanden/coop/coop-sangis/"
+  },
+  {
+    "id": "1041",
+    "name": "Coop Rejmyre",
+    "url": "/butiker-erbjudanden/coop/coop-rejmyre/"
+  },
+  {
+    "id": "293",
+    "name": "Coop Kristinatorget",
+    "url": "/butiker-erbjudanden/coop/coop-kristinatorget/"
+  },
+  {
+    "id": "305",
+    "name": "Coop Traryd",
+    "url": "/butiker-erbjudanden/coop/coop-traryd/"
+  },
+  {
+    "id": "1279",
+    "name": "Coop Vikene",
+    "url": "/butiker-erbjudanden/coop/coop-vikene/"
+  },
+  {
+    "id": "1280",
+    "name": "Coop Högboda",
+    "url": "/butiker-erbjudanden/coop/coop-hogboda/"
+  },
+  {
+    "id": "1286",
+    "name": "Coop Skillingsfors",
+    "url": "/butiker-erbjudanden/coop/coop-skillingsfors/"
+  },
+  {
+    "id": "1364",
+    "name": "Coop Hagaström",
+    "url": "/butiker-erbjudanden/coop/coop-hagastrom/"
+  },
+  {
+    "id": "1560",
+    "name": "Coop Harads",
+    "url": "/butiker-erbjudanden/coop/coop-harads/"
+  },
+  {
+    "id": "966",
+    "name": "Coop Berg",
+    "url": "/butiker-erbjudanden/coop/coop-berg/"
+  },
+  {
+    "id": "967",
+    "name": "Coop Långvik",
+    "url": "/butiker-erbjudanden/coop/coop-langvik/"
+  },
+  {
+    "id": "333",
+    "name": "Coop Visingsö",
+    "url": "/butiker-erbjudanden/coop/coop-visingso/"
+  },
+  {
+    "id": "339",
+    "name": "Coop Bor",
+    "url": "/butiker-erbjudanden/coop/coop-bor/"
+  },
+  {
+    "id": "1076",
+    "name": "Coop Edsbruk",
+    "url": "/butiker-erbjudanden/coop/coop-edsbruk/"
+  },
+  {
+    "id": "1078",
+    "name": "Coop Fårbo",
+    "url": "/butiker-erbjudanden/coop/coop-farbo/"
+  },
+  {
+    "id": "1082",
+    "name": "Coop Berga",
+    "url": "/butiker-erbjudanden/coop/coop-berga/"
+  },
+  {
+    "id": "1089",
+    "name": "Coop Alsterbro",
+    "url": "/butiker-erbjudanden/coop/coop-alsterbro/"
+  },
+  {
+    "id": "1285",
+    "name": "Coop Sunnemo",
+    "url": "/butiker-erbjudanden/coop/coop-sunnemo/"
+  },
+  {
+    "id": "1287",
+    "name": "Coop Stöllet",
+    "url": "/butiker-erbjudanden/coop/coop-stollet/"
+  },
+  {
+    "id": "1444",
+    "name": "Coop Sorsele",
+    "url": "/butiker-erbjudanden/coop/coop-sorsele/"
+  },
+  {
+    "id": "1447",
+    "name": "Coop Dorotea",
+    "url": "/butiker-erbjudanden/coop/coop-dorotea/"
+  },
+  {
+    "id": "923",
+    "name": "Coop Åsele",
+    "url": "/butiker-erbjudanden/coop/coop-asele/"
+  },
+  {
+    "id": "1453",
+    "name": "Coop Hörnefors",
+    "url": "/butiker-erbjudanden/coop/coop-hornefors/"
+  },
+  {
+    "id": "1457",
+    "name": "Coop Bollstabruk",
+    "url": "/butiker-erbjudanden/coop/coop-bollstabruk/"
+  },
+  {
+    "id": "1462",
+    "name": "Coop Ersboda",
+    "url": "/butiker-erbjudanden/coop/coop-ersboda/"
+  },
+  {
+    "id": "1464",
+    "name": "Coop Vännäsby",
+    "url": "/butiker-erbjudanden/coop/coop-vannasby/"
+  },
+  {
+    "id": "1465",
+    "name": "Coop Haga Umeå",
+    "url": "/butiker-erbjudanden/coop/coop-haga-umea/"
+  },
+  {
+    "id": "1483",
+    "name": "Coop Jörn",
+    "url": "/butiker-erbjudanden/coop/coop-jorn/"
+  },
+  {
+    "id": "1485",
+    "name": "Coop Lövånger",
+    "url": "/butiker-erbjudanden/coop/coop-lovanger/"
+  },
+  {
+    "id": "613",
+    "name": "Coop Köpmanholmen",
+    "url": "/butiker-erbjudanden/coop/coop-kopmanholmen/"
+  },
+  {
+    "id": "615",
+    "name": "Coop Mellansel",
+    "url": "/butiker-erbjudanden/coop/coop-mellansel/"
+  },
+  {
+    "id": "616",
+    "name": "Coop Bredbyn",
+    "url": "/butiker-erbjudanden/coop/coop-bredbyn/"
+  },
+  {
+    "id": "927",
+    "name": "Coop Torpshammar",
+    "url": "/butiker-erbjudanden/coop/coop-torpshammar/"
+  },
+  {
+    "id": "1526",
+    "name": "Coop Bergsåker",
+    "url": "/butiker-erbjudanden/coop/coop-bergsaker/"
+  },
+  {
+    "id": "1531",
+    "name": "Coop Fränsta",
+    "url": "/butiker-erbjudanden/coop/coop-fransta/"
+  },
+  {
+    "id": "1537",
+    "name": "Coop Näsåker",
+    "url": "/butiker-erbjudanden/coop/coop-nasaker/"
+  },
+  {
+    "id": "1417",
+    "name": "Coop Torvalla",
+    "url": "/butiker-erbjudanden/coop/coop-torvalla/"
+  },
+  {
+    "id": "1304",
+    "name": "Coop Bråten",
+    "url": "/butiker-erbjudanden/coop/coop-braten/"
+  },
+  {
+    "id": "239",
+    "name": "Coop Vallaplan",
+    "url": "/butiker-erbjudanden/coop/coop-vallaplan/"
+  },
+  {
+    "id": "248",
+    "name": "Coop Hantverkaregatan",
+    "url": "/butiker-erbjudanden/coop/coop-hantverkaregatan/"
+  },
+  {
+    "id": "265",
+    "name": "Coop Tystberga",
+    "url": "/butiker-erbjudanden/coop/coop-tystberga/"
+  },
+  {
+    "id": "46",
+    "name": "Coop Mariatorget",
+    "url": "/butiker-erbjudanden/coop/coop-mariatorget/"
+  },
+  {
+    "id": "3802",
+    "name": "Coop Furuvägen",
+    "url": "/butiker-erbjudanden/coop/coop-furuvagen/"
+  },
+  {
+    "id": "50",
+    "name": "Coop Tranebergsvägen",
+    "url": "/butiker-erbjudanden/coop/coop-tranebergsvagen/"
+  },
+  {
+    "id": "53",
+    "name": "Coop Västertorp",
+    "url": "/butiker-erbjudanden/coop/coop-vastertorp/"
+  },
+  {
+    "id": "3832",
+    "name": "Coop Nobeltorget",
+    "url": "/butiker-erbjudanden/coop/coop-nobeltorget/"
+  },
+  {
+    "id": "3833",
+    "name": "Coop Malmö Central",
+    "url": "/butiker-erbjudanden/coop/coop-malmo-central/"
+  },
+  {
+    "id": "3835",
+    "name": "Coop Kornettsgatan",
+    "url": "/butiker-erbjudanden/coop/coop-kornettsgatan/"
+  },
+  {
+    "id": "3837",
+    "name": "Coop Trollebergsvägen",
+    "url": "/butiker-erbjudanden/coop/coop-trollebergsvagen/"
+  },
+  {
+    "id": "3839",
+    "name": "Coop Flöjtvägen",
+    "url": "/butiker-erbjudanden/coop/coop-flojtvagen/"
+  },
+  {
+    "id": "3845",
+    "name": "Coop Örebrogatan",
+    "url": "/butiker-erbjudanden/coop/coop-orebrogatan/"
+  },
+  {
+    "id": "73",
+    "name": "Coop Tomtebogatan",
+    "url": "/butiker-erbjudanden/coop/coop-nara-tomtebogatan/"
+  },
+  {
+    "id": "532",
+    "name": "Coop Högsjö",
+    "url": "/butiker-erbjudanden/coop/coop-hogsjo/"
+  },
+  {
+    "id": "534",
+    "name": "Coop Kyrkogatan",
+    "url": "/butiker-erbjudanden/coop/coop-kyrkogatan/"
+  },
+  {
+    "id": "540",
+    "name": "Coop Skogstorp",
+    "url": "/butiker-erbjudanden/coop/coop-skogstorp/"
+  },
+  {
+    "id": "541",
+    "name": "Coop Ärla",
+    "url": "/butiker-erbjudanden/coop/coop-arla/"
+  },
+  {
+    "id": "3141",
+    "name": "Coop Älvsjö",
+    "url": "/butiker-erbjudanden/coop/coop-alvsjo/"
+  },
+  {
+    "id": "90",
+    "name": "Coop Stamgatan",
+    "url": "/butiker-erbjudanden/coop/coop-stamgatan/"
+  },
+  {
+    "id": "97",
+    "name": "Coop Vasalund",
+    "url": "/butiker-erbjudanden/coop/coop-vasalund/"
+  },
+  {
+    "id": "105",
+    "name": "Coop Ribby",
+    "url": "/butiker-erbjudanden/coop/coop-ribby/"
+  },
+  {
+    "id": "3079",
+    "name": "Coop Centralen",
+    "url": "/butiker-erbjudanden/coop/coop-centralen/"
+  },
+  {
+    "id": "111",
+    "name": "Coop Essingen",
+    "url": "/butiker-erbjudanden/coop/coop-essingen/"
+  },
+  {
+    "id": "115",
+    "name": "Coop Farmarstigen",
+    "url": "/butiker-erbjudanden/coop/coop-farmarstigen/"
+  },
+  {
+    "id": "127",
+    "name": "Coop Sveavägen",
+    "url": "/butiker-erbjudanden/coop/coop-sveavagen/"
+  },
+  {
+    "id": "129",
+    "name": "Coop Svandammsplan",
+    "url": "/butiker-erbjudanden/coop/coop-svandammsplan/"
+  },
+  {
+    "id": "174",
+    "name": "Coop Väsby Station",
+    "url": "/butiker-erbjudanden/coop/coop-vasby-station/"
+  },
+  {
+    "id": "178",
+    "name": "Coop Barkarby",
+    "url": "/butiker-erbjudanden/coop/coop-barkarby/"
+  },
+  {
+    "id": "179",
+    "name": "Coop Veckovägen",
+    "url": "/butiker-erbjudanden/coop/coop-veckovagen/"
+  },
+  {
+    "id": "207",
+    "name": "Coop Sunnersta",
+    "url": "/butiker-erbjudanden/coop/coop-sunnersta/"
+  },
+  {
+    "id": "208",
+    "name": "Coop Ekeby Uppsala",
+    "url": "/butiker-erbjudanden/coop/coop-ekeby-uppsala/"
+  },
+  {
+    "id": "219",
+    "name": "Coop Almunge",
+    "url": "/butiker-erbjudanden/coop/coop-almunge/"
+  },
+  {
+    "id": "220",
+    "name": "Coop Grindvägen",
+    "url": "/butiker-erbjudanden/coop/coop-grindvagen/"
+  },
+  {
+    "id": "114",
+    "name": "Coop Bromsten",
+    "url": "/butiker-erbjudanden/coop/coop-bromsten/"
+  },
+  {
+    "id": "3148",
+    "name": "Coop City Kristianstad",
+    "url": "/butiker-erbjudanden/coop/coop-city-kristianstad/"
+  },
+  {
+    "id": "149",
+    "name": "Coop Spångbro",
+    "url": "/butiker-erbjudanden/coop/coop-spangbro/"
+  },
+  {
+    "id": "1435",
+    "name": "Coop Lycksele",
+    "url": "/butiker-erbjudanden/coop/coop-lycksele/"
+  },
+  {
+    "id": "101",
+    "name": "Coop Spångavägen",
+    "url": "/butiker-erbjudanden/coop/coop-spangavagen/"
+  },
+  {
+    "id": "43",
+    "name": "Coop Fruängen",
+    "url": "/butiker-erbjudanden/coop/coop-fruangen/"
+  },
+  {
+    "id": "298",
+    "name": "Coop Södra Ringvägen",
+    "url": "/butiker-erbjudanden/coop/coop-sodra-ringvaegen/"
+  },
+  {
+    "id": "7",
+    "name": "Coop Odenplan",
+    "url": "/butiker-erbjudanden/coop/coop-odenplan/"
+  },
+  {
+    "id": "133",
+    "name": "Coop Reimersholme",
+    "url": "/butiker-erbjudanden/coop/coop-reimersholme/"
+  },
+  {
+    "id": "38",
+    "name": "Coop Kristineberg",
+    "url": "/butiker-erbjudanden/coop/coop-kristineberg/"
+  },
+  {
+    "id": "134",
+    "name": "Coop Mälarhöjden",
+    "url": "/butiker-erbjudanden/coop/coop-malarhojden/"
+  },
+  {
+    "id": "3847",
+    "name": "Coop Lomma",
+    "url": "/butiker-erbjudanden/coop/coop-lomma/"
+  },
+  {
+    "id": "3414",
+    "name": "Coop Hötorget",
+    "url": "/butiker-erbjudanden/coop/coop-hotorget/"
+  },
+  {
+    "id": "3844",
+    "name": "Coop Knutpunkten",
+    "url": "/butiker-erbjudanden/coop/coop-knutpunkten/"
+  },
+  {
+    "id": "3413",
+    "name": "Coop Renstiernas Gata",
+    "url": "/butiker-erbjudanden/coop/coop-renstiernas-gata/"
+  },
+  {
+    "id": "336",
+    "name": "Coop Forserum",
+    "url": "/butiker-erbjudanden/coop/coop-forserum/"
+  },
+  {
+    "id": "1056",
+    "name": "Coop Lenhovda",
+    "url": "/butiker-erbjudanden/coop/coop-lenhovda/"
+  },
+  {
+    "id": "3803",
+    "name": "Coop Gamletull Halmstad",
+    "url": "/butiker-erbjudanden/coop/coop-gamletull-halmstad/"
+  },
+  {
+    "id": "1355",
+    "name": "Coop Eken Gävle",
+    "url": "/butiker-erbjudanden/coop/coop-eken-gavle/"
+  },
+  {
+    "id": "26",
+    "name": "Coop Järna",
+    "url": "/butiker-erbjudanden/coop/coop-jarna/"
+  },
+  {
+    "id": "1200",
+    "name": "Coop Malmön",
+    "url": "/butiker-erbjudanden/coop/coop-malmon/"
+  },
+  {
+    "id": "608",
+    "name": "Coop Enånger",
+    "url": "/butiker-erbjudanden/coop/coop-enanger/"
+  },
+  {
+    "id": "591",
+    "name": "Coop Sunnansjö",
+    "url": "/butiker-erbjudanden/coop/coop-sunnansjo/"
+  },
+  {
+    "id": "581",
+    "name": "Coop Djurås",
+    "url": "/butiker-erbjudanden/coop/coop-djuras/"
+  },
+  {
+    "id": "509",
+    "name": "Coop Fredriksberg",
+    "url": "/butiker-erbjudanden/coop/coop-fredriksberg/"
+  },
+  {
+    "id": "480",
+    "name": "Coop Hällekis",
+    "url": "/butiker-erbjudanden/coop/coop-hallekis/"
+  },
+  {
+    "id": "461",
+    "name": "Coop Kyrkbytorget",
+    "url": "/butiker-erbjudanden/coop/coop-kyrkbytorget/"
+  },
+  {
+    "id": "453",
+    "name": "Coop Gastorp",
+    "url": "/butiker-erbjudanden/coop/coop-gastorp/"
+  },
+  {
+    "id": "3411",
+    "name": "Coop Alingsås",
+    "url": "/butiker-erbjudanden/coop/coop-alingsas/"
+  },
+  {
+    "id": "451",
+    "name": "Coop Marstrand",
+    "url": "/butiker-erbjudanden/coop/coop-marstrand/"
+  },
+  {
+    "id": "448",
+    "name": "Coop Mariagatan",
+    "url": "/butiker-erbjudanden/coop/coop-mariagatan/"
+  },
+  {
+    "id": "444",
+    "name": "Coop Käringberget",
+    "url": "/butiker-erbjudanden/coop/coop-karingberget/"
+  },
+  {
+    "id": "435",
+    "name": "Coop Dr Bex Gata",
+    "url": "/butiker-erbjudanden/coop/coop-dr-bex-gata/"
+  },
+  {
+    "id": "3777",
+    "name": "Coop Östanås",
+    "url": "/butiker-erbjudanden/coop/coop-ostanas/"
+  },
+  {
+    "id": "3774",
+    "name": "Coop Karlfeldtsplatsen",
+    "url": "/butiker-erbjudanden/coop/coop-karlfeldtsplatsen/"
+  },
+  {
+    "id": "3790",
+    "name": "Coop Rosta",
+    "url": "/butiker-erbjudanden/coop/coop-rosta/"
+  },
+  {
+    "id": "3787",
+    "name": "Stora Coop Ladugårdsängen",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-ladugardsangen/"
+  },
+  {
+    "id": "3786",
+    "name": "Coop Österplan",
+    "url": "/butiker-erbjudanden/coop/coop-osterplan/"
+  },
+  {
+    "id": "3440",
+    "name": "Coop Anderstorp",
+    "url": "/butiker-erbjudanden/coop/coop-anderstorp/"
+  },
+  {
+    "id": "3441",
+    "name": "Coop Atollen Jönköping",
+    "url": "/butiker-erbjudanden/coop/coop-atollen-jonkoping/"
+  },
+  {
+    "id": "3442",
+    "name": "Coop Baronen Kalmar",
+    "url": "/butiker-erbjudanden/coop/coop-baronen-kalmar/"
+  },
+  {
+    "id": "125",
+    "name": "Coop Bergshamra",
+    "url": "/butiker-erbjudanden/coop/coop-bergshamra/"
+  },
+  {
+    "id": "137",
+    "name": "Coop Nytorgsgatan",
+    "url": "/butiker-erbjudanden/coop/coop-nytorgsgatan/"
+  },
+  {
+    "id": "36",
+    "name": "Coop Storsjövägen",
+    "url": "/butiker-erbjudanden/coop/coop-storsjovagen/"
+  },
+  {
+    "id": "1171",
+    "name": "Coop Söder",
+    "url": "/butiker-erbjudanden/coop/coop-soder/"
+  },
+  {
+    "id": "1172",
+    "name": "Coop Håsten",
+    "url": "/butiker-erbjudanden/coop/coop-hasten/"
+  },
+  {
+    "id": "1579",
+    "name": "Coop Vittangi",
+    "url": "/butiker-erbjudanden/coop/coop-vittangi/"
+  },
+  {
+    "id": "1580",
+    "name": "Coop Svappavaara",
+    "url": "/butiker-erbjudanden/coop/coop-svappavaara/"
+  },
+  {
+    "id": "1581",
+    "name": "Coop Jukkasjärvi",
+    "url": "/butiker-erbjudanden/coop/coop-jukkasjarvi/"
+  },
+  {
+    "id": "2798",
+    "name": "Coop Gällivare Luleåvägen",
+    "url": "/butiker-erbjudanden/coop/coop-gallivare-luleavagen/"
+  },
+  {
+    "id": "1616",
+    "name": "Coop Vuollerim",
+    "url": "/butiker-erbjudanden/coop/coop-vuollerim/"
+  },
+  {
+    "id": "3455",
+    "name": "Coop Gullänget",
+    "url": "/butiker-erbjudanden/coop/coop-gullanget/"
+  },
+  {
+    "id": "17",
+    "name": "Coop Nynäshamn",
+    "url": "/butiker-erbjudanden/coop/coop-nynashamn/"
+  },
+  {
+    "id": "86",
+    "name": "Coop Zinken",
+    "url": "/butiker-erbjudanden/coop/coop--zinken-/"
+  },
+  {
+    "id": "1557",
+    "name": "Coop Övertorneå",
+    "url": "/butiker-erbjudanden/coop/coop-overtornea/"
+  },
+  {
+    "id": "2450",
+    "name": "Coop Loet",
+    "url": "/butiker-erbjudanden/coop/coop-loet/"
+  },
+  {
+    "id": "1592",
+    "name": "Coop Munksund",
+    "url": "/butiker-erbjudanden/coop/coop-munksund/"
+  },
+  {
+    "id": "1609",
+    "name": "Coop Mjölkudden",
+    "url": "/butiker-erbjudanden/coop/coop-mjolkudden/"
+  },
+  {
+    "id": "1433",
+    "name": "Coop City Umeå",
+    "url": "/butiker-erbjudanden/coop/coop-city-umea/"
+  },
+  {
+    "id": "3771",
+    "name": "Coop Laholm",
+    "url": "/butiker-erbjudanden/coop/coop-laholm/"
+  },
+  {
+    "id": "9",
+    "name": "Coop Gröndal",
+    "url": "/butiker-erbjudanden/coop/coop-grondal/"
+  },
+  {
+    "id": "13",
+    "name": "Coop Högdalen",
+    "url": "/butiker-erbjudanden/coop/coop-hogdalen/"
+  },
+  {
+    "id": "56",
+    "name": "Coop Bagarmossen",
+    "url": "/butiker-erbjudanden/coop/coop-bagarmossen/"
+  },
+  {
+    "id": "3816",
+    "name": "Coop Norra Parkgatan",
+    "url": "/butiker-erbjudanden/coop/coop--norra-parkgatan/"
+  },
+  {
+    "id": "32",
+    "name": "Coop Farsta",
+    "url": "/butiker-erbjudanden/coop/coop-farsta/"
+  },
+  {
+    "id": "1046",
+    "name": "Coop Norrahammar",
+    "url": "/butiker-erbjudanden/coop/coop-norrahammar/"
+  },
+  {
+    "id": "1047",
+    "name": "Coop Hovslätt",
+    "url": "/butiker-erbjudanden/coop/coop-hovslatt/"
+  },
+  {
+    "id": "1050",
+    "name": "Coop Taberg",
+    "url": "/butiker-erbjudanden/coop/coop-taberg/"
+  },
+  {
+    "id": "1567",
+    "name": "Coop Bergnäset",
+    "url": "/butiker-erbjudanden/coop/coop-bergnaset/"
+  },
+  {
+    "id": "1573",
+    "name": "Coop Jokkmokk",
+    "url": "/butiker-erbjudanden/coop/coop-jokkmokk/"
+  },
+  {
+    "id": "3821",
+    "name": "Coop Örkelljunga",
+    "url": "/butiker-erbjudanden/coop/coop-orkelljunga/"
+  },
+  {
+    "id": "622",
+    "name": "Coop Trehörningsjö",
+    "url": "/butiker-erbjudanden/coop/coop-trehorningsjo/"
+  },
+  {
+    "id": "3429",
+    "name": "Coop Tanumshede",
+    "url": "/butiker-erbjudanden/coop/coop-tanumshede/"
+  },
+  {
+    "id": "1474",
+    "name": "Coop Grisbacka",
+    "url": "/butiker-erbjudanden/coop/coop-grisbacka/"
+  },
+  {
+    "id": "1528",
+    "name": "Coop Haga Sundsvall",
+    "url": "/butiker-erbjudanden/coop/coop-haga-sundsvall/"
+  },
+  {
+    "id": "2305",
+    "name": "Coop Medborgarplatsen",
+    "url": "/butiker-erbjudanden/coop/coop-medborgarplatsen/"
+  },
+  {
+    "id": "3463",
+    "name": "Coop Sundborn",
+    "url": "/butiker-erbjudanden/coop/coop-sundborn/"
+  },
+  {
+    "id": "1180",
+    "name": "Coop Strömstad",
+    "url": "/butiker-erbjudanden/coop/coop-stromstad-/"
+  },
+  {
+    "id": "3088",
+    "name": "Coop Öster",
+    "url": "/butiker-erbjudanden/coop/coop-oster/"
+  },
+  {
+    "id": "634",
+    "name": "Coop Funäsdalen",
+    "url": "/butiker-erbjudanden/coop/coop-funasdalen-/"
+  },
+  {
+    "id": "1452",
+    "name": "Coop Holmsund",
+    "url": "/butiker-erbjudanden/coop/coop-holmsund/"
+  },
+  {
+    "id": "913",
+    "name": "Coop Mönsterås",
+    "url": "/butiker-erbjudanden/coop/coop-monsteras/"
+  },
+  {
+    "id": "1070",
+    "name": "Coop Hultsfred",
+    "url": "/butiker-erbjudanden/coop/coop-hultsfred/"
+  },
+  {
+    "id": "1088",
+    "name": "Coop Blomstermåla",
+    "url": "/butiker-erbjudanden/coop/coop-blomstermala/"
+  },
+  {
+    "id": "1091",
+    "name": "Coop Målilla",
+    "url": "/butiker-erbjudanden/coop/coop-malilla/"
+  },
+  {
+    "id": "3826",
+    "name": "Coop Höllviken",
+    "url": "/butiker-erbjudanden/coop/coop-hollviken/"
+  },
+  {
+    "id": "3820",
+    "name": "Coop Klostergården",
+    "url": "/butiker-erbjudanden/coop/coop-klostergarden/"
+  },
+  {
+    "id": "3843",
+    "name": "Coop Kopparmöllegatan",
+    "url": "/butiker-erbjudanden/coop/coop-kopparmollegatan/"
+  },
+  {
+    "id": "3846",
+    "name": "Coop Stenbocksgatan",
+    "url": "/butiker-erbjudanden/coop/coop-stenbocksgatan/"
+  },
+  {
+    "id": "1141",
+    "name": "Coop Höör",
+    "url": "/butiker-erbjudanden/coop/coop-hoor/"
+  },
+  {
+    "id": "255",
+    "name": "Coop Krokek",
+    "url": "/butiker-erbjudanden/coop/coop-krokek/"
+  },
+  {
+    "id": "3223",
+    "name": "Coop Smålandsstenar",
+    "url": "/butiker-erbjudanden/coop/coop-smalandsstenar/"
+  },
+  {
+    "id": "563",
+    "name": "Coop Leksand",
+    "url": "/butiker-erbjudanden/coop/coop--leksand/"
+  },
+  {
+    "id": "1245",
+    "name": "Coop Storfors",
+    "url": "/butiker-erbjudanden/coop/coop-storfors/"
+  },
+  {
+    "id": "1264",
+    "name": "Coop Skattkärr",
+    "url": "/butiker-erbjudanden/coop/coop-skattkarr/"
+  },
+  {
+    "id": "1106",
+    "name": "Coop Nättraby",
+    "url": "/butiker-erbjudanden/coop/coop-nattraby/"
+  },
+  {
+    "id": "2200",
+    "name": "Coop Vällingby Centrum",
+    "url": "/butiker-erbjudanden/coop/coop-vallingby-centrum/"
+  },
+  {
+    "id": "537",
+    "name": "Coop Triangeln Eskilstuna",
+    "url": "/butiker-erbjudanden/coop/coop-triangeln-eskilstuna/"
+  },
+  {
+    "id": "3842",
+    "name": "Coop Ängelholm",
+    "url": "/butiker-erbjudanden/coop/coop-angelholm/"
+  },
+  {
+    "id": "254",
+    "name": "Stora Coop Risängen",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-risangen/"
+  },
+  {
+    "id": "429",
+    "name": "Coop Mölnlycke",
+    "url": "/butiker-erbjudanden/coop/coop-molnlycke/"
+  },
+  {
+    "id": "2800",
+    "name": "Coop Skeppet",
+    "url": "/butiker-erbjudanden/coop/coop-skeppet/"
+  },
+  {
+    "id": "2802",
+    "name": "Coop Torsvik",
+    "url": "/butiker-erbjudanden/coop/coop-torsvik/"
+  },
+  {
+    "id": "3813",
+    "name": "Coop Mårtenstorget",
+    "url": "/butiker-erbjudanden/coop/coop-martenstorget/"
+  },
+  {
+    "id": "3831",
+    "name": "Coop Djupadal",
+    "url": "/butiker-erbjudanden/coop/coop-djupadal/"
+  },
+  {
+    "id": "240",
+    "name": "Coop Lägerhyddan",
+    "url": "/butiker-erbjudanden/coop/coop-lagerhyddan/"
+  },
+  {
+    "id": "168",
+    "name": "Coop Hemmesta",
+    "url": "/butiker-erbjudanden/coop/coop-hemmesta/"
+  },
+  {
+    "id": "93",
+    "name": "Coop Västra Skogen",
+    "url": "/butiker-erbjudanden/coop/coop-vastra-skogen/"
+  },
+  {
+    "id": "1116",
+    "name": "Coop Vä",
+    "url": "/butiker-erbjudanden/coop/coop-va/"
+  },
+  {
+    "id": "186",
+    "name": "Coop Kallhäll",
+    "url": "/butiker-erbjudanden/coop/coop-kallhall/"
+  },
+  {
+    "id": "633",
+    "name": "Coop Sveg",
+    "url": "/butiker-erbjudanden/coop/coop-sveg/"
+  },
+  {
+    "id": "1455",
+    "name": "Coop Vindeln",
+    "url": "/butiker-erbjudanden/coop/coop-vindeln/"
+  },
+  {
+    "id": "920",
+    "name": "Coop Vilhelmina",
+    "url": "/butiker-erbjudanden/coop/coop-vilhelmina/"
+  },
+  {
+    "id": "1401",
+    "name": "Coop Bräcke",
+    "url": "/butiker-erbjudanden/coop/coop-bracke/"
+  },
+  {
+    "id": "1556",
+    "name": "Coop Överkalix",
+    "url": "/butiker-erbjudanden/coop/coop-overkalix/"
+  },
+  {
+    "id": "3822",
+    "name": "Coop Ystad",
+    "url": "/butiker-erbjudanden/coop/coop-ystad/"
+  },
+  {
+    "id": "72",
+    "name": "Coop Rådhuset",
+    "url": "/butiker-erbjudanden/coop/coop-radhuset/"
+  },
+  {
+    "id": "60",
+    "name": "Coop Örnsberg",
+    "url": "/butiker-erbjudanden/coop/coop-ornsberg/"
+  },
+  {
+    "id": "2821",
+    "name": "Coop Centralhuset",
+    "url": "/butiker-erbjudanden/coop/coop-centralhuset/"
+  },
+  {
+    "id": "3817",
+    "name": "Coop Sjöbo",
+    "url": "/butiker-erbjudanden/coop/coop-sjobo/"
+  },
+  {
+    "id": "519",
+    "name": "Coop Sveaplan Eskilstuna",
+    "url": "/butiker-erbjudanden/coop/coop-sveaplan-eskilstuna/"
+  },
+  {
+    "id": "3812",
+    "name": "Coop Dragonen",
+    "url": "/butiker-erbjudanden/coop/coop-dragonen/"
+  },
+  {
+    "id": "41",
+    "name": "Coop Råsundavägen",
+    "url": "/butiker-erbjudanden/coop/coop-rasundavagen/"
+  },
+  {
+    "id": "968",
+    "name": "Coop Stenhamra",
+    "url": "/butiker-erbjudanden/coop/coop-stenhamra/"
+  },
+  {
+    "id": "205",
+    "name": "Coop Öregrund",
+    "url": "/butiker-erbjudanden/coop/coop-oregrund/"
+  },
+  {
+    "id": "233",
+    "name": "Coop Åby",
+    "url": "/butiker-erbjudanden/coop/coop-aby/"
+  },
+  {
+    "id": "1103",
+    "name": "Coop Åhus",
+    "url": "/butiker-erbjudanden/coop/coop-ahus/"
+  },
+  {
+    "id": "1045",
+    "name": "Coop Hyltebruk",
+    "url": "/butiker-erbjudanden/coop/coop-hyltebruk/"
+  },
+  {
+    "id": "52",
+    "name": "Coop Brommaplan",
+    "url": "/butiker-erbjudanden/coop/coop-brommaplan/"
+  },
+  {
+    "id": "1771",
+    "name": "Coop Sala",
+    "url": "/butiker-erbjudanden/coop/coop-sala/"
+  },
+  {
+    "id": "3791",
+    "name": "Coop Svampen",
+    "url": "/butiker-erbjudanden/coop/coop-svampen/"
+  },
+  {
+    "id": "3838",
+    "name": "Coop Karolingatan",
+    "url": "/butiker-erbjudanden/coop/coop-karolingatan/"
+  },
+  {
+    "id": "3834",
+    "name": "Coop Kirseberg",
+    "url": "/butiker-erbjudanden/coop/coop-kirseberg/"
+  },
+  {
+    "id": "3484",
+    "name": "Coop Norra Djurgårdsstaden",
+    "url": "/butiker-erbjudanden/coop/coop-norra-djurgardsstaden/"
+  },
+  {
+    "id": "235",
+    "name": "Coop Saluhallen Norrköping",
+    "url": "/butiker-erbjudanden/coop/coop-saluhallen/"
+  },
+  {
+    "id": "1065",
+    "name": "Coop Västervik",
+    "url": "/butiker-erbjudanden/coop/coop-vastervik/"
+  },
+  {
+    "id": "3486",
+    "name": "Coop Röbäck",
+    "url": "/butiker-erbjudanden/coop/coop-roback/"
+  },
+  {
+    "id": "1108",
+    "name": "Coop Sibbhult",
+    "url": "/butiker-erbjudanden/coop/coop-sibbhult/"
+  },
+  {
+    "id": "531",
+    "name": "Coop Malmköping",
+    "url": "/butiker-erbjudanden/coop/coop-malmkoping/"
+  },
+  {
+    "id": "1576",
+    "name": "Coop Föraregatan",
+    "url": "/butiker-erbjudanden/coop/coop-foraregatan/"
+  },
+  {
+    "id": "237",
+    "name": "Coop Vadstena",
+    "url": "/butiker-erbjudanden/coop/coop-vadstena/"
+  },
+  {
+    "id": "3794",
+    "name": "Coop Fjugesta",
+    "url": "/butiker-erbjudanden/coop/coop-fjugesta/"
+  },
+  {
+    "id": "545",
+    "name": "Coop Mariefred",
+    "url": "/butiker-erbjudanden/coop/coop-mariefred/"
+  },
+  {
+    "id": "3814",
+    "name": "Coop Skurup",
+    "url": "/butiker-erbjudanden/coop/coop-skurup/"
+  },
+  {
+    "id": "3841",
+    "name": "Coop Genarp",
+    "url": "/butiker-erbjudanden/coop/coop-genarp/"
+  },
+  {
+    "id": "3815",
+    "name": "Coop Bulltofta",
+    "url": "/butiker-erbjudanden/coop/coop-bulltofta/"
+  },
+  {
+    "id": "1577",
+    "name": "Coop Lappgatan",
+    "url": "/butiker-erbjudanden/coop/coop-lappgatan/"
+  },
+  {
+    "id": "8",
+    "name": "Coop Midsommarkransen",
+    "url": "/butiker-erbjudanden/coop/coop-midsommarkransen/"
+  },
+  {
+    "id": "23",
+    "name": "Coop Vaxholm",
+    "url": "/butiker-erbjudanden/coop/coop-vaxholm/"
+  },
+  {
+    "id": "2267",
+    "name": "Coop Tyresö Strand",
+    "url": "/butiker-erbjudanden/coop/coop-tyreso-strand/"
+  },
+  {
+    "id": "234",
+    "name": "Coop Trosa",
+    "url": "/butiker-erbjudanden/coop/coop-trosa/"
+  },
+  {
+    "id": "200",
+    "name": "Coop Rimbo",
+    "url": "/butiker-erbjudanden/coop/coop-rimbo/"
+  },
+  {
+    "id": "1931",
+    "name": "Coop Gustavsberg",
+    "url": "/butiker-erbjudanden/coop/coop-gustavsberg/"
+  },
+  {
+    "id": "1115",
+    "name": "Coop Hörby",
+    "url": "/butiker-erbjudanden/coop/coop-horby/"
+  },
+  {
+    "id": "181",
+    "name": "Coop Kungsängen",
+    "url": "/butiker-erbjudanden/coop/coop-kungsangen/"
+  },
+  {
+    "id": "3492",
+    "name": "Coop Ånäset",
+    "url": "/butiker-erbjudanden/coop/coop-anaset/"
+  },
+  {
+    "id": "76",
+    "name": "Coop Bondegatan",
+    "url": "/butiker-erbjudanden/coop/coop-bondegatan/"
+  },
+  {
+    "id": "1252",
+    "name": "Coop Vålberg",
+    "url": "/butiker-erbjudanden/coop/coop-valberg/"
+  },
+  {
+    "id": "1100",
+    "name": "Coop Osby",
+    "url": "/butiker-erbjudanden/coop/coop-osby/"
+  },
+  {
+    "id": "1968",
+    "name": "Coop City Östersund",
+    "url": "/butiker-erbjudanden/coop/coop-city-ostersund/"
+  },
+  {
+    "id": "1235",
+    "name": "Coop Munkfors",
+    "url": "/butiker-erbjudanden/coop/coop-munkfors/"
+  },
+  {
+    "id": "1563",
+    "name": "Coop Öjebyn",
+    "url": "/butiker-erbjudanden/coop/coop-ojebyn/"
+  },
+  {
+    "id": "106",
+    "name": "Coop Djursholm",
+    "url": "/butiker-erbjudanden/coop/coop-djursholm/"
+  },
+  {
+    "id": "1566",
+    "name": "Coop Rosvik",
+    "url": "/butiker-erbjudanden/coop/coop-rosvik/"
+  },
+  {
+    "id": "80",
+    "name": "Coop Odengatan",
+    "url": "/butiker-erbjudanden/coop/coop-odengatan/"
+  },
+  {
+    "id": "1906",
+    "name": "Coop Hammarby Sjöstad",
+    "url": "/butiker-erbjudanden/coop/coop-hammarby-sjostad/"
+  },
+  {
+    "id": "517",
+    "name": "Coop Östra Torget Torshälla",
+    "url": "/butiker-erbjudanden/coop/coop-ostra-torget-torshalla/"
+  },
+  {
+    "id": "3776",
+    "name": "Coop Stjärnan Västerås",
+    "url": "/butiker-erbjudanden/coop/coop-stjarnan-vasteras/"
+  },
+  {
+    "id": "11",
+    "name": "Coop Kärrtorp",
+    "url": "/butiker-erbjudanden/coop/coop-karrtorp/"
+  },
+  {
+    "id": "55",
+    "name": "Coop Finn Malmgren",
+    "url": "/butiker-erbjudanden/coop/coop-finn-malmgren/"
+  },
+  {
+    "id": "1471",
+    "name": "Coop Teg",
+    "url": "/butiker-erbjudanden/coop/coop-teg/"
+  },
+  {
+    "id": "66",
+    "name": "Coop Älta Gård",
+    "url": "/butiker-erbjudanden/coop/coop-alta-gard/"
+  },
+  {
+    "id": "3493",
+    "name": "Coop Granlo",
+    "url": "/butiker-erbjudanden/coop/coop-granlo/"
+  },
+  {
+    "id": "79",
+    "name": "Coop Storgatan",
+    "url": "/butiker-erbjudanden/coop/coop-storgatan/"
+  },
+  {
+    "id": "61",
+    "name": "Coop Erik Dahlbergsgatan",
+    "url": "/butiker-erbjudanden/coop/coop-erik-dahlbergsgatan/"
+  },
+  {
+    "id": "62",
+    "name": "Coop Garnisonen",
+    "url": "/butiker-erbjudanden/coop/coop-garnisonen/"
+  },
+  {
+    "id": "512",
+    "name": "Coop Kvarnen",
+    "url": "/butiker-erbjudanden/coop/coop-kvarnen/"
+  },
+  {
+    "id": "1919",
+    "name": "Coop Liljeholmen",
+    "url": "/butiker-erbjudanden/coop/coop-liljeholmen/"
+  },
+  {
+    "id": "2705",
+    "name": "Coop Folkparken",
+    "url": "/butiker-erbjudanden/coop/coop-folkparken/"
+  },
+  {
+    "id": "40",
+    "name": "Coop Södra Station",
+    "url": "/butiker-erbjudanden/coop/coop-sodra-station-/"
+  },
+  {
+    "id": "165",
+    "name": "Coop Rönninge",
+    "url": "/butiker-erbjudanden/coop/coop-ronninge/"
+  },
+  {
+    "id": "2801",
+    "name": "Coop Norrtull",
+    "url": "/butiker-erbjudanden/coop/coop-norrtull/"
+  },
+  {
+    "id": "238",
+    "name": "Coop Lambohov",
+    "url": "/butiker-erbjudanden/coop/coop-lambohov/"
+  },
+  {
+    "id": "3819",
+    "name": "Coop Oxie",
+    "url": "/butiker-erbjudanden/coop/coop-oxie/"
+  },
+  {
+    "id": "3770",
+    "name": "Coop Kungsör",
+    "url": "/butiker-erbjudanden/coop/coop-kungsor/"
+  },
+  {
+    "id": "1105",
+    "name": "Coop Sommarlust",
+    "url": "/butiker-erbjudanden/coop/coop-sommarlust/"
+  },
+  {
+    "id": "42",
+    "name": "Coop Skarpnäck",
+    "url": "/butiker-erbjudanden/coop/coop-skarpnack-/"
+  },
+  {
+    "id": "3789",
+    "name": "Coop Nora",
+    "url": "/butiker-erbjudanden/coop/coop-nora/"
+  },
+  {
+    "id": "524",
+    "name": "Coop Vingåker",
+    "url": "/butiker-erbjudanden/coop/coop-vingaker/"
+  },
+  {
+    "id": "2274",
+    "name": "Coop Engströms Livs",
+    "url": "/butiker-erbjudanden/coop/coop-engstroms-livs/"
+  },
+  {
+    "id": "69",
+    "name": "Coop Gubbängen",
+    "url": "/butiker-erbjudanden/coop/coop-gubbangen/"
+  },
+  {
+    "id": "131",
+    "name": "Coop Grindsgatan",
+    "url": "/butiker-erbjudanden/coop/coop-grindsgatan-/"
+  },
+  {
+    "id": "3500",
+    "name": "Coop Brunne",
+    "url": "/butiker-erbjudanden/coop/coop-brunne/"
+  },
+  {
+    "id": "3501",
+    "name": "Coop Tullporten",
+    "url": "/butiker-erbjudanden/coop/coop-tullporten/"
+  },
+  {
+    "id": "3502",
+    "name": "Coop Mariehem",
+    "url": "/butiker-erbjudanden/coop/coop-mariehem/"
+  },
+  {
+    "id": "1479",
+    "name": "Coop Gunnarn",
+    "url": "/butiker-erbjudanden/coop/coop-gunnarn/"
+  },
+  {
+    "id": "1226",
+    "name": "Coop City Karlstad",
+    "url": "/butiker-erbjudanden/coop/coop-city-karlstad/"
+  },
+  {
+    "id": "1222",
+    "name": "Coop Dalsjöfors",
+    "url": "/butiker-erbjudanden/coop/coop-dalsjofors/"
+  },
+  {
+    "id": "1508",
+    "name": "Coop Dikanäs",
+    "url": "/butiker-erbjudanden/coop/coop-dikanas/"
+  },
+  {
+    "id": "625",
+    "name": "Coop Skorped",
+    "url": "/butiker-erbjudanden/coop/coop-skorped/"
+  },
+  {
+    "id": "3505",
+    "name": "Coop Kvarnholmen",
+    "url": "/butiker-erbjudanden/coop/coop-kvarnholmen/"
+  },
+  {
+    "id": "3806",
+    "name": "Stora Coop Falkenberg",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-falkenberg/"
+  },
+  {
+    "id": "57",
+    "name": "Coop Minneberg",
+    "url": "/butiker-erbjudanden/coop/coop-minneberg/"
+  },
+  {
+    "id": "3520",
+    "name": "Coop Haningeterrassen",
+    "url": "/butiker-erbjudanden/coop/coop-haningeterrassen/"
+  },
+  {
+    "id": "3521",
+    "name": "Coop Alsike",
+    "url": "/butiker-erbjudanden/coop/coop-alsike/"
+  },
+  {
+    "id": "3525",
+    "name": "Coop Ullånger",
+    "url": "/butiker-erbjudanden/coop/coop-ullanger/"
+  },
+  {
+    "id": "3531",
+    "name": "Coop Kongahälla",
+    "url": "/butiker-erbjudanden/coop/coop-kongahalla/"
+  },
+  {
+    "id": "3533",
+    "name": "Coop Partille",
+    "url": "/butiker-erbjudanden/coop/coop-partille/"
+  },
+  {
+    "id": "3536",
+    "name": "Coop Varvet",
+    "url": "/butiker-erbjudanden/coop/coop-varvet/"
+  },
+  {
+    "id": "3830",
+    "name": "Coop Limhamn",
+    "url": "/butiker-erbjudanden/coop/coop-limhamn/"
+  },
+  {
+    "id": "3545",
+    "name": "Coop Norra Ringen",
+    "url": "/butiker-erbjudanden/coop/coop-norra-ringen/"
+  },
+  {
+    "id": "3807",
+    "name": "Coop Slättenvägen",
+    "url": "/butiker-erbjudanden/coop/coop-slattenvagen/"
+  },
+  {
+    "id": "3550",
+    "name": "Coop Mellerud",
+    "url": "/butiker-erbjudanden/coop/coop-mellerud/"
+  },
+  {
+    "id": "3743",
+    "name": "Coop Skövde Henriksbergsgatan Östermalm",
+    "url": "/butiker-erbjudanden/coop/coop-skovde-henriksbergsgatan-ostermalm/"
+  },
+  {
+    "id": "3557",
+    "name": "Coop Hjo",
+    "url": "/butiker-erbjudanden/coop/coop-hjo/"
+  },
+  {
+    "id": "3745",
+    "name": "Coop Lidköping Råda Mossevägen",
+    "url": "/butiker-erbjudanden/coop/coop-lidkoping-rada-mossevagen/"
+  },
+  {
+    "id": "3567",
+    "name": "Coop Borås Byttorp",
+    "url": "/butiker-erbjudanden/coop/coop-boras-byttorp/"
+  },
+  {
+    "id": "3573",
+    "name": "Coop Mölndal Åby Katrinebergsgatan",
+    "url": "/butiker-erbjudanden/coop/coop-aby-molndal-katrinebergsgatan/"
+  },
+  {
+    "id": "3574",
+    "name": "Coop Skånegatan",
+    "url": "/butiker-erbjudanden/coop/coop-skanegatan/"
+  },
+  {
+    "id": "3580",
+    "name": "Coop Göteborg Mölndalsvägen",
+    "url": "/butiker-erbjudanden/coop/coop-goteborg-molndalsvagen/"
+  },
+  {
+    "id": "3616",
+    "name": "Coop Kågeröd",
+    "url": "/butiker-erbjudanden/coop/coop-kagerod/"
+  },
+  {
+    "id": "3617",
+    "name": "Coop Linden Motala",
+    "url": "/butiker-erbjudanden/coop/coop-linden-motala/"
+  },
+  {
+    "id": "3874",
+    "name": "Coop Domino",
+    "url": "/butiker-erbjudanden/coop/coop-domino/"
+  },
+  {
+    "id": "3871",
+    "name": "Coop Stockholmsvägen",
+    "url": "/butiker-erbjudanden/coop/coop-stockholmsvagen/"
+  },
+  {
+    "id": "3868",
+    "name": "Coop Ullstämma",
+    "url": "/butiker-erbjudanden/coop/coop-ullstamma/"
+  },
+  {
+    "id": "3867",
+    "name": "Coop Drottninggatan Linköping",
+    "url": "/butiker-erbjudanden/coop/coop-drottninggatan-linkoping/"
+  },
+  {
+    "id": "3877",
+    "name": "Coop Eskilstunavägen Torshälla",
+    "url": "/butiker-erbjudanden/coop/coop-eskilstunavagen-torshalla/"
+  },
+  {
+    "id": "3779",
+    "name": "Coop Köping",
+    "url": "/butiker-erbjudanden/coop/coop-koping/"
+  },
+  {
+    "id": "3796",
+    "name": "Coop Laxå",
+    "url": "/butiker-erbjudanden/coop/coop-laxa/"
+  },
+  {
+    "id": "3862",
+    "name": "Coop Mjölby",
+    "url": "/butiker-erbjudanden/coop/coop-mjolby/"
+  },
+  {
+    "id": "3649",
+    "name": "Coop Björna",
+    "url": "/butiker-erbjudanden/coop/coop-bjorna/"
+  },
+  {
+    "id": "3652",
+    "name": "Coop Staffanstorp",
+    "url": "/butiker-erbjudanden/coop/coop-staffanstorp/"
+  },
+  {
+    "id": "3653",
+    "name": "Coop Västra Hamnen",
+    "url": "/butiker-erbjudanden/coop/coop-vastra-hamnen/"
+  },
+  {
+    "id": "3656",
+    "name": "Coop Vildgåsen Lund",
+    "url": "/butiker-erbjudanden/coop/coop-vildgasen-lund/"
+  },
+  {
+    "id": "3657",
+    "name": "Coop Bjärred",
+    "url": "/butiker-erbjudanden/coop/coop-bjarred/"
+  },
+  {
+    "id": "3688",
+    "name": "Coop Jönköping Anders Blomstrands Väg",
+    "url": "/butiker-erbjudanden/coop/coop-jonkoping-anders-blomstrands-vag/"
+  },
+  {
+    "id": "3698",
+    "name": "Coop Borgholm",
+    "url": "/butiker-erbjudanden/coop/coop-borgholm/"
+  },
+  {
+    "id": "3699",
+    "name": "Coop Färjestaden Brofästet",
+    "url": "/butiker-erbjudanden/coop/coop-farjestaden-brofastet/"
+  },
+  {
+    "id": "3706",
+    "name": "Coop Hagastaden",
+    "url": "/butiker-erbjudanden/coop/coop-hagastaden/"
+  },
+  {
+    "id": "3709",
+    "name": "Coop Kök och Café",
+    "url": "/butiker-erbjudanden/coop/coop-kok--cafe/"
+  },
+  {
+    "id": "3720",
+    "name": "Coop Liljegatan",
+    "url": "/butiker-erbjudanden/coop/coop-liljegatan/"
+  },
+  {
+    "id": "3721",
+    "name": "Coop Tullhuset",
+    "url": "/butiker-erbjudanden/coop/coop-tullhuset/"
+  },
+  {
+    "id": "3827",
+    "name": "Coop Stationsstaden",
+    "url": "/butiker-erbjudanden/coop/coop-stationsstaden/"
+  },
+  {
+    "id": "3725",
+    "name": "Coop Odinsgatan",
+    "url": "/butiker-erbjudanden/coop/coop-odinsgatan/"
+  },
+  {
+    "id": "3718",
+    "name": "Coop Gamla Riksvägen",
+    "url": "/butiker-erbjudanden/coop/coop-gamla-riksvagen/"
+  },
+  {
+    "id": "3751",
+    "name": "Coop Bålsta",
+    "url": "/butiker-erbjudanden/coop/coop-balsta/"
+  },
+  {
+    "id": "3804",
+    "name": "Coop Gallerian",
+    "url": "/butiker-erbjudanden/coop/coop-gallerian/"
+  },
+  {
+    "id": "3809",
+    "name": "Coop Flygaregatan",
+    "url": "/butiker-erbjudanden/coop/coop-flygaregatan/"
+  },
+  {
+    "id": "3762",
+    "name": "Coop Ankarsrum",
+    "url": "/butiker-erbjudanden/coop/coop-ankarsrum/"
+  },
+  {
+    "id": "3828",
+    "name": "Coop Borstahusen",
+    "url": "/butiker-erbjudanden/coop/coop-borstahusen/"
+  },
+  {
+    "id": "3765",
+    "name": "Coop Kolla Parkstad",
+    "url": "/butiker-erbjudanden/coop/coop-kolla-parkstad/"
+  },
+  {
+    "id": "3768",
+    "name": "Coop City Örnsköldsvik",
+    "url": "/butiker-erbjudanden/coop/coop-city-ornskoldsvik/"
+  },
+  {
+    "id": "3883",
+    "name": "Coop Mini Täby Park",
+    "url": "/butiker-erbjudanden/coop-mini/coop-mini-taby-park/"
+  },
+  {
+    "id": "3884",
+    "name": "Stora Coop Ronneby",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-ronneby/"
+  },
+  {
+    "id": "3885",
+    "name": "Coop Kallkällan",
+    "url": "/butiker-erbjudanden/coop/coop-kallkallan/"
+  },
+  {
+    "id": "3886",
+    "name": "Stora Coop Norrböle",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-norrbole/"
+  },
+  {
+    "id": "3887",
+    "name": "Coop Kittelfjäll",
+    "url": "/butiker-erbjudanden/coop-konsum/coop-kittelfjall/"
+  },
+  {
+    "id": "3888",
+    "name": "Coop Strömlida",
+    "url": "/butiker-erbjudanden/coop-konsum/coop-stromlida/"
+  },
+  {
+    "id": "3889",
+    "name": "Coop Kiruna C",
+    "url": "/butiker-erbjudanden/coop/coop-kiruna-c/"
+  },
+  {
+    "id": "3890",
+    "name": "Coop Matboden",
+    "url": "/butiker-erbjudanden/coop/coop-matboden/"
+  },
+  {
+    "id": "165310",
+    "name": "Coop Tullholmen",
+    "url": "/butiker-erbjudanden/coop/coop-tullholmen/"
+  },
+  {
+    "id": "186117",
+    "name": "Coop Oxbacken",
+    "url": "/butiker-erbjudanden/coop/coop-oxbacken/"
+  },
+  {
+    "id": "104210",
+    "name": "Stora Coop Svedala",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-svedala/"
+  },
+  {
+    "id": "185091",
+    "name": "Coop Flen",
+    "url": "/butiker-erbjudanden/coop/coop-flen/"
+  },
+  {
+    "id": "185040",
+    "name": "Coop Katrineholm",
+    "url": "/butiker-erbjudanden/coop/coop-katrineholm/"
+  },
+  {
+    "id": "16993",
+    "name": "Coop Träkvista Alltid Öppet",
+    "url": "/butiker-erbjudanden/coop/coop-mini-trakvista/"
+  },
+  {
+    "id": "196163",
+    "name": "Coop Lima",
+    "url": "/butiker-erbjudanden/coop/coop-lima/"
+  },
+  {
+    "id": "236220",
+    "name": "Coop City Skellefteå",
+    "url": "/butiker-erbjudanden/coop/coop-city-skelleftea/"
+  },
+  {
+    "id": "246650",
+    "name": "Coop Sävast",
+    "url": "/butiker-erbjudanden/coop/coop-savast/"
+  },
+  {
+    "id": "16992",
+    "name": "Coop Mini Haninge",
+    "url": "/butiker-erbjudanden/coop/coop-mini-haninge/"
+  },
+  {
+    "id": "16991",
+    "name": "Coop Mini Gåvsta",
+    "url": "/butiker-erbjudanden/coop/coop-mini-gavsta/"
+  },
+  {
+    "id": "186118",
+    "name": "Coop Punkt",
+    "url": "/butiker-erbjudanden/coop/coop-punkt/"
+  },
+  {
+    "id": "106530",
+    "name": "Coop Hjärup",
+    "url": "/butiker-erbjudanden/coop/coop-hjarup/"
+  },
+  {
+    "id": "123300",
+    "name": "Coop Öjersjö",
+    "url": "/butiker-erbjudanden/coop/coop-ojersjo/"
+  },
+  {
+    "id": "235970",
+    "name": "Coop Vemdalen",
+    "url": "/butiker-erbjudanden/coop/coop-vemdalen/"
+  },
+  {
+    "id": "16170",
+    "name": "Stora Coop Spånga",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-spanga/"
+  },
+  {
+    "id": "236013",
+    "name": "Coop Östra Station",
+    "url": "/butiker-erbjudanden/coop/coop-ostra-station/"
+  },
+  {
+    "id": "55030",
+    "name": "Stora Coop Ingelsta",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-ingelsta/"
+  },
+  {
+    "id": "242900",
+    "name": "Coop Gällivare Centrum",
+    "url": "/butiker-erbjudanden/coop/coop-gallivare-centrum/"
+  },
+  {
+    "id": "15480",
+    "name": "Stora Coop Barkarby",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-barkarby/"
+  },
+  {
+    "id": "126308",
+    "name": "Coop Backaplan",
+    "url": "/butiker-erbjudanden/coop/coop-backaplan/"
+  },
+  {
+    "id": "232400",
+    "name": "Stora Coop Avion",
+    "url": "/butiker-erbjudanden/stora-coop/stora-coop-avion/"
+  },
+  {
+    "id": "245270",
+    "name": "Coop Arvidsjaur",
+    "url": "/butiker-erbjudanden/coop/coop-arvidsjaur/"
+  }
+]
+
+export const allWillysStores = [
+  {
+    "id": "2120",
+    "name": "Willys Östersund Storsjö"
+  },
+  {
+    "id": "2197",
+    "name": "Willys Örnsköldsvik"
+  },
+  {
+    "id": "2139",
+    "name": "Willys Örebro Västhaga"
+  },
+  {
+    "id": "2123",
+    "name": "Willys Örebro Marieberg"
+  },
+  {
+    "id": "2289",
+    "name": "Willys Örebro Baronbackarna"
+  },
+  {
+    "id": "2222",
+    "name": "Willys Örebro Almby"
+  },
+  {
+    "id": "2174",
+    "name": "Willys Åtvidaberg C"
+  },
+  {
+    "id": "2662",
+    "name": "Willys Åmål Rondellen"
+  },
+  {
+    "id": "2280",
+    "name": "Willys Åkersberga Runö"
+  },
+  {
+    "id": "2286",
+    "name": "Willys Åhus Rondellen"
+  },
+  {
+    "id": "2233",
+    "name": "Willys Ängelholm Brännborn Center"
+  },
+  {
+    "id": "2326",
+    "name": "Willys Älvängen Handelsplats"
+  },
+  {
+    "id": "2254",
+    "name": "Willys Älmhult"
+  },
+  {
+    "id": "2231",
+    "name": "Willys Ystad"
+  },
+  {
+    "id": "2320",
+    "name": "Willys Vårgårda Torggatan"
+  },
+  {
+    "id": "2131",
+    "name": "Willys Växjö Teleborg"
+  },
+  {
+    "id": "2265",
+    "name": "Willys Växjö I11"
+  },
+  {
+    "id": "2343",
+    "name": "Willys Västerås Stenby"
+  },
+  {
+    "id": "2261",
+    "name": "Willys Västerås Hälla"
+  },
+  {
+    "id": "2339",
+    "name": "Willys Västerås Erikslund"
+  },
+  {
+    "id": "2171",
+    "name": "Willys Västervik Södra Järnvägsg"
+  },
+  {
+    "id": "2297",
+    "name": "Willys Väsby Centrum"
+  },
+  {
+    "id": "2204",
+    "name": "Willys Värnamo Gröndal"
+  },
+  {
+    "id": "2263",
+    "name": "Willys Vänersborg Trenova Center"
+  },
+  {
+    "id": "2162",
+    "name": "Willys Visby"
+  },
+  {
+    "id": "2346",
+    "name": "Willys Vimmerby Allen"
+  },
+  {
+    "id": "2342",
+    "name": "Willys Vetlanda Nydala"
+  },
+  {
+    "id": "2182",
+    "name": "Willys Vellinge Kompanigatan"
+  },
+  {
+    "id": "2161",
+    "name": "Willys Varberg"
+  },
+  {
+    "id": "2235",
+    "name": "Willys Vara Axet"
+  },
+  {
+    "id": "2341",
+    "name": "Willys Vagnhärad Lånesta"
+  },
+  {
+    "id": "2272",
+    "name": "Willys Uppsala Stenhagen"
+  },
+  {
+    "id": "2193",
+    "name": "Willys Uppsala Kungsgatan"
+  },
+  {
+    "id": "2218",
+    "name": "Willys Uppsala Gränby"
+  },
+  {
+    "id": "2195",
+    "name": "Willys Uppsala Gottsunda"
+  },
+  {
+    "id": "2194",
+    "name": "Willys Uppsala Björkgatan"
+  },
+  {
+    "id": "2276",
+    "name": "Willys Umeå Syd"
+  },
+  {
+    "id": "2333",
+    "name": "Willys Umeå Klockarbäcken"
+  },
+  {
+    "id": "2203",
+    "name": "Willys Umeå Ersboda"
+  },
+  {
+    "id": "2184",
+    "name": "Willys Uddevalla C"
+  },
+  {
+    "id": "2293",
+    "name": "Willys Täby Centrum"
+  },
+  {
+    "id": "2262",
+    "name": "Willys Tyresö Bollmora"
+  },
+  {
+    "id": "2106",
+    "name": "Willys Trollhättan Hojum"
+  },
+  {
+    "id": "2213",
+    "name": "Willys Trelleborg Väst"
+  },
+  {
+    "id": "2151",
+    "name": "Willys Tranås"
+  },
+  {
+    "id": "2143",
+    "name": "Willys Tranemo Västra"
+  },
+  {
+    "id": "2274",
+    "name": "Willys Torslanda"
+  },
+  {
+    "id": "2330",
+    "name": "Willys Sölvesborg Kämpaslätten"
+  },
+  {
+    "id": "2229",
+    "name": "Willys Södertälje Weda"
+  },
+  {
+    "id": "2284",
+    "name": "Willys Södertälje Vasa"
+  },
+  {
+    "id": "2138",
+    "name": "Willys Södertälje Hamn"
+  },
+  {
+    "id": "2239",
+    "name": "Willys Söderköping"
+  },
+  {
+    "id": "2340",
+    "name": "Willys Söderhamn Porten"
+  },
+  {
+    "id": "2344",
+    "name": "Willys Surahammar Stavtorpet"
+  },
+  {
+    "id": "2167",
+    "name": "Willys Sundsvall Ortviken"
+  },
+  {
+    "id": "2214",
+    "name": "Willys Sundsvall Birsta"
+  },
+  {
+    "id": "2242",
+    "name": "Willys Sundbyberg Esplanaden"
+  },
+  {
+    "id": "2660",
+    "name": "Willys Strömstad Shoppingcenter"
+  },
+  {
+    "id": "2134",
+    "name": "Willys Strängnäs"
+  },
+  {
+    "id": "2219",
+    "name": "Willys Stockholm Älvsjö"
+  },
+  {
+    "id": "2163",
+    "name": "Willys Stockholm Värmdö Mölnvik"
+  },
+  {
+    "id": "2345",
+    "name": "Willys Stockholm Vällingby"
+  },
+  {
+    "id": "2273",
+    "name": "Willys Stockholm Vinsta"
+  },
+  {
+    "id": "2260",
+    "name": "Willys Stockholm Veddesta Handel"
+  },
+  {
+    "id": "2207",
+    "name": "Willys Stockholm Täby Arninge"
+  },
+  {
+    "id": "2129",
+    "name": "Willys Stockholm Tumba"
+  },
+  {
+    "id": "2295",
+    "name": "Willys Stockholm Sköndal"
+  },
+  {
+    "id": "2350",
+    "name": "Willys Stockholm Skärholmen"
+  },
+  {
+    "id": "2187",
+    "name": "Willys Stockholm Rissne"
+  },
+  {
+    "id": "2252",
+    "name": "Willys Stockholm Port 73"
+  },
+  {
+    "id": "2283",
+    "name": "Willys Stockholm Mariahallen"
+  },
+  {
+    "id": "2121",
+    "name": "Willys Stockholm Länna"
+  },
+  {
+    "id": "2205",
+    "name": "Willys Stockholm Lidingö"
+  },
+  {
+    "id": "2258",
+    "name": "Willys Stockholm Fridhemsplan"
+  },
+  {
+    "id": "2351",
+    "name": "Willys Stockholm Bromma"
+  },
+  {
+    "id": "2200",
+    "name": "Willys Stenungsund Strandvägen"
+  },
+  {
+    "id": "2220",
+    "name": "Willys Staffanstorp Rondellen"
+  },
+  {
+    "id": "2228",
+    "name": "Willys Sollentuna Rotebro"
+  },
+  {
+    "id": "2294",
+    "name": "Willys Sollentuna Häggvik"
+  },
+  {
+    "id": "2270",
+    "name": "Willys Skövde Stallsiken"
+  },
+  {
+    "id": "2277",
+    "name": "Willys Skutskär Östra"
+  },
+  {
+    "id": "2299",
+    "name": "Willys Skurup Handelsplats"
+  },
+  {
+    "id": "2199",
+    "name": "Willys Skene C"
+  },
+  {
+    "id": "2208",
+    "name": "Willys Skellefteå Solbacken"
+  },
+  {
+    "id": "2327",
+    "name": "Willys Skellefteå Anderstorp"
+  },
+  {
+    "id": "2291",
+    "name": "Willys Simrishamn Skanshill"
+  },
+  {
+    "id": "2211",
+    "name": "Willys Sandviken Linggatan"
+  },
+  {
+    "id": "2257",
+    "name": "Willys Sala Ängshagen"
+  },
+  {
+    "id": "2323",
+    "name": "Willys Ronneby Centrum"
+  },
+  {
+    "id": "2227",
+    "name": "Willys Piteå"
+  },
+  {
+    "id": "2188",
+    "name": "Willys Partille C"
+  },
+  {
+    "id": "2278",
+    "name": "Willys Oskarshamn Snickeriet"
+  },
+  {
+    "id": "2281",
+    "name": "Willys Olofström"
+  },
+  {
+    "id": "2246",
+    "name": "Willys Nässjö Almenäs"
+  },
+  {
+    "id": "2336",
+    "name": "Willys Nynäshamn Sandtorp"
+  },
+  {
+    "id": "2159",
+    "name": "Willys Nyköping"
+  },
+  {
+    "id": "2264",
+    "name": "Willys Nybro"
+  },
+  {
+    "id": "2192",
+    "name": "Willys Norrtälje"
+  },
+  {
+    "id": "2212",
+    "name": "Willys Norrköping Ingelsta"
+  },
+  {
+    "id": "2170",
+    "name": "Willys Norrköping Hageby"
+  },
+  {
+    "id": "2215",
+    "name": "Willys Nacka Sickla"
+  },
+  {
+    "id": "2141",
+    "name": "Willys Märsta C"
+  },
+  {
+    "id": "2202",
+    "name": "Willys Motala"
+  },
+  {
+    "id": "2189",
+    "name": "Willys Mora"
+  },
+  {
+    "id": "2279",
+    "name": "Willys Mjölby Centrum"
+  },
+  {
+    "id": "2150",
+    "name": "Willys Mariestad Haggården"
+  },
+  {
+    "id": "2352",
+    "name": "Willys Malmö Rosengård"
+  },
+  {
+    "id": "2253",
+    "name": "Willys Malmö Mobilia"
+  },
+  {
+    "id": "2144",
+    "name": "Willys Malmö Limhamn"
+  },
+  {
+    "id": "2114",
+    "name": "Willys Malmö Katrinelund"
+  },
+  {
+    "id": "2244",
+    "name": "Willys Malmö Emporia"
+  },
+  {
+    "id": "2125",
+    "name": "Willys Löddeköpinge"
+  },
+  {
+    "id": "2176",
+    "name": "Willys Lund"
+  },
+  {
+    "id": "2179",
+    "name": "Willys Luleå Storheden"
+  },
+  {
+    "id": "2127",
+    "name": "Willys Luleå Hamn"
+  },
+  {
+    "id": "2347",
+    "name": "Willys Ludvika Lyviksberget"
+  },
+  {
+    "id": "2256",
+    "name": "Willys Ljungby"
+  },
+  {
+    "id": "2298",
+    "name": "Willys Linköping Tornby"
+  },
+  {
+    "id": "2178",
+    "name": "Willys Linköping Skäggetorp"
+  },
+  {
+    "id": "2160",
+    "name": "Willys Linköping Ekholmen"
+  },
+  {
+    "id": "2105",
+    "name": "Willys Lidköping Framnäs"
+  },
+  {
+    "id": "2245",
+    "name": "Willys Landvetter"
+  },
+  {
+    "id": "2269",
+    "name": "Willys Landskrona Infarten"
+  },
+  {
+    "id": "2198",
+    "name": "Willys Köping Big Inn"
+  },
+  {
+    "id": "2201",
+    "name": "Willys Kållered Eken"
+  },
+  {
+    "id": "2104",
+    "name": "Willys Kungälv Komarken"
+  },
+  {
+    "id": "2275",
+    "name": "Willys Kungsbacka Södercity"
+  },
+  {
+    "id": "2110",
+    "name": "Willys Kungsbacka Hede"
+  },
+  {
+    "id": "2337",
+    "name": "Willys Kumla Skogstorp"
+  },
+  {
+    "id": "2108",
+    "name": "Willys Kristianstad Långebro"
+  },
+  {
+    "id": "2251",
+    "name": "Willys Kramfors"
+  },
+  {
+    "id": "2266",
+    "name": "Willys Knivsta C"
+  },
+  {
+    "id": "2334",
+    "name": "Willys Klippan Fabriksallén"
+  },
+  {
+    "id": "2210",
+    "name": "Willys Katrineholm Lövåsen"
+  },
+  {
+    "id": "2290",
+    "name": "Willys Karlstad Bryggudden"
+  },
+  {
+    "id": "2117",
+    "name": "Willys Karlstad"
+  },
+  {
+    "id": "2153",
+    "name": "Willys Karlskrona Slottsbacken"
+  },
+  {
+    "id": "2180",
+    "name": "Willys Karlskrona Pantarholmen"
+  },
+  {
+    "id": "2145",
+    "name": "Willys Karlskoga C"
+  },
+  {
+    "id": "2238",
+    "name": "Willys Karlshamn"
+  },
+  {
+    "id": "2285",
+    "name": "Willys Kalmar Hansa City"
+  },
+  {
+    "id": "2135",
+    "name": "Willys Jönköping Österängen"
+  },
+  {
+    "id": "2164",
+    "name": "Willys Jönköping Råslätt"
+  },
+  {
+    "id": "2234",
+    "name": "Willys Jönköping A6"
+  },
+  {
+    "id": "2349",
+    "name": "Willys Hörby Rondellen"
+  },
+  {
+    "id": "2296",
+    "name": "Willys Hässleholm Läreda"
+  },
+  {
+    "id": "2250",
+    "name": "Willys Härnösand Härnön"
+  },
+  {
+    "id": "2338",
+    "name": "Willys Hyllinge Handelsplats"
+  },
+  {
+    "id": "2173",
+    "name": "Willys Huskvarna"
+  },
+  {
+    "id": "2324",
+    "name": "Willys Hultsfred Knekten"
+  },
+  {
+    "id": "2196",
+    "name": "Willys Huddinge Heron City"
+  },
+  {
+    "id": "2332",
+    "name": "Willys Huddinge Flemingsberg"
+  },
+  {
+    "id": "2834",
+    "name": "Willys Hemma Östhammar"
+  },
+  {
+    "id": "2880",
+    "name": "Willys Hemma Örebro Varberga"
+  },
+  {
+    "id": "2876",
+    "name": "Willys Hemma Örebro City"
+  },
+  {
+    "id": "2839",
+    "name": "Willys Hemma Valbo"
+  },
+  {
+    "id": "2852",
+    "name": "Willys Hemma Utlandagatan"
+  },
+  {
+    "id": "2872",
+    "name": "Willys Hemma Umeå Rådhusesplanaden"
+  },
+  {
+    "id": "2814",
+    "name": "Willys Hemma Ulricehamn"
+  },
+  {
+    "id": "2844",
+    "name": "Willys Hemma Timrå"
+  },
+  {
+    "id": "2847",
+    "name": "Willys Hemma Säter"
+  },
+  {
+    "id": "2867",
+    "name": "Willys Hemma Säffle Station"
+  },
+  {
+    "id": "2826",
+    "name": "Willys Hemma Stockholm Täby"
+  },
+  {
+    "id": "2848",
+    "name": "Willys Hemma Stockholm Torsplan"
+  },
+  {
+    "id": "2830",
+    "name": "Willys Hemma Stockholm Saltsjöbaden"
+  },
+  {
+    "id": "2822",
+    "name": "Willys Hemma Stockholm Nacka"
+  },
+  {
+    "id": "2812",
+    "name": "Willys Hemma Stockholm Liljeholmen"
+  },
+  {
+    "id": "2853",
+    "name": "Willys Hemma Stockholm Götgatan"
+  },
+  {
+    "id": "2849",
+    "name": "Willys Hemma Solna Hagahallen"
+  },
+  {
+    "id": "2881",
+    "name": "Willys Hemma Sollentuna Tureberg"
+  },
+  {
+    "id": "2862",
+    "name": "Willys Hemma Skara Hötorget"
+  },
+  {
+    "id": "2879",
+    "name": "Willys Hemma Oxie Centrum"
+  },
+  {
+    "id": "2836",
+    "name": "Willys Hemma Orsa"
+  },
+  {
+    "id": "2833",
+    "name": "Willys Hemma Nora"
+  },
+  {
+    "id": "2865",
+    "name": "Willys Hemma Malmö Söderkulla"
+  },
+  {
+    "id": "2870",
+    "name": "Willys Hemma Malmö Möllevången"
+  },
+  {
+    "id": "2851",
+    "name": "Willys Hemma Malmö Lugnet"
+  },
+  {
+    "id": "2843",
+    "name": "Willys Hemma Malmö Lindängen"
+  },
+  {
+    "id": "2863",
+    "name": "Willys Hemma Lund Stortorget"
+  },
+  {
+    "id": "2882",
+    "name": "Willys Hemma Ludvika Marnäs"
+  },
+  {
+    "id": "2866",
+    "name": "Willys Hemma Lomma Centrum"
+  },
+  {
+    "id": "2838",
+    "name": "Willys Hemma Lindesberg"
+  },
+  {
+    "id": "2828",
+    "name": "Willys Hemma Laholm"
+  },
+  {
+    "id": "2819",
+    "name": "Willys Hemma Kristianstad"
+  },
+  {
+    "id": "2854",
+    "name": "Willys Hemma Kil"
+  },
+  {
+    "id": "2818",
+    "name": "Willys Hemma Kalix"
+  },
+  {
+    "id": "2827",
+    "name": "Willys Hemma Jönköping Torpa"
+  },
+  {
+    "id": "2873",
+    "name": "Willys Hemma Hönö Entré"
+  },
+  {
+    "id": "2840",
+    "name": "Willys Hemma Henån"
+  },
+  {
+    "id": "2829",
+    "name": "Willys Hemma Helsingborg"
+  },
+  {
+    "id": "2816",
+    "name": "Willys Hemma Göteborg Vårväderstorget"
+  },
+  {
+    "id": "2841",
+    "name": "Willys Hemma Göteborg Vegastaden"
+  },
+  {
+    "id": "2811",
+    "name": "Willys Hemma Göteborg Tuve"
+  },
+  {
+    "id": "2855",
+    "name": "Willys Hemma Göteborg Torslanda"
+  },
+  {
+    "id": "2837",
+    "name": "Willys Hemma Göteborg Sävedalen"
+  },
+  {
+    "id": "2861",
+    "name": "Willys Hemma Göteborg Sten Sturegatan"
+  },
+  {
+    "id": "2846",
+    "name": "Willys Hemma Göteborg Påvelund"
+  },
+  {
+    "id": "2842",
+    "name": "Willys Hemma Göteborg Majorna"
+  },
+  {
+    "id": "2864",
+    "name": "Willys Hemma Göteborg Lövgärdet"
+  },
+  {
+    "id": "2820",
+    "name": "Willys Hemma Göteborg Kvilletorget"
+  },
+  {
+    "id": "2859",
+    "name": "Willys Hemma Göteborg Kaverös"
+  },
+  {
+    "id": "2850",
+    "name": "Willys Hemma Göteborg Johanneberg"
+  },
+  {
+    "id": "2875",
+    "name": "Willys Hemma Göteborg Heden"
+  },
+  {
+    "id": "2871",
+    "name": "Willys Hemma Göteborg Första Långg"
+  },
+  {
+    "id": "2857",
+    "name": "Willys Hemma Göteborg Friskväderstorget"
+  },
+  {
+    "id": "2858",
+    "name": "Willys Hemma Göteborg Björkekärr"
+  },
+  {
+    "id": "2874",
+    "name": "Willys Hemma Göteborg Altplatsen"
+  },
+  {
+    "id": "2810",
+    "name": "Willys Hemma Gnosjö"
+  },
+  {
+    "id": "2878",
+    "name": "Willys Hemma Enköping Centrum"
+  },
+  {
+    "id": "2823",
+    "name": "Willys Hemma Ed"
+  },
+  {
+    "id": "2860",
+    "name": "Willys Hemma Arboga Centrum"
+  },
+  {
+    "id": "2813",
+    "name": "Willys Hemma Alvesta"
+  },
+  {
+    "id": "2271",
+    "name": "Willys Helsingborg Väla"
+  },
+  {
+    "id": "2335",
+    "name": "Willys Helsingborg Råå"
+  },
+  {
+    "id": "2236",
+    "name": "Willys Halmstad Öster"
+  },
+  {
+    "id": "2137",
+    "name": "Willys Halmstad Flygstaden"
+  },
+  {
+    "id": "2321",
+    "name": "Willys Habo Kärnekulla"
+  },
+  {
+    "id": "2102",
+    "name": "Willys Göteborg Wieselgrensplatsen"
+  },
+  {
+    "id": "2226",
+    "name": "Willys Göteborg Sisjön"
+  },
+  {
+    "id": "2247",
+    "name": "Willys Göteborg Hvitfeldtsplatsen"
+  },
+  {
+    "id": "2111",
+    "name": "Willys Göteborg Gamlestaden"
+  },
+  {
+    "id": "2288",
+    "name": "Willys Göteborg Elisedal"
+  },
+  {
+    "id": "2223",
+    "name": "Willys Gävle Hemsta"
+  },
+  {
+    "id": "2132",
+    "name": "Willys Gävle Gestrike"
+  },
+  {
+    "id": "2241",
+    "name": "Willys Gislaved Smålandia"
+  },
+  {
+    "id": "2292",
+    "name": "Willys Flen Tisteln"
+  },
+  {
+    "id": "2248",
+    "name": "Willys Finspång"
+  },
+  {
+    "id": "2230",
+    "name": "Willys Falun Svalan"
+  },
+  {
+    "id": "2169",
+    "name": "Willys Falun Origo"
+  },
+  {
+    "id": "2322",
+    "name": "Willys Falköping Ålleberg Center"
+  },
+  {
+    "id": "2267",
+    "name": "Willys Falkenberg Tånga"
+  },
+  {
+    "id": "2325",
+    "name": "Willys Fagersta Norrbyplan"
+  },
+  {
+    "id": "2240",
+    "name": "Willys Eslöv"
+  },
+  {
+    "id": "2282",
+    "name": "Willys Eskilstuna Smeden"
+  },
+  {
+    "id": "2118",
+    "name": "Willys Eskilstuna Folkesta"
+  },
+  {
+    "id": "2224",
+    "name": "Willys Eskilstuna City"
+  },
+  {
+    "id": "2152",
+    "name": "Willys Enköping Romberga"
+  },
+  {
+    "id": "2225",
+    "name": "Willys Eksjö C"
+  },
+  {
+    "id": "2249",
+    "name": "Willys Båstad"
+  },
+  {
+    "id": "2328",
+    "name": "Willys Burlöv Center"
+  },
+  {
+    "id": "2348",
+    "name": "Willys Bro Handel"
+  },
+  {
+    "id": "2329",
+    "name": "Willys Botkyrka Handel"
+  },
+  {
+    "id": "2103",
+    "name": "Willys Borås Knalleland"
+  },
+  {
+    "id": "2353",
+    "name": "Willys Borlänge Stora Tuna"
+  },
+  {
+    "id": "2206",
+    "name": "Willys Borlänge Kupolen"
+  },
+  {
+    "id": "2232",
+    "name": "Willys Bollnäs Asea"
+  },
+  {
+    "id": "2259",
+    "name": "Willys Boden"
+  },
+  {
+    "id": "2268",
+    "name": "Willys Avesta"
+  },
+  {
+    "id": "2149",
+    "name": "Willys Alingsås Hagaplan"
+  },
+  {
+    "id": "2877",
+    "name": "Wh Helsingborg Gustavslund"
+  }
+]
