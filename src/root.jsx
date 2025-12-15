@@ -3,9 +3,10 @@ import { Filter } from "./presenters/FilterPresenter";
 import { Articles } from "./presenters/articlesPresenter";
 import { Header } from "./presenters/HeaderPresenter";
 import { Login } from "./presenters/loginPagePresenter";
-import { Cart } from "./presenters/cartPresenter";
+import { Cart } from "./presenters/CartPresenter";
 import { createHashRouter, RouterProvider, redirect } from "react-router-dom";
 import { useEffect } from "react"; 
+import { LikedStores } from "./presenters/likedStoresPresenter";
 
 const createRouter = (model) => createHashRouter([
   {
@@ -23,6 +24,7 @@ const createRouter = (model) => createHashRouter([
     element: (
       <>
         <Header model={model} />
+        <LikedStores model={model}/>
         <Filter model={model} />
         <Articles model={model} />
       </>
