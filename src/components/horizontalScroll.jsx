@@ -3,9 +3,7 @@ import { Utils } from "../utilities";
 
 export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategories, cartItems, onUpdateCartAmount, filterSearch }) {
     return (
-        <div className="w-[95%] my-3 mx-auto">
-            <h2 className="font-semibold text-lg">{storeData.name}</h2>
-
+        <div className="mb-4">
             <ScrollArea 
                 className="w-full"
                 style={{ 
@@ -16,7 +14,7 @@ export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategorie
                 <div className="flex w-max space-x-4 p-2">
                     {storeData.articles?.map(renderArticlesCB)}
                 </div>
-                <Scrollbar orientation="horizontal" className="flex h-2.5 touch-none select-none">
+                <Scrollbar orientation="horizontal" className="flex h-1.5 touch-none select-none">
                     <Thumb className="relative flex-1 rounded-full bg-gray-300" />
                 </Scrollbar>
                 <Corner />
@@ -29,8 +27,13 @@ export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategorie
         // Get formatted text for title and alt
         const formattedTitle = Utils.formatLongText(article.title, 40);
         const formattedAlt = Utils.formatLongText(article.mainImgAlt || article.title, 40);
+        
+        const searchQuery = filterSearch?.toLowerCase() || "";
+        const searchHit = article.title.toLowerCase().includes(searchQuery);
 
-        if(!(filterCategories[0] === "Visa Alla" || filterCategories.includes(article.category))) {
+        if(!(filterCategories[0] === "Visa Alla" || filterCategories.includes(article.category))
+          || !searchHit) 
+        {
           return null;
         }
 

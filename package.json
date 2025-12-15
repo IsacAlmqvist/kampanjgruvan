@@ -25,6 +25,7 @@
         "react": "latest",
         "react-dom": "latest",
         "react-router-dom": "latest",
+        "scrapingbee": "^1.7.6",
         "tailwindcss": "^4.1.17"
     },
     "name": "dh2642-project",

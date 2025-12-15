@@ -11079,3 +11079,818 @@ export const allWillysStores = [
     "name": "Wh Helsingborg Gustavslund"
   }
 ]
+
+export const allHemkopStores = [
+  {
+    "id": "4798",
+    "name": "Hemköp Alfta Västanågatan"
+  },
+  {
+    "id": "4660",
+    "name": "Hemköp Alingsås"
+  },
+  {
+    "id": "4775",
+    "name": "Hemköp Almö Livs"
+  },
+  {
+    "id": "4797",
+    "name": "Hemköp Avesta"
+  },
+  {
+    "id": "4714",
+    "name": "Hemköp Avesta Skogsbo"
+  },
+  {
+    "id": "4514",
+    "name": "Hemköp Björklinge"
+  },
+  {
+    "id": "4770",
+    "name": "Hemköp Blentarp"
+  },
+  {
+    "id": "4515",
+    "name": "Hemköp Bollebygd"
+  },
+  {
+    "id": "4734",
+    "name": "Hemköp Borensberg Östenssons"
+  },
+  {
+    "id": "4638",
+    "name": "Hemköp Borlänge Södra Backa"
+  },
+  {
+    "id": "4624",
+    "name": "Hemköp Botkyrka Tullinge C"
+  },
+  {
+    "id": "4669",
+    "name": "Hemköp Bromma Blackeberg C"
+  },
+  {
+    "id": "4774",
+    "name": "Hemköp Bromma Stora Mossen"
+  },
+  {
+    "id": "4623",
+    "name": "Hemköp Bromma Ängby Torg"
+  },
+  {
+    "id": "4609",
+    "name": "Hemköp Bålsta"
+  },
+  {
+    "id": "4773",
+    "name": "Hemköp Dala-järna Myrbacka"
+  },
+  {
+    "id": "4517",
+    "name": "Hemköp Dalby"
+  },
+  {
+    "id": "4667",
+    "name": "Hemköp Delsbo Edevägen"
+  },
+  {
+    "id": "4254",
+    "name": "Hemköp Domsjö"
+  },
+  {
+    "id": "4519",
+    "name": "Hemköp Ellös"
+  },
+  {
+    "id": "4221",
+    "name": "Hemköp Eskilstuna City"
+  },
+  {
+    "id": "4203",
+    "name": "Hemköp Falun C"
+  },
+  {
+    "id": "4687",
+    "name": "Hemköp Falun Hosjö"
+  },
+  {
+    "id": "4799",
+    "name": "Hemköp Farsta"
+  },
+  {
+    "id": "4520",
+    "name": "Hemköp Fellingsbro"
+  },
+  {
+    "id": "4521",
+    "name": "Hemköp Gnesta Dansutvägen"
+  },
+  {
+    "id": "4767",
+    "name": "Hemköp Granängsringen"
+  },
+  {
+    "id": "4930",
+    "name": "Hemköp Grums Orrby"
+  },
+  {
+    "id": "4524",
+    "name": "Hemköp Grästorp Södergatan"
+  },
+  {
+    "id": "4670",
+    "name": "Hemköp Gustavsberg Hamnen"
+  },
+  {
+    "id": "4512",
+    "name": "Hemköp Göteborg Annedal"
+  },
+  {
+    "id": "4264",
+    "name": "Hemköp Göteborg Guldheden"
+  },
+  {
+    "id": "4530",
+    "name": "Hemköp Göteborg Högsbo"
+  },
+  {
+    "id": "4146",
+    "name": "Hemköp Göteborg Kortedala Torg"
+  },
+  {
+    "id": "4547",
+    "name": "Hemköp Göteborg Linnégatan"
+  },
+  {
+    "id": "4222",
+    "name": "Hemköp Göteborg Lundby Park"
+  },
+  {
+    "id": "4557",
+    "name": "Hemköp Göteborg Majorna"
+  },
+  {
+    "id": "4559",
+    "name": "Hemköp Göteborg Masthuggstorget"
+  },
+  {
+    "id": "4359",
+    "name": "Hemköp Göteborg Mölnlycke"
+  },
+  {
+    "id": "4561",
+    "name": "Hemköp Göteborg Nordenskiöldsgatan"
+  },
+  {
+    "id": "4269",
+    "name": "Hemköp Göteborg Nordstan"
+  },
+  {
+    "id": "4219",
+    "name": "Hemköp Göteborg Opaltorget"
+  },
+  {
+    "id": "4360",
+    "name": "Hemköp Göteborg Selma Lagerlöfs Torg"
+  },
+  {
+    "id": "4349",
+    "name": "Hemköp Göteborg Stigbergstorget"
+  },
+  {
+    "id": "4792",
+    "name": "Hemköp Göteborg Torslanda C"
+  },
+  {
+    "id": "4504",
+    "name": "Hemköp Göteborg Vasagatan"
+  },
+  {
+    "id": "4245",
+    "name": "Hemköp Halmstad C"
+  },
+  {
+    "id": "4189",
+    "name": "Hemköp Haninge C"
+  },
+  {
+    "id": "4751",
+    "name": "Hemköp Haninge Vega"
+  },
+  {
+    "id": "4511",
+    "name": "Hemköp Haverdal Klövervägen"
+  },
+  {
+    "id": "4263",
+    "name": "Hemköp Hedemora"
+  },
+  {
+    "id": "4542",
+    "name": "Hemköp Helsingborg Laröd"
+  },
+  {
+    "id": "4569",
+    "name": "Hemköp Helsingborg Rydebäck"
+  },
+  {
+    "id": "4293",
+    "name": "Hemköp Helsingborg Stattena"
+  },
+  {
+    "id": "4214",
+    "name": "Hemköp Helsingborg Söder"
+  },
+  {
+    "id": "4526",
+    "name": "Hemköp Herrljunga"
+  },
+  {
+    "id": "4605",
+    "name": "Hemköp Huddinge Centrum"
+  },
+  {
+    "id": "4610",
+    "name": "Hemköp Huddinge Matbörsen"
+  },
+  {
+    "id": "4131",
+    "name": "Hemköp Hudiksvall C"
+  },
+  {
+    "id": "4684",
+    "name": "Hemköp Hägersten Västertorp"
+  },
+  {
+    "id": "4252",
+    "name": "Hemköp Härnösand"
+  },
+  {
+    "id": "4702",
+    "name": "Hemköp Hässelby Strand"
+  },
+  {
+    "id": "4657",
+    "name": "Hemköp Insjön Hjultorget"
+  },
+  {
+    "id": "4230",
+    "name": "Hemköp Järfälla Barkarbystaden"
+  },
+  {
+    "id": "4119",
+    "name": "Hemköp Järfälla Jakobsbergs Centrum"
+  },
+  {
+    "id": "4111",
+    "name": "Hemköp Järfälla Stäket"
+  },
+  {
+    "id": "4674",
+    "name": "Hemköp Jönköping C"
+  },
+  {
+    "id": "4208",
+    "name": "Hemköp Jönköping Munksjöstaden"
+  },
+  {
+    "id": "4207",
+    "name": "Hemköp Kalmar"
+  },
+  {
+    "id": "4534",
+    "name": "Hemköp Karlskrona"
+  },
+  {
+    "id": "4755",
+    "name": "Hemköp Karlstad C"
+  },
+  {
+    "id": "4535",
+    "name": "Hemköp Kinna C"
+  },
+  {
+    "id": "4604",
+    "name": "Hemköp Kisa"
+  },
+  {
+    "id": "4537",
+    "name": "Hemköp Kolbäck"
+  },
+  {
+    "id": "4727",
+    "name": "Hemköp Kullavik C"
+  },
+  {
+    "id": "4681",
+    "name": "Hemköp Kungsbacka Billdal"
+  },
+  {
+    "id": "4676",
+    "name": "Hemköp Kungsbacka Hålabäck"
+  },
+  {
+    "id": "4716",
+    "name": "Hemköp Kungsbacka Torget"
+  },
+  {
+    "id": "4683",
+    "name": "Hemköp Kälvesta"
+  },
+  {
+    "id": "4673",
+    "name": "Hemköp Köping C"
+  },
+  {
+    "id": "4142",
+    "name": "Hemköp Leksand"
+  },
+  {
+    "id": "4779",
+    "name": "Hemköp Lerum Solkatten"
+  },
+  {
+    "id": "4697",
+    "name": "Hemköp Lidingö Brevik"
+  },
+  {
+    "id": "4228",
+    "name": "Hemköp Lidköping C"
+  },
+  {
+    "id": "4545",
+    "name": "Hemköp Lindesberg Bergslagsvägen"
+  },
+  {
+    "id": "4552",
+    "name": "Hemköp Linköping Lucullus"
+  },
+  {
+    "id": "4701",
+    "name": "Hemköp Linköping Priso"
+  },
+  {
+    "id": "4193",
+    "name": "Hemköp Linköping Ryd"
+  },
+  {
+    "id": "4277",
+    "name": "Hemköp Linköping Storgatan"
+  },
+  {
+    "id": "4225",
+    "name": "Hemköp Linköping Tallboda"
+  },
+  {
+    "id": "4738",
+    "name": "Hemköp Linköping Ullstämma Östenssons"
+  },
+  {
+    "id": "4549",
+    "name": "Hemköp Ljungbyhed C"
+  },
+  {
+    "id": "4550",
+    "name": "Hemköp Ljungsbro C"
+  },
+  {
+    "id": "4757",
+    "name": "Hemköp Lkpg Folkungavallen Östenssons"
+  },
+  {
+    "id": "4224",
+    "name": "Hemköp Lund Brunnshög"
+  },
+  {
+    "id": "4123",
+    "name": "Hemköp Lund Karhögstorg"
+  },
+  {
+    "id": "4721",
+    "name": "Hemköp Malmköping Torget"
+  },
+  {
+    "id": "4212",
+    "name": "Hemköp Malmö Elinegård"
+  },
+  {
+    "id": "4114",
+    "name": "Hemköp Malmö Kronprinsen"
+  },
+  {
+    "id": "4247",
+    "name": "Hemköp Malmö Triangeln"
+  },
+  {
+    "id": "4199",
+    "name": "Hemköp Malmö Värnhem"
+  },
+  {
+    "id": "4682",
+    "name": "Hemköp Malung"
+  },
+  {
+    "id": "4541",
+    "name": "Hemköp Mellerud Kvarnkullen"
+  },
+  {
+    "id": "4698",
+    "name": "Hemköp Mellerud Torget"
+  },
+  {
+    "id": "4554",
+    "name": "Hemköp Mjölby Lundby"
+  },
+  {
+    "id": "4748",
+    "name": "Hemköp Motala Luxor Center"
+  },
+  {
+    "id": "4730",
+    "name": "Hemköp Motala Verkstan Östenssons"
+  },
+  {
+    "id": "4732",
+    "name": "Hemköp Motala Väster Östenssons"
+  },
+  {
+    "id": "4560",
+    "name": "Hemköp Munkedal"
+  },
+  {
+    "id": "4513",
+    "name": "Hemköp Mölndal Bifrost"
+  },
+  {
+    "id": "4231",
+    "name": "Hemköp Mölndal C"
+  },
+  {
+    "id": "4239",
+    "name": "Hemköp Mörby C"
+  },
+  {
+    "id": "4201",
+    "name": "Hemköp Nacka Forum"
+  },
+  {
+    "id": "4756",
+    "name": "Hemköp Norrk Björkalund Östenssons"
+  },
+  {
+    "id": "4539",
+    "name": "Hemköp Norrköping Kungsgatan"
+  },
+  {
+    "id": "4200",
+    "name": "Hemköp Norrköping Lasarettsgatan"
+  },
+  {
+    "id": "4546",
+    "name": "Hemköp Norrköping Lindö"
+  },
+  {
+    "id": "4232",
+    "name": "Hemköp Norrköping Ljura"
+  },
+  {
+    "id": "4935",
+    "name": "Hemköp Nossebro C Konkursbo"
+  },
+  {
+    "id": "4685",
+    "name": "Hemköp Nyköping C"
+  },
+  {
+    "id": "4671",
+    "name": "Hemköp Nyköping Spelhagen"
+  },
+  {
+    "id": "4563",
+    "name": "Hemköp Onsala"
+  },
+  {
+    "id": "4202",
+    "name": "Hemköp Oskarström Blåklintsvägen"
+  },
+  {
+    "id": "4216",
+    "name": "Hemköp Råcksta"
+  },
+  {
+    "id": "4156",
+    "name": "Hemköp Rättvik C"
+  },
+  {
+    "id": "4183",
+    "name": "Hemköp Saltsjö-boo Lännersta"
+  },
+  {
+    "id": "4753",
+    "name": "Hemköp Sickla Köpkvarter"
+  },
+  {
+    "id": "4307",
+    "name": "Hemköp Skillingaryd Artillerigatan"
+  },
+  {
+    "id": "4737",
+    "name": "Hemköp Skänninge Östenssons"
+  },
+  {
+    "id": "4629",
+    "name": "Hemköp Skärholmen Bredäng"
+  },
+  {
+    "id": "4608",
+    "name": "Hemköp Sköndal C"
+  },
+  {
+    "id": "4195",
+    "name": "Hemköp Skövde C"
+  },
+  {
+    "id": "4606",
+    "name": "Hemköp Skövde Hentorpshallen"
+  },
+  {
+    "id": "4639",
+    "name": "Hemköp Skövde Rydshallen"
+  },
+  {
+    "id": "4690",
+    "name": "Hemköp Sollentuna Rotehallen"
+  },
+  {
+    "id": "4725",
+    "name": "Hemköp Sollentuna Sjöbergshallen"
+  },
+  {
+    "id": "4138",
+    "name": "Hemköp Solna Centrum"
+  },
+  {
+    "id": "4655",
+    "name": "Hemköp Solna Frösunda Boulevard"
+  },
+  {
+    "id": "4607",
+    "name": "Hemköp Solna Huvudsta C"
+  },
+  {
+    "id": "4754",
+    "name": "Hemköp Solna Mall Of Scandinavia"
+  },
+  {
+    "id": "4647",
+    "name": "Hemköp Solna Ulriksdal"
+  },
+  {
+    "id": "4706",
+    "name": "Hemköp Stenungsund Stora Höga"
+  },
+  {
+    "id": "4150",
+    "name": "Hemköp Stockholm Birger Jarl"
+  },
+  {
+    "id": "4297",
+    "name": "Hemköp Stockholm City"
+  },
+  {
+    "id": "4196",
+    "name": "Hemköp Stockholm Djurgårdsstaden"
+  },
+  {
+    "id": "4726",
+    "name": "Hemköp Stockholm Fatburen"
+  },
+  {
+    "id": "4633",
+    "name": "Hemköp Stockholm Fruängen C"
+  },
+  {
+    "id": "4626",
+    "name": "Hemköp Stockholm Fältöversten"
+  },
+  {
+    "id": "4628",
+    "name": "Hemköp Stockholm Gullmarsplan"
+  },
+  {
+    "id": "4234",
+    "name": "Hemköp Stockholm Gärdet"
+  },
+  {
+    "id": "4785",
+    "name": "Hemköp Stockholm Jungfrugatan"
+  },
+  {
+    "id": "4641",
+    "name": "Hemköp Stockholm Matpressen"
+  },
+  {
+    "id": "4129",
+    "name": "Hemköp Stockholm Odenplan"
+  },
+  {
+    "id": "4127",
+    "name": "Hemköp Stockholm Skanstull"
+  },
+  {
+    "id": "4162",
+    "name": "Hemköp Stockholm Skarpnäck"
+  },
+  {
+    "id": "4229",
+    "name": "Hemköp Stockholm Stadshagen"
+  },
+  {
+    "id": "4190",
+    "name": "Hemköp Stockholm Torsplan"
+  },
+  {
+    "id": "4658",
+    "name": "Hemköp Stockholm Wasahallen"
+  },
+  {
+    "id": "4273",
+    "name": "Hemköp Stockholm Vällingby C"
+  },
+  {
+    "id": "4787",
+    "name": "Hemköp Stockholm Älvsjö"
+  },
+  {
+    "id": "4781",
+    "name": "Hemköp Stockholm Örby"
+  },
+  {
+    "id": "4147",
+    "name": "Hemköp Stockholm Östermalmstorg"
+  },
+  {
+    "id": "4772",
+    "name": "Hemköp Strängnäs Matarket"
+  },
+  {
+    "id": "4566",
+    "name": "Hemköp Sundbyberg Rissne"
+  },
+  {
+    "id": "4168",
+    "name": "Hemköp Sundbyberg Sturegatan"
+  },
+  {
+    "id": "4573",
+    "name": "Hemköp Svanesund C"
+  },
+  {
+    "id": "4689",
+    "name": "Hemköp Svedala"
+  },
+  {
+    "id": "4507",
+    "name": "Hemköp Särö C"
+  },
+  {
+    "id": "4672",
+    "name": "Hemköp Söderköping"
+  },
+  {
+    "id": "4640",
+    "name": "Hemköp Södertälje Ellbe Livs"
+  },
+  {
+    "id": "4695",
+    "name": "Hemköp Tierp"
+  },
+  {
+    "id": "4771",
+    "name": "Hemköp Torshälla"
+  },
+  {
+    "id": "4705",
+    "name": "Hemköp Tranås C"
+  },
+  {
+    "id": "4527",
+    "name": "Hemköp Trollhättan Hjortmossen"
+  },
+  {
+    "id": "4789",
+    "name": "Hemköp Trollhättan Kungsgatan"
+  },
+  {
+    "id": "4766",
+    "name": "Hemköp Tyresö Krusboda"
+  },
+  {
+    "id": "4175",
+    "name": "Hemköp Tyresö Trollbäcken C"
+  },
+  {
+    "id": "4656",
+    "name": "Hemköp Tyringe"
+  },
+  {
+    "id": "4642",
+    "name": "Hemköp Täby Näsbypark C"
+  },
+  {
+    "id": "4585",
+    "name": "Hemköp Upplands Väsby"
+  },
+  {
+    "id": "4103",
+    "name": "Hemköp Uppsala Rosendal"
+  },
+  {
+    "id": "4256",
+    "name": "Hemköp Uppsala Svava C"
+  },
+  {
+    "id": "4592",
+    "name": "Hemköp Uppsala Västertorg"
+  },
+  {
+    "id": "4736",
+    "name": "Hemköp Vadstena Mima Östenssons"
+  },
+  {
+    "id": "4735",
+    "name": "Hemköp Vadstena Starby Östenssons"
+  },
+  {
+    "id": "4587",
+    "name": "Hemköp Valdemarsvik"
+  },
+  {
+    "id": "4508",
+    "name": "Hemköp Veddige C"
+  },
+  {
+    "id": "4616",
+    "name": "Hemköp Vendelsö"
+  },
+  {
+    "id": "4590",
+    "name": "Hemköp Vrigstad"
+  },
+  {
+    "id": "4688",
+    "name": "Hemköp Vänersborg Sundsgatan"
+  },
+  {
+    "id": "4580",
+    "name": "Hemköp Vänersborg Torpa"
+  },
+  {
+    "id": "4794",
+    "name": "Hemköp Värnamo"
+  },
+  {
+    "id": "4627",
+    "name": "Hemköp Västerhaninge C"
+  },
+  {
+    "id": "4191",
+    "name": "Hemköp Västervik"
+  },
+  {
+    "id": "4265",
+    "name": "Hemköp Västerås C"
+  },
+  {
+    "id": "4558",
+    "name": "Hemköp Västerås Malmaberg"
+  },
+  {
+    "id": "4220",
+    "name": "Hemköp Västerås Öster Mälarstrand"
+  },
+  {
+    "id": "4555",
+    "name": "Hemköp Västra Frölunda Långedrag"
+  },
+  {
+    "id": "4353",
+    "name": "Hemköp Västra Frölunda Torg"
+  },
+  {
+    "id": "4677",
+    "name": "Hemköp Växjö Högstorp"
+  },
+  {
+    "id": "4644",
+    "name": "Hemköp Örebro Lucullus"
+  },
+  {
+    "id": "4204",
+    "name": "Hemköp Örebro Svampen"
+  },
+  {
+    "id": "4720",
+    "name": "Hemköp Östervåla Torget"
+  }
+]

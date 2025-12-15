@@ -1,7 +1,8 @@
 import pLimit from "p-limit";
 import { categorizeItems } from "./gemini";
-import { scrapeIca } from "./webScraping";
-import { allIcaStores } from "./constData";
+import { scrapeStore } from "./scraping/scrapingEntry";
+import { allIcaStores, allWillysStores } from "./constData";
+import { allCoopStores } from "./constData";
 import { loadStore } from "./firestoreModel";
 
 const limit = pLimit(5);
@@ -27,7 +28,7 @@ export const model = {
 
     storesData: [],
 
-    allStores: allIcaStores,
+    allStores: [...allIcaStores, ...allWillysStores],
 
     searchFocus: false,
 
@@ -55,7 +56,7 @@ export const model = {
                 newArr = [...newArr, category];
             newArr = newArr.filter(c => c !== "Visa Alla");
         }
-
+        if(newArr.length === 0) newArr = ["Visa Alla"];
         this.filterCategories = newArr;
     },
 
@@ -72,7 +73,7 @@ export const model = {
         return limit(async () => {
             console.log("scraping: " + store.name);
 
-            const articles = await scrapeIca(store.url); 
+            const articles = await scrapeStore(store); 
             console.log("scraped!");   
             const processed = await categorizeItems(articles);
             console.log("processed!");
