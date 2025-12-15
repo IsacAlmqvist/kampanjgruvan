@@ -56,7 +56,7 @@ export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategorie
                 <span className="text-sm text-center font-medium mb-1 whitespace-pre-line min-h-[2.5em]">
                   {formattedTitle}
                 </span>
-                <span className="text-xs text-gray-500 mb-3 mt-auto">{article.price}</span>
+                <span className="text-xs text-gray-500 mb-3 mt-auto bg-orange-100 text-orange-800 px-2 py-1 rounded">{article.price}</span>
 
               {/* if item already in cart, let user increment or decrement amount */}
               {!cartItem ? (
