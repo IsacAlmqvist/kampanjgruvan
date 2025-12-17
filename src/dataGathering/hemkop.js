@@ -14,6 +14,7 @@ export async function getHemkopOffers(storeId = "4520") {
     });
 
     const data = await res.json();
+    console.log("hemköp: ",data.results[0])
     return data.results;
 
   } catch (err) {

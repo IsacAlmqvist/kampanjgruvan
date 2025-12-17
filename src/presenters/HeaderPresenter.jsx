@@ -11,7 +11,7 @@ export const Header = observer(function HeaderRender(props) {
             <HeaderView
                 setCurrentSearch={(searchInput) => {props.model.setCurrentSearch(searchInput)}}
                 searchInput={props.model.searchInput}
-                setSearchFocus={() => props.model.setSearchFocus(true)}
+                setSearchFocus={(newFocus) => props.model.setSearchFocus(newFocus)}
                 user={props.model.user}
                 cartItems={props.model.cartItems}
                 city={props.model.userPosition.city}

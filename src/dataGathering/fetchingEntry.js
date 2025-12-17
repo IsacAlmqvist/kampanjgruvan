@@ -38,6 +38,8 @@ function normalizeIca(arr) {
           category: o.category?.expandedArticleGroupName,
           title: o.details.name,
         }),
+        brand: o.details.brand,
+        amount: o.details.packageInformation,
         price: o.parsedMechanics?.value2
           ? `${o.parsedMechanics.value1} ${o.parsedMechanics.value2} kr`
           : null,
@@ -63,6 +65,8 @@ function normalizeCoop(arr) {
           category: o.categoryTeam?.name,
           title: o.content.title
         }),
+        brand: o.content.brand,
+        amount: o.content.amountInformation,
         price: o.priceInformation?.discountValue
           ? `${o.priceInformation.discountValue}:-`
           : null,
@@ -89,6 +93,8 @@ function normalizeWillys(arr) {
           category: "",
           title: promo?.name || o.name || ""
         }),
+        brand: o.manufacturer,
+        amount: o.displayVolume,
         price: promo?.rewardLabel || o.price || null,
         comparePrice: promo?.comparePrice || null,
         image: o.image?.url || null,
@@ -114,6 +120,8 @@ function normalizeHemkop(arr) {
           category: o.googleAnalyticsCategory?.split("|")[0],
           title: promo?.name || o.name || ""
         }),
+        brand: o.manufacturer,
+        amount: o.displayVolume,
         price: promo?.rewardLabel || null,
         comparePrice: promo?.comparePrice || null,
         image: o.image?.url || null,

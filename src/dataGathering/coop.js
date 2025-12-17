@@ -21,6 +21,7 @@ export async function getCoopOffers(offerId = "196183") {
     });
 
     const data = await res.json();
+    console.log("coop: ",data[0])
 
     return data;
   } catch (err) {

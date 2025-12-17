@@ -3,7 +3,7 @@ import { Utils } from "../utilities";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { useRef } from "react";
 
-export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategories, cartItems, onUpdateCartAmount, filterSearch }) {
+export function ScrollAreaHorizontal({storeData, onAddCartItem, filterCategories, cartItems, onUpdateCartAmount, filterSearch }) {
 
   const parentRef = useRef(null);
   const articles = storeData.articles ?? [];
@@ -20,10 +20,12 @@ export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategorie
     );
   });
 
+  const CARD_WIDTH = 320;
+
   const virtualizer = useVirtualizer({
     count: filteredArticles.length,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 200,
+    estimateSize: () => CARD_WIDTH,
     horizontal: true,
     overscan: 3,
   });
@@ -36,12 +38,17 @@ export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategorie
       <div
         style={{
           width: virtualizer.getTotalSize(),
-          height: 275,
+          height: 170,
           position: "relative",
         }}
       >
         {virtualizer.getVirtualItems().map(v => {
           const article = filteredArticles[v.index];
+          const cartItem = cartItems.find(
+            item => item.storeName === storeData.name && item.article.id === article.id
+          )
+          const cartAmount = cartItem?.amount || 0;
+          const cartId = cartItem?.id;
 
           return (
             <div
@@ -51,10 +58,18 @@ export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategorie
                 left: 0,
                 top: 0,
                 transform: `translateX(${v.start}px)`,
-                width: v.size,
+                width: CARD_WIDTH,
+                paddingRight: 16
               }}
             >
-              {renderArticlesCB(article)}
+              <ArticleCard 
+                article={article}
+                storeName={storeData.name}
+                onAddCartItem={onAddCartItem}
+                cartAmount={cartAmount}
+                cartId={cartId}
+                onUpdateCartAmount={onUpdateCartAmount}
+              />
             </div>
           );
         })}
@@ -65,67 +80,102 @@ export function ScrollAreaHorizontal({ storeData, onAddCartItem, filterCategorie
       </Scrollbar>
     </ScrollArea>
   );
+}
 
-  function renderArticlesCB(article) {
+ export function ArticleCard({article, cartId, storeName, cartAmount, isCart = false, onAddCartItem, onUpdateCartAmount}) {
+  const formattedTitle = Utils.formatLongText(article.title, 55);
 
-    // Get formatted text for title and alt
-    const formattedTitle = Utils.formatLongText(article.title, 40);
-    const formattedAlt = Utils.formatLongText(article.title, 40);
+  const brand = article.brand ? article.brand + ". " : " ";
+  
+  return (
+    <div
+      key={cartId || article.id}
+      className={`
+        relative h-[168px] flex-shrink-0
+        rounded-xl border border-gray-300 bg-white
+        shadow-md hover:shadow-lg hover:border-green-400
+        transition-all overflow-hidden ${isCart && "w-[290px]"}
+      `}
+    >
 
-    const cartItem = cartItems.find(
-      item => item.storeName === storeData.name && item.article.id === article.id //same article from same store
-    );
+      {/* Storename for cart items */}
+      {isCart &&
+        <div className={`absolute max-w-[50%] rounded-md top-0 left-1 p-1 text-[14px] font-bold 
+            leading-tight line-clamp-2 z-10 bg-white/70 
+            ${Utils.getStoreBrandStyle(storeName)}`}>
+          {storeName}
+        </div>
+      }
 
-    return (
-      <div
-        key={article.id}
-        className="flex-shrink-0 w-48 rounded-lg border border-gray-400 
-                p-4 flex flex-col items-center bg-white shadow-md max-h-[280px] overflow-hidden"
-      >
-        <div className="h-32 flex items-center justify-center">
+      {/* Image */}
+      <div className="absolute inset-0 flex items-center pr-7 pb-4 justify-center">
+        {article.image && (
           <img
             src={article.image}
-            alt={formattedAlt}
+            alt={formattedTitle}
             loading="lazy"
             decoding="async"
-            className="max-h-32 max-w-[90%] object-cover m-auto rounded-md"
+            className="
+              max-h-[120px] max-w-[85%]
+              object-contain
+            "
           />
-        </div>
-        <div className="flex flex-col items-center flex-grow w-full">
-          <span className="text-sm text-center font-medium mb-1 whitespace-pre-line min-h-[2.5em]">
+        )}
+      </div>
+      
+      {/* Price */}
+      <div className="absolute right-4 top-[8px] text-[25px] font-bold text-red-600 leading-none bg-white/70 rounded pl-1 pb-1">
+        {article.price.replace(":-", " kr").replace("/st", "").replace(",00", "kr")}
+      </div>
+
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-white/40 via-white/10 to-transparent" />
+
+      <div className="absolute bottom-1 left-3 bg-white/70 p-[2px] rounded z-10 max-w-[70%]">
+        {/* Title */}
+          <span className="text-md font-semibold leading-tight line-clamp-2">
             {formattedTitle}
           </span>
-          <span className="text-xs text-gray-500 mb-3 mt-auto bg-orange-100 text-orange-800 px-2 py-1 rounded">{article.price}</span>
+        {/* Brand */}
+        <div className="text-[11px] text-gray-500 tracking-wide">
+          {brand} {article.amount}
+        </div>
+      </div>
 
-          {/* if item already in cart, let user increment or decrement amount */}
-          {!cartItem ? (
+      {/* price/kg NOT DONE*/}
+      {article.comparePrice && (
+        <div className="absolute top-9 right-3 text-[10px] max-w-[30%] text-gray-500">
+          {article.comparePrice}
+        </div>
+      )}
+
+      {/* Cart controls – kept but visually minimal */}
+      <div className="absolute bottom-2 right-2 z-20">
+        {!cartAmount ? (
+          <button
+            className="w-8 h-8 text-[16px] pb-[3px] rounded-full border border-gray-200 text-gray-600 font-bold
+                       hover:bg-gray-200 active:scale-95"
+            onClick={() => onAddCartItem(article, storeName)}
+          >
+            +
+          </button>
+        ) : (
+          <div className="flex items-center bg-white rounded-full shadow-sm">
             <button
-              className="px-3 py-1.5 text-white bg-green-300 rounded active:scale-97 hover:bg-green-200 
-                      text-sm font-medium min-w-[60px]"
-              onClick={() => onAddCartItem(article, storeData.name)}
+              className="text-sm hover:bg-gray-200 active:scale-95 px-2 py-1 rounded-full"
+              onClick={() => onUpdateCartAmount(cartId, -1)}
+            >
+              −
+            </button>
+            <span className="text-sm px-1">{cartAmount}</span>
+            <button
+              className="text-sm hover:bg-gray-200 active:scale-95 px-2 py-1 rounded-full"
+              onClick={() => onUpdateCartAmount(cartId, 1)}
             >
               +
             </button>
-          ) : (
-            <div className="flex items-center gap-2">
-              <button
-                className="px-2 py-1 bg-gray-200 rounded"
-                onClick={() => onUpdateCartAmount(cartItem.id, -1)}
-              >
-                -
-              </button>
-              <span className="px-2">{cartItem.amount}</span>
-              <button
-                className="px-2 py-1 bg-green-200 rounded"
-                onClick={() => onUpdateCartAmount(cartItem.id, 1)}
-              >
-                +
-              </button>
-            </div>
-          )}
-
-        </div>
+          </div>
+        )}
       </div>
-    )
-  }
+    </div>
+  );
 }

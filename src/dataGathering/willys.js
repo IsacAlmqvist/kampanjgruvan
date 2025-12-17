@@ -15,6 +15,7 @@ export async function getWillysOffers() {
         });
 
         const data = await res.json();
+        console.log("W: ", data.results[0]);
         return data.results;
     } catch (err) {
         console.error("Failed to fetch Willys offers:", err);

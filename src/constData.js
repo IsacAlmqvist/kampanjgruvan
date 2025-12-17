@@ -8,53 +8,64 @@ export const categories = [
   "Fryst",
   "Godis & Snacks",
   "Hushåll & Hem",
-  "Övrigt"
 ];
 
 export const category_keywords = {
   "Frukt & Grönt": [
     "frukt", "grönt", "grönsaker", "äpple", "clementin", "banan",
-    "potatis", "lök", "sallad", "tomat", "broccoli", "blommor"
+    "potatis", "lök", "sallad", "tomat", "broccoli", "blomkål",
+    "blommor", "morot", "gurka", "paprika", "ruccola", "rödkål",
+    "grönkål", "brussels", "brysselkål", "citron", "lime", "apelsin"
   ],
 
   "Mejeri": [
     "mejeri", "mjölk", "grädde", "yoghurt", "fil", "smör",
-    "ost", "kvarg", "crème", "bregott"
+    "ost", "kvarg", "crème", "bregott", "cheddar", "gouda",
+    "mascarpone", "majonnäs", "cream cheese", "laktosfri"
   ],
 
   "Kött & Fisk": [
-    "kött", "färs", "kyckling", "nöt", "fläsk",
-    "fisk", "lax", "räkor", "korv", "chark", "skinka"
+    "kött", "färs", "sill ", "lamm", "karr", "revben", "ribs", "kyckling", "nöt", "fläsk",
+    "fisk", "lax", "räkor", "korv", "chark", "skinka", "kalkon", 
+    "wienerkorv", "medwurst", "bacon", "köttpålägg", "cognac"
   ],
 
   "Bröd & Bageri": [
-    "bröd", "limpa", "bageri", "kex", "knäcke", "fralla"
+    "bröd", "limpa", "bageri", "kex", "knäcke", "fralla",
+    "tortilla", "baguette", "bullar", "frallor", "tårtbotten"
   ],
 
   "Dryck": [
     "dryck", "läsk", "juice", "saft", "vin",
-    "cider", "kaffe", "energydryck"
+    "cider", "kaffe", "te", "tepaket", "energydryck",
+    "öl", "alkoholfri", "glögg", "julmust", "alkoholfri öl"
   ],
 
   "Skafferi": [
-    "skafferi", "kolonial", "pasta", "ris", "mjöl",
-    "olja", "krydda", "sås", "konserv", "bönor"
+    "skafferi", "kolonial", "pasta", "mjöl",
+    "olja", "krydda", "sås", "konserv", "bönor",
+    "buljong", "majonnäs", "pesto", "senap", "ketchup",
+    "socker", "honung", "vinäger", "tahini", "tortillachips"
   ],
 
   "Fryst": [
-    "fryst", "djupfryst", "glass", "pizza", "frys"
+    "fryst", "djupfryst", "glass", "pizza", "frys",
+    "vegetariskt fryst", "vegomåltid", "färdigmat"
   ],
 
   "Godis & Snacks": [
     "godis", "snacks", "chips", "choklad", "praliner",
-    "konfektyr", "kex", "popcorn"
+    "konfektyr", "kex", "popcorn", "salta pinnar", "smågodis",
+    "after eight", "skumtomtar", "lindorkulor", "smash"
   ],
 
   "Hushåll & Hem": [
     "hushåll", "hem", "städ", "disk", "toalettpapper",
-    "tvätt", "ljus", "servetter"
+    "tvätt", "ljus", "servetter", "rengöring", "sköljmedel",
+    "maskinrengöring", "spolglans", "trasor", "moppar"
   ]
 };
+
 
 export const allIcaStores = [
   {

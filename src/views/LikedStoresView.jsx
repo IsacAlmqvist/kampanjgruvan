@@ -14,13 +14,13 @@ export const LikedStoresView = observer(function LikedStoresRender(props) {
             <div
                 key={store.name}
                 className="bg-gray-50 rounded-full border border-gray-300 
-                    flex items-center justify-between mx-2 overflow-hidden"
+                    flex items-center justify-between mx-1 overflow-hidden"
             >
-                <div className="pl-3 pr-2">             
+                <div className="pl-3 py-1 pr-2 text-sm font-semibold">             
                     {store.name}
                 </div>
                 <button
-                    className="px-3 py-1 bg-gray-50 hover:bg-gray-200 rounded-full
+                    className="px-3 text-sm bg-gray-50 hover:bg-gray-200 rounded-full
                         flex items-center justify-between"
                     onClick={() => props.removeSelected(store)}
                 >

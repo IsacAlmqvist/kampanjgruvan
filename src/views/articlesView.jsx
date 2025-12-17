@@ -13,8 +13,6 @@ export const ArticlesView = observer(function SidebarRender(props) {
 
     function renderStoresCB(store) {
 
-        const brand = Utils.getStoreBrandStyle(store.name)
-
         return (
             <div className="w-[95%] mx-auto" key={store.name}>
                 <div className="mb-1 mt-4">
@@ -23,7 +21,7 @@ export const ArticlesView = observer(function SidebarRender(props) {
                     >
                         {store.name}
                     </h2>
-                    <div className={`h-[3px] w-24 mt-1 rounded ${brand.accent}`} />
+                    <div className={`h-[3px] w-24 mt-1 rounded ${Utils.getStoreBrandStyle}`} />
                 </div>
                 {chooseSuspenseCB(store)}
             </div>
@@ -75,16 +73,17 @@ export const ArticlesView = observer(function SidebarRender(props) {
 
     return (
         <>
-            {props.selected.map(renderStoresCB)}
+            <div className="mb-10">
+                {props.selected.map(renderStoresCB)}
+            </div>
             {props.selected.length < 5 && props.closest && 
-                <div className="flex items-center gap-3 px-4 py-2">
-                    <span className="text-2xl">📍</span>
+                <div className="flex items-center w-[96%] mb-3 gap-3 mx-auto">
 
-                    <h3 className="text-xl md:text-3xl font-bold tracking-wide text-gray-800">
+                    <h3 className="text-xl md:text-2xl font-bold tracking-wide text-gray-800">
                         Erbjudanden nära dig
                     </h3>
 
-                    <div className="align-center flex-grow h-[2px] bg-gradient-to-r from-green-500 to-transparent mr-[20%]" />
+                    <div className="align-center mt-1 flex-grow h-[2px] bg-gradient-to-r from-green-500 to-transparent mr-[20%]" />
                 </div>
             }
             {props.closest
