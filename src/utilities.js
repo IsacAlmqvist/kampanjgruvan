@@ -70,42 +70,22 @@ export const Utils = {
         const name = storeName.toLowerCase();
 
         if (name.includes("ica")) {
-            return {
-            text: "text-red-600",
-            accent: "bg-red-600",
-            font: "font-bold tracking-wide",
-            };
+            return "text-red-600"
         }
 
         if (name.includes("coop")) {
-            return {
-            text: "text-green-700",
-            accent: "bg-green-700",
-            font: "font-bold tracking-wide",
-            };
+            return "text-green-700"
         }
 
         if (name.includes("willys")) {
-            return {
-            text: "text-red-400",
-            accent: "bg-black",
-            font: "font-extrabold uppercase tracking-wider",
-            };
+            return "text-black"
         }
 
         if (name.includes("hemköp") || name.includes("hemkop")) {
-            return {
-            text: "text-red-600",
-            accent: "bg-red-600",
-            font: "font-bold",
-            };
+            return "text-red-600"
         }
 
-        return {
-            text: "text-gray-800",
-            accent: "bg-gray-400",
-            font: "font-semibold",
-        };
+        return "text-gray-800"
     }
 
 }

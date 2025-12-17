@@ -72,7 +72,7 @@ export const FilterView = observer(function FilterRender(props) {
                     -mt-[1px]
                 `}
             >
-                <span className="font-semibold text-lg text-gray-700">Filter</span>
+                <span className="font-semibold text-xl text-gray-700">Filter</span>
                 <svg xmlns="http://www.w3.org/2000/svg"
                     className={`w-5 h-5
                         ${props.filterFocus ? "rotate-180" : ""}`}
