@@ -1,15 +1,19 @@
 import pLimit from "p-limit";
 import { categorizeItems } from "./gemini";
-import { scrapeStore } from "./scraping/scrapingEntry";
-import { allIcaStores, allWillysStores } from "./constData";
-import { allCoopStores } from "./constData";
+import { fetchOffers } from "./dataGathering/fetchingEntry";
+import { allHemkopStores, allIcaStores, allWillysStores, allCoopStores } from "./constData";
 import { loadStore } from "./firestoreModel";
+import { Utils } from "./utilities";
 
 const limit = pLimit(5);
 const running = new Map();
 
 export const model = {
+
+    userPosition: {x: 18.0617,y: 59.3324, city: "Stockholm"},
+
     user: null,
+    hasCheckedAuth: false,
 
     setUser(u) {
         this.user = u;
@@ -26,9 +30,11 @@ export const model = {
 
     selectedStores: [],
 
+    closestStores: [],
+
     storesData: [],
 
-    allStores: [...allIcaStores, ...allWillysStores],
+    allStores: [...allIcaStores, ...allWillysStores, ...allCoopStores, ...allHemkopStores],
 
     searchFocus: false,
 
@@ -93,12 +99,10 @@ export const model = {
     async safeScrape(store) {
 
         if(this.storesData.some((s) => s.id === store.id)) {
-            console.log("store: " + storeName + " already scraped!")
             return this.storesData.find(s => s.id === store.id);
         };
 
         if (running.has(store)) {
-            console.log("scrape already running:", store.name);
             return running.get(store);
         };
 
@@ -129,24 +133,96 @@ export const model = {
         }
     },
 
-    async addStore(store) {
+    // new fetching function
+    async fetchData(store) {
+        try {
+            this.selectedStores = this.selectedStores.map(s =>
+                s.name === store.name ? { ...s, status: "loading" } : s
+            );
 
-        this.selectedStores = [{ ...store, status:"loading" }, ...this.selectedStores];
+            // fetching default closest stores
+            this.closestStores = this.closestStores.map(s =>
+                s.name === store.name ? { ...s, status: "loading" } : s
+            );
 
-        await loadStore(this, store);
+            const articles = await fetchOffers(store); // unified API fetch
+            if(articles === null || articles == []) return null;
 
-        this.selectedStores = this.selectedStores.map(s =>
-            s.id === store.id ? { ...s, status: "ready" } : s
-        );
+            const storeData = {
+                id: store.id,
+                name: store.name,
+                articles: articles
+            };
+
+            // Update state
+            this.storesData = [storeData, ...this.storesData];
+            this.selectedStores = this.selectedStores.map(s =>
+                s.name === store.name ? { ...s, status: "ready" } : s
+            );
+            this.closestStores = this.closestStores.map(s =>
+                s.name === store.name ? { ...s, status: "ready" } : s
+            );
+
+            return storeData;
+
+        } catch (err) {
+            console.error("Failed to fetch store data:", store.name, err);
+            this.selectedStores = this.selectedStores.filter(s => s.name !== store.name);
+            return null;
+        }
     },
+
+    
+    async fetchClosestStores() {
+
+        console.log("fetching closest!!");
+    
+        const numDefaults = 4;
+    
+        const sorted = Utils.sortStoresByDistance(this.allStores, this.userPosition);
+    
+        const unselected = sorted.filter(
+            s => !this.selectedStores.some(sel => sel.id === s.id)
+        );
+    
+        const defaultsToFetch = unselected.slice(0, numDefaults);
+        this.closestStores = defaultsToFetch;
+    
+        await Promise.all(
+            defaultsToFetch.map(async store => {
+                if (!this.storesData.some(s => s.id === store.id)) {
+                    const data = await this.fetchData(store);
+                    return data;
+                }
+            })
+        );
+        
+    },
+
+    async addStore(store) {
+        this.selectedStores = [{ ...store, status: "loading" }, ...this.selectedStores];
+        return this.fetchData(store);
+    },
+
+    // async addStore(store) {
+
+    //     this.selectedStores = [{ ...store, status:"loading" }, ...this.selectedStores];
+
+    //     await loadStore(this, store);
+
+    //     this.selectedStores = this.selectedStores.map(s =>
+    //         s.id === store.id ? { ...s, status: "ready" } : s
+    //     );
+    // },
 
     setCurrentSearch(searchInput) {
         this.searchInput = searchInput;
     },
 
     removeStore(store) {
-        this.selectedStores = this.selectedStores.filter(s => s.id !== store.id);
-        this.storesData = this.storesData.filter(s => s.id !== store.id);
+        this.selectedStores = this.selectedStores.filter(s => s.name !== store.name);
+        if(!this.closestStores.some(s => s.name === store.name)) 
+            this.storesData = this.storesData.filter(s => s.name !== store.name);
     },
 
     addCartItem(article, storeName) {
@@ -179,4 +255,20 @@ export const model = {
             return acc;
         }, []);
     },
+
+    async handleGetLocation() {
+        if (!navigator.geolocation) {
+            alert("Platstjänster stöds inte i din webbläsare");
+            return;
+        }
+        console.log(this);
+
+        try {
+            const coords = await Utils.getUserCoords(this.userPosition);
+            this.userPosition = coords; // { x: longitude, y: latitude, city: "Stockholm" }
+        } catch (err) {
+            console.error("Could not get position:", err);
+            alert("Tillåt platstjänster");
+        }
+    }
 }

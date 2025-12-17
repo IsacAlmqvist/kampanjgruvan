@@ -1,9 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { useNavigate } from 'react-router-dom';
 import { ScrollAreaHorizontal } from "../components/horizontalScroll";
-import { scrapeStore } from "../scraping/scrapingEntry";
-import { scrapeCoop } from "../scraping/coop";
-
+import { Utils } from "../utilities";
 
 export const ArticlesView = observer(function SidebarRender(props) { 
     
@@ -15,9 +13,18 @@ export const ArticlesView = observer(function SidebarRender(props) {
 
     function renderStoresCB(store) {
 
+        const brand = Utils.getStoreBrandStyle(store.name)
+
         return (
-            <div className="w-[95%] mx-auto" key={store.id}>
-                <h2 className="text-lg font-semibold p-1 text-gray-800">{store.name}</h2>
+            <div className="w-[95%] mx-auto" key={store.name}>
+                <div className="mb-1 mt-4">
+                    <h2
+                        className={`text-lg md:text-xl font-bold text-gray-800`}
+                    >
+                        {store.name}
+                    </h2>
+                    <div className={`h-[3px] w-24 mt-1 rounded ${brand.accent}`} />
+                </div>
                 {chooseSuspenseCB(store)}
             </div>
         );
@@ -25,21 +32,22 @@ export const ArticlesView = observer(function SidebarRender(props) {
 
     const chooseSuspenseCB = (store) => {
         if(store.status === "loading") return LoadingDotsCB();
-        if(store.status === "scraping") return ScrapingSuspenseCB();
 
-        const storeData = props.data.find(s => s.id === store.id);
-        if (!storeData) return <div key={store.id} className="p-3 text-lg">Kunde inte ladda data</div>;
+        const storeData = props.data.find(s => s.name === store.name);
+        if(store.status === "ready" && storeData)
+            return (
+                <ScrollAreaHorizontal 
+                    storeData = {storeData} 
+                    onAddCartItem={(item, store) => props.handleAddItemToCart(item, store)}
+                    onUpdateCartAmount={(id, increment) => props.handleUpdateCartAmount(id, increment)}
+                    filterCategories={props.filterCategories}
+                    filterSearch={props.filterSearch}   
+                    cartItems={props.cartItems} 
+                />
+            )
 
-        return (
-            <ScrollAreaHorizontal 
-                storeData = {storeData} 
-                onAddCartItem={(item, store) => props.handleAddItemToCart(item, store)}
-                onUpdateCartAmount={(id, increment) => props.handleUpdateCartAmount(id, increment)}
-                filterCategories={props.filterCategories}
-                filterSearch={props.filterSearch}   
-                cartItems={props.cartItems} 
-            />
-        )
+        return <div key={store.id} className="p-3 text-lg">Kunde inte ladda data</div>;
+
     }
 
     const LoadingDotsCB = () => (
@@ -68,6 +76,21 @@ export const ArticlesView = observer(function SidebarRender(props) {
     return (
         <>
             {props.selected.map(renderStoresCB)}
+            {props.selected.length < 5 && props.closest && 
+                <div className="flex items-center gap-3 px-4 py-2">
+                    <span className="text-2xl">📍</span>
+
+                    <h3 className="text-xl md:text-3xl font-bold tracking-wide text-gray-800">
+                        Erbjudanden nära dig
+                    </h3>
+
+                    <div className="align-center flex-grow h-[2px] bg-gradient-to-r from-green-500 to-transparent mr-[20%]" />
+                </div>
+            }
+            {props.closest
+                .filter(store => !props.selected.some(s => s.name === store.name))
+                .slice(0, 5 - props.selected.length)
+                .map(renderStoresCB)}
         </>
     );
 

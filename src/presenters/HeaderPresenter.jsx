@@ -14,6 +14,8 @@ export const Header = observer(function HeaderRender(props) {
                 setSearchFocus={() => props.model.setSearchFocus(true)}
                 user={props.model.user}
                 cartItems={props.model.cartItems}
+                city={props.model.userPosition.city}
+                handleGetLocation={() => props.model.handleGetLocation()}
             />
             <StoreSearchResultsView 
                 addStore={(store) => props.model.addStore(store)}
