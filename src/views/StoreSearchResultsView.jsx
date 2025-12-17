@@ -64,7 +64,7 @@ export const StoreSearchResultsView = observer(function StoreSearchResultsRender
 
         return (
             <div
-                key={store.id} 
+                key={store.name} 
                 className="flex flex-row justify-between bg-white rounded-2xl shadow-md hover:shadow-xl 
                     hover:-translate-y-1 transition-all duration-300 overflow-hidden border border-gray-100"
                 onClick={() => {

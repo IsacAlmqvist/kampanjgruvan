@@ -13,7 +13,8 @@ const createRouter = (model) => createHashRouter([
     path: "/",
     loader: () => {
         // Check if user is explicitly false/null, not just falsy
-        if (!model.user && model.user !== undefined) {
+        if (!model.hasCheckedAuth && !model.user && model.user !== undefined) {
+            model.hasCheckedAuth = true;
             return redirect("/login");
         }
         return redirect("/articles");

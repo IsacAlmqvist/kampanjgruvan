@@ -11,7 +11,6 @@ const provider = new GoogleAuthProvider();
 
 export async function loginWithGoogle() {
   try {
-    console.log("wtf");
     const result = await signInWithPopup(auth, provider);
     return result.user;
   } catch (err) {
@@ -39,6 +38,8 @@ export async function connectToPersistence(model, reactionFunction, uid){
 
     model.ready = false;
 
+    const defaultPos = {x: 18.0617,y: 59.3324, city: "Stockholm"}
+
     const userDoc = uid ? doc(db, "userData", uid) : null;
 
     if (uid) {
@@ -46,35 +47,30 @@ export async function connectToPersistence(model, reactionFunction, uid){
             const userSnap = await getDoc(userDoc);
             model.selectedStores = userSnap.data()?.selectedStores || [];
             model.cartItems = userSnap.data()?.cartItems || [];
+            model.userPosition = userSnap.data()?.userPosition || defaultPos;
         } catch (err) {
             console.log("Error loading user data:", err);
         }
     } else {
         model.selectedStores = [];
-        console.log("not logged in!");
+        model.userPosition = defaultPos;
     }
 
     if (model.selectedStores.length > 0) {
         await Promise.all(
-            model.selectedStores.map(store => {
-                loadStore(model, store);
-                model.selectedStores = model.selectedStores.map(s =>
-                    s.id === store.id ? { ...s, status: "ready" } : s
-                );
-            })
+            model.selectedStores.map(store =>
+                model.fetchData(store)
+            )
         );
-    } else {
-        // TODO: load 2-3 first docs in public data
     }
 
     model.ready = true;
 
     reactionFunction(
         function watchtThesePropsACB(){ return [
-            model.storesData,
             model.selectedStores,
             model.cartItems,
-            uid
+            model.userPosition,
         ]},
         function saveModelSideEffectACB(){
             if(!model.ready) return;
@@ -82,7 +78,8 @@ export async function connectToPersistence(model, reactionFunction, uid){
             if (uid) {
                 setDoc(userDoc, {
                     selectedStores: model.selectedStores,
-                    cartItems: model.cartItems
+                    cartItems: model.cartItems,
+                    userPosition: model.userPosition
                 }, { merge: true });
             }
         }

@@ -12,7 +12,7 @@ export const LikedStoresView = observer(function LikedStoresRender(props) {
     function renderSelectedCB(store) {
         return (
             <div
-                key={store.id}
+                key={store.name}
                 className="bg-gray-50 rounded-full border border-gray-300 
                     flex items-center justify-between mx-2 overflow-hidden"
             >
