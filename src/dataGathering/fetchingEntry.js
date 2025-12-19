@@ -37,7 +37,7 @@ export async function getOffers(store, storeId) {
     storeId
   });
 
-  const res = await fetch(`${API_BASE}/api/offers?${params}`);
+  const res = await fetch(`/api/offers?${params}`);
 
   if (!res.ok) {
     throw new Error(`Failed to fetch ${store} offers`);
