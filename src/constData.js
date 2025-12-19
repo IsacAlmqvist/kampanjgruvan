@@ -66,7 +66,6 @@ export const category_keywords = {
   ]
 };
 
-
 export const allIcaStores = [
   {
     "id": "2121",

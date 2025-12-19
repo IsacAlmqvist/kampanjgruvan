@@ -1,8 +1,8 @@
 import { category_keywords } from "../constData";
-import { getHemkopOffers } from "./hemkop";
-import { scrapeIca } from "./ica";
-import { getIcaOffers } from "./icaNew";
-import { getWillysOffers } from "./willys";
+// import { getHemkopOffers } from "./hemkop";
+// import { scrapeIca } from "./ica";
+// import { getIcaOffers } from "./icaNew";
+// import { getWillysOffers } from "./willys";
 // import { scrapeCoop } from "./coop";
 
 const API_BASE =
