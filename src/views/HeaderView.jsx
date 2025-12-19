@@ -106,7 +106,7 @@ export const HeaderView = observer(function HeaderRender(props) {
                 )}
                 {!isCartPage && (
                     <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
-                        {props.cartItems.length}
+                        {props.numberOfItemsInCart}
                     </span>
                 )}
             </div>

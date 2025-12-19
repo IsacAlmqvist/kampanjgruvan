@@ -9,6 +9,7 @@ export const Header = observer(function HeaderRender(props) {
     return (
         <>
             <HeaderView
+                numberOfItemsInCart={props.model.numberOfItemsInCart}
                 setCurrentSearch={(searchInput) => {props.model.setCurrentSearch(searchInput)}}
                 searchInput={props.model.searchInput}
                 setSearchFocus={(newFocus) => props.model.setSearchFocus(newFocus)}

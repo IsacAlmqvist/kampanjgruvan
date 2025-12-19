@@ -10,6 +10,8 @@ const running = new Map();
 
 export const model = {
 
+    numberOfItemsInCart: 0,
+
     userPosition: {x: 18.0617,y: 59.3324, city: "Stockholm"},
 
     user: null,
@@ -227,6 +229,8 @@ export const model = {
 
     addCartItem(article, storeName) {
 
+        this.numberOfItemsInCart++;
+
         const maxId = this.cartItems.length > 0 
             ? Math.max(...this.cartItems.map(i => i.id)) 
             : 0;
@@ -243,6 +247,7 @@ export const model = {
 
     // +1 or -1, removes if = 0
     updateCartAmount(itemId, increment) {
+        this.numberOfItemsInCart += increment;
         this.cartItems = this.cartItems.reduce((acc, item) => {
             if (item.id === itemId) {
                 const newAmount = item.amount + increment;

@@ -13,6 +13,7 @@ export const ArticlesView = observer(function SidebarRender(props) {
 
     function renderStoresCB(store) {
 
+
         return (
             <div className="w-[95%] mx-auto" key={store.name}>
                 <div className="mb-1 mt-4">
@@ -28,25 +29,39 @@ export const ArticlesView = observer(function SidebarRender(props) {
         );
     }
 
-    const chooseSuspenseCB = (store) => {
-        if(store.status === "loading") return LoadingDotsCB();
+const chooseSuspenseCB = (store) => {
+    if(store.status === "loading") return LoadingDotsCB();
 
-        const storeData = props.data.find(s => s.name === store.name);
-        if(store.status === "ready" && storeData)
+    const storeData = props.data.find(s => s.name === store.name);
+    if(store.status === "ready" && storeData) {
+        // Check if store has any filtered articles before rendering
+        const storeArticles = storeData.articles ?? [];
+        const hasFilteredArticles = storeArticles.some(article => {
+            const searchQuery = props.filterSearch?.toLowerCase() || "";
+            const searchHit = article.title.toLowerCase().includes(searchQuery);
             return (
-                <ScrollAreaHorizontal 
-                    storeData = {storeData} 
-                    onAddCartItem={(item, store) => props.handleAddItemToCart(item, store)}
-                    onUpdateCartAmount={(id, increment) => props.handleUpdateCartAmount(id, increment)}
-                    filterCategories={props.filterCategories}
-                    filterSearch={props.filterSearch}   
-                    cartItems={props.cartItems} 
-                />
-            )
-
-        return <div key={store.id} className="p-3 text-lg">Kunde inte ladda data</div>;
-
+                (props.filterCategories[0] === "Visa Alla" ||
+                props.filterCategories.includes(article.category)) &&
+                searchHit
+            );
+        });
+        
+        if (!hasFilteredArticles) return null;
+        
+        return (
+            <ScrollAreaHorizontal 
+                storeData = {storeData} 
+                onAddCartItem={(item, store) => props.handleAddItemToCart(item, store)}
+                onUpdateCartAmount={(id, increment) => props.handleUpdateCartAmount(id, increment)}
+                filterCategories={props.filterCategories}
+                filterSearch={props.filterSearch}   
+                cartItems={props.cartItems} 
+            />
+        )
     }
+
+    return <div key={store.id} className="p-3 text-lg">Kunde inte ladda data</div>;
+}
 
     const LoadingDotsCB = () => (
         <div className="flex items-center justify-center py-6">

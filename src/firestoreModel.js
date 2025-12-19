@@ -48,12 +48,14 @@ export async function connectToPersistence(model, reactionFunction, uid){
             model.selectedStores = userSnap.data()?.selectedStores || [];
             model.cartItems = userSnap.data()?.cartItems || [];
             model.userPosition = userSnap.data()?.userPosition || defaultPos;
+            model.numberOfItemsInCart = userSnap.data()?.numberOfItemsInCart || 0;
         } catch (err) {
             console.log("Error loading user data:", err);
         }
     } else {
         model.selectedStores = [];
         model.userPosition = defaultPos;
+        model.numberOfItemsInCart = 0;
     }
 
     if (model.selectedStores.length > 0) {
@@ -71,6 +73,7 @@ export async function connectToPersistence(model, reactionFunction, uid){
             model.selectedStores,
             model.cartItems,
             model.userPosition,
+            model.numberOfItemsInCart,
         ]},
         function saveModelSideEffectACB(){
             if(!model.ready) return;
@@ -79,7 +82,8 @@ export async function connectToPersistence(model, reactionFunction, uid){
                 setDoc(userDoc, {
                     selectedStores: model.selectedStores,
                     cartItems: model.cartItems,
-                    userPosition: model.userPosition
+                    userPosition: model.userPosition,
+                    numberOfItemsInCart: model.numberOfItemsInCart
                 }, { merge: true });
             }
         }
