@@ -1,8 +1,6 @@
 import { FilterView } from "../views/FilterView";
 import { observer } from "mobx-react-lite";
 
-import { categorizeItems } from "../gemini";
-
 export const Filter = observer(function FilterRender(props) {
 
     return (

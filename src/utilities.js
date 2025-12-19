@@ -66,26 +66,26 @@ export const Utils = {
             .sort((a, b) => a.distance - b.distance);
     },
 
-    getStoreBrandStyle(storeName = "") {
+    getStoreTextStyle(storeName = "") {
         const name = storeName.toLowerCase();
 
-        if (name.includes("ica")) {
-            return "text-red-600"
-        }
-
-        if (name.includes("coop")) {
-            return "text-green-700"
-        }
-
-        if (name.includes("willys")) {
-            return "text-black"
-        }
-
-        if (name.includes("hemköp") || name.includes("hemkop")) {
-            return "text-red-600"
-        }
+        if (name.includes("ica")) {return "text-red-600"}
+        if (name.includes("coop")) {return "text-green-700"}
+        if (name.includes("willys")) {return "text-black"}
+        if (name.includes("hemköp") || name.includes("hemkop")) {return "text-red-600"}
 
         return "text-gray-800"
+    },
+    
+    getStoreLineStyle(storeName = "") {
+        const name = storeName.toLowerCase();
+
+        if (name.includes("ica")) {return "bg-red-600"}
+        if (name.includes("coop")) {return "bg-green-700"}
+        if (name.includes("willys")) {return "bg-black"}
+        if (name.includes("hemköp") || name.includes("hemkop")) {return "bg-red-600"}
+
+        return "bg-gray-800"
     }
 
 }

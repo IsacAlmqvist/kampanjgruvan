@@ -85,30 +85,3 @@ export async function connectToPersistence(model, reactionFunction, uid){
         }
     )
 }
-
-export async function loadStore(model, store) {
-
-    model.selectedStores = model.selectedStores.map(s =>
-        s.id === store.id ? { ...s, status: "loading" } : s
-    );
-
-    const storeDoc = doc(db, "publicData", store.id);
-    const storeSnap = await getDoc(storeDoc);
-    const loadedData = storeSnap.exists() ? storeSnap.data() : null;
-
-    if(!loadedData) {
-        model.selectedStores = model.selectedStores.map(s =>
-            s.id === store.id ? { ...s, status: "scraping" } : s
-        );
-        const scrapeResult = await model.scrapeInit(store);
-        model.storesData = [scrapeResult, ...model.storesData];
-        await setDoc(storeDoc, scrapeResult, { merge: true });
-    } else {
-        model.storesData = [loadedData, ...model.storesData];
-    }
-
-    // const currentWeek = model.getWeek();
-    // if(storesData[0] && storesData[0]?.week !== currentWeek){
-    //     await deleteDoc(publicDoc);
-    // } else {
-}

@@ -1,8 +1,6 @@
 import pLimit from "p-limit";
-import { categorizeItems } from "./gemini";
-import { fetchOffers } from "./dataGathering/fetchingEntry";
+import { fetchOffers } from "./fetchingEntry";
 import { allHemkopStores, allIcaStores, allWillysStores, allCoopStores } from "./constData";
-import { loadStore } from "./firestoreModel";
 import { Utils } from "./utilities";
 
 const limit = pLimit(5);
@@ -42,7 +40,6 @@ export const model = {
         this.searchFocus = newValue;
     },
 
-    // Sidebar props
     filterFocus: false,
     setFilterFocus(newValue) {
         this.filterFocus = newValue;
@@ -66,74 +63,6 @@ export const model = {
         this.filterCategories = newArr;
     },
 
-
-    getWeek() {
-        const now = new Date();
-        const start = new Date(now.getFullYear(), 0, 1);
-        const days = Math.floor((now - start) / (24 * 60 * 60 * 1000));
-        const week = Math.ceil((days + 1) / 7);
-        return week;
-    },
-
-    async getData(store) {
-        return limit(async () => {
-            console.log("scraping: " + store.name);
-
-            const articles = await scrapeStore(store); 
-            console.log("scraped!");   
-            const processed = await categorizeItems(articles);
-            console.log("processed!");
-
-            const week = this.getWeek();
-
-            const storesDataObject = {
-                id: store.id,
-                name: store.name,
-                week: week,
-                articles: processed
-            }
-            return storesDataObject;
-        })
-    },
-
-    async safeScrape(store) {
-
-        if(this.storesData.some((s) => s.id === store.id)) {
-            return this.storesData.find(s => s.id === store.id);
-        };
-
-        if (running.has(store)) {
-            return running.get(store);
-        };
-
-        const p = this.getData(store)
-            .finally(() => {running.delete(store)});
-
-        running.set(store, p);
-
-        return p; // promise that resolves to the storeData
-    },
-
-    async scrapeInit(store) {
-        try {
-            const result = await this.safeScrape(store); // this is where the magic happens
-
-            this.selectedStores = this.selectedStores.map(s =>
-                s.id === store.id ? { ...s, status: "ready" } : s
-            );
-            return result;
-        } catch (error) {
-            console.error(error);
-
-            // removes store (eventually we want to show error popup)
-            this.selectedStores = this.selectedStores.filter(s =>
-                s.id !== store.id 
-            );
-            return null;
-        }
-    },
-
-    // new fetching function
     async fetchData(store) {
         try {
             this.selectedStores = this.selectedStores.map(s =>
@@ -171,7 +100,6 @@ export const model = {
             return null;
         }
     },
-
     
     async fetchClosestStores() {
 
@@ -203,17 +131,6 @@ export const model = {
         this.selectedStores = [{ ...store, status: "loading" }, ...this.selectedStores];
         return this.fetchData(store);
     },
-
-    // async addStore(store) {
-
-    //     this.selectedStores = [{ ...store, status:"loading" }, ...this.selectedStores];
-
-    //     await loadStore(this, store);
-
-    //     this.selectedStores = this.selectedStores.map(s =>
-    //         s.id === store.id ? { ...s, status: "ready" } : s
-    //     );
-    // },
 
     setCurrentSearch(searchInput) {
         this.searchInput = searchInput;
