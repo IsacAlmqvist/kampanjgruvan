@@ -1,8 +1,8 @@
 import { category_keywords } from "../constData";
-import { getHemkopOffers } from "./hemkop";
-import { scrapeIca } from "./ica";
-import { getIcaOffers } from "./icaNew";
-import { getWillysOffers } from "./willys";
+// import { getHemkopOffers } from "./hemkop";
+// import { scrapeIca } from "./ica";
+// import { getIcaOffers } from "./icaNew";
+// import { getWillysOffers } from "./willys";
 // import { scrapeCoop } from "./coop";
 
 const API_BASE =
@@ -37,7 +37,7 @@ export async function getOffers(store, storeId) {
     storeId
   });
 
-  const res = await fetch(`${API_BASE}/api/offers?${params}`);
+  const res = await fetch(`/api/offers?${params}`);
 
   if (!res.ok) {
     throw new Error(`Failed to fetch ${store} offers`);
