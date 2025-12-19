@@ -25,10 +25,6 @@ export async function getIcaOffers(storeId) {
       },
     });
     const offers = await offersRes.json();
-    console.log("ica: ", offers[0])
-    console.log("ica: ", offers[3])
-    console.log("ica: ", offers[5])
-    console.log("ica: ", offers[6])
     return offers;
   } catch (err) {
     console.error("Failed to fetch ICA offers:", err);

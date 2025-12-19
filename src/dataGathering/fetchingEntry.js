@@ -1,22 +1,26 @@
 import { category_keywords } from "../constData";
-import { getCoopOffers } from "./coop";
 import { getHemkopOffers } from "./hemkop";
 import { scrapeIca } from "./ica";
 import { getIcaOffers } from "./icaNew";
 import { getWillysOffers } from "./willys";
 // import { scrapeCoop } from "./coop";
 
+const API_BASE =
+  import.meta.env.DEV
+    ? "http://localhost:3000"
+    : "https://iprog-proxy-2vj79tn2k-isacs-projects-a57141f1.vercel.app";
+
 export async function fetchOffers(store) {
     try {
         if(store.name.includes("ICA")){
             // return await scrapeIca(store);
-            return normalizeIca(await getIcaOffers(store.id));
+            return normalizeIca(await getOffers("ica", store.id));
         } else if(store.name.includes("Coop")) {
-            return normalizeCoop(await getCoopOffers(store.id));
+            return normalizeCoop(await getOffers("coop", store.id));
         } else if(store.name.includes("Willys")) {
-            return normalizeWillys(await getWillysOffers());
+            return normalizeWillys(await getOffers("willys", store.id));
         } else if(store.name.includes("Hemköp")) {
-            return normalizeHemkop(await getHemkopOffers(store.id));
+            return normalizeHemkop(await getOffers("hemkop", store.id));
         } else {
             return [];
         }
@@ -24,6 +28,22 @@ export async function fetchOffers(store) {
         console.log("Error scraping from " + store.name + err);
         return [];
     }
+}
+
+// calls our vercel API with the corresponding endpoint
+export async function getOffers(store, storeId) {
+  const params = new URLSearchParams({
+    store,
+    storeId
+  });
+
+  const res = await fetch(`${API_BASE}/api/offers?${params}`);
+
+  if (!res.ok) {
+    throw new Error(`Failed to fetch ${store} offers`);
+  }
+
+  return await res.json();
 }
 
 function normalizeIca(arr) {
