@@ -1,4 +1,4 @@
-import { category_keywords } from "../constData";
+import { category_keywords } from "./constData";
 // import { getHemkopOffers } from "./hemkop";
 // import { scrapeIca } from "./ica";
 // import { getIcaOffers } from "./icaNew";
@@ -8,7 +8,7 @@ import { category_keywords } from "../constData";
 const API_BASE =
   import.meta.env.DEV
     ? "http://localhost:3000"
-    : "https://iprog-proxy-2vj79tn2k-isacs-projects-a57141f1.vercel.app";
+    : "";
 
 export async function fetchOffers(store) {
     try {
@@ -37,7 +37,7 @@ export async function getOffers(store, storeId) {
     storeId
   });
 
-  const res = await fetch(`/api/offers?${params}`);
+  const res = await fetch(`${API_BASE}/api/offers?${params}`);
 
   if (!res.ok) {
     throw new Error(`Failed to fetch ${store} offers`);
