@@ -11,8 +11,9 @@ export const Filter = observer(function FilterRender(props) {
             filterFocus = {props.model.filterFocus}
             itemSearchInput = {props.model.itemSearchInput}
             setCurrentItemSearch={(searchInput) => {props.model.setCurrentItemSearch(searchInput)}}
-            filterCategory={props.model.filterCategory}
+            filterCategories={props.model.filterCategories}
             setFilterCategory={(c) => props.model.setFilterCategory(c)}
+            setSearchFocus = {() => props.model.setSearchFocus(false)}
         /> 
     );
 });

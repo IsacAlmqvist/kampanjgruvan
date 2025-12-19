@@ -5,7 +5,7 @@ export const Cart = observer(function CartRender(props) {
     <>
         <CartView 
             cartItems={props.model.cartItems}
-            onRemoveItem={(id) => props.model.removeCartItem(id)}
+            onUpdateCartAmount={(id, increment) => props.model.updateCartAmount(id, increment)}
         />
     </>
     );

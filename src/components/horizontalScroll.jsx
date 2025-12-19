@@ -1,60 +1,181 @@
 import { ScrollArea, Scrollbar, Thumb, Corner } from "@radix-ui/react-scroll-area"
 import { Utils } from "../utilities";
+import { useVirtualizer } from "@tanstack/react-virtual";
+import { useRef } from "react";
 
-export function ScrollAreaHorizontal({ storeData, onAddCartItem }) {
+export function ScrollAreaHorizontal({storeData, onAddCartItem, filterCategories, cartItems, onUpdateCartAmount, filterSearch }) {
+
+  const parentRef = useRef(null);
+  const articles = storeData.articles ?? [];
+
+  // filter out before virtualizer
+  const filteredArticles = articles.filter(article => {
+    const searchQuery = filterSearch?.toLowerCase() || "";
+    const searchHit = article.title.toLowerCase().includes(searchQuery);
+
     return (
-        <div className="w-[95%] my-3 mx-auto">
-            <h2 className="font-semibold text-lg">{Utils.formatStoreName(storeData.storeName)}</h2>
+      (filterCategories[0] === "Visa Alla" ||
+        filterCategories.includes(article.category)) &&
+      searchHit
+    );
+  });
 
-            <ScrollArea 
-                className="w-full"
-                style={{ 
-                    overflowX: 'auto',
-                    WebkitOverflowScrolling: 'touch'
-                }}
-            >
-                <div className="flex w-max space-x-4 p-2">
-                    {storeData.articles?.map(renderArticlesCB)}
-                </div>
-                <Scrollbar orientation="horizontal" className="flex h-2.5 touch-none select-none">
-                    <Thumb className="relative flex-1 rounded-full bg-gray-300" />
-                </Scrollbar>
-                <Corner />
-            </ScrollArea>
-        </div>
-    )
+  const CARD_WIDTH = 320;
 
-    function renderArticlesCB(article) {
+  const virtualizer = useVirtualizer({
+    count: filteredArticles.length,
+    getScrollElement: () => parentRef.current,
+    estimateSize: () => CARD_WIDTH,
+    horizontal: true,
+    overscan: 3,
+  });
 
-        // Get formatted text for title and alt
-        const formattedTitle = Utils.formatLongText(article.title, 40);
-        const formattedAlt = Utils.formatLongText(article.mainImgAlt || article.title, 40);
+  return (
+    <ScrollArea
+      ref={parentRef}
+      className="w-full overflow-x-auto overflow-y-hidden"
+    >
+      <div
+        style={{
+          width: virtualizer.getTotalSize(),
+          height: 170,
+          position: "relative",
+        }}
+      >
+        {virtualizer.getVirtualItems().map(v => {
+          const article = filteredArticles[v.index];
+          const cartItem = cartItems.find(
+            item => item.storeName === storeData.name && item.article.id === article.id
+          )
+          const cartAmount = cartItem?.amount || 0;
+          const cartId = cartItem?.id;
 
-        return (
+          return (
             <div
               key={article.id}
-              className="flex-shrink-0 w-48 rounded-lg border border-gray-400 
-                p-4 flex flex-col items-center bg-white shadow-md min-h-[280px]"
+              style={{
+                position: "absolute",
+                left: 0,
+                top: 0,
+                transform: `translateX(${v.start}px)`,
+                width: CARD_WIDTH,
+                paddingRight: 16
+              }}
             >
-              <img
-                src={article.mainImgSrc}
-                alt={formattedAlt}
-                className="w-full h-32 object-cover rounded-md mb-3"
+              <ArticleCard 
+                article={article}
+                storeName={storeData.name}
+                onAddCartItem={onAddCartItem}
+                cartAmount={cartAmount}
+                cartId={cartId}
+                onUpdateCartAmount={onUpdateCartAmount}
               />
-              <div className="flex flex-col items-center flex-grow w-full">
-                <span className="text-sm text-center font-medium mb-1 whitespace-pre-line min-h-[2.5em]">
-                  {formattedTitle}
-                </span>
-                <span className="text-xs text-gray-500 mb-3 mt-auto">{article.price}</span>
-                <button
-                  className="px-3 py-1.5 text-white bg-blue-500 rounded hover:bg-blue-600 
-                    text-sm font-medium min-w-[60px]"
-                  onClick={() => onAddCartItem(article, storeData.storeName)}
-                >
-                  +
-                </button>
-              </div>
             </div>
-        )
-    }
+          );
+        })}
+      </div>
+
+      <Scrollbar orientation="horizontal">
+        <Thumb />
+      </Scrollbar>
+    </ScrollArea>
+  );
+}
+
+ export function ArticleCard({article, cartId, storeName, cartAmount, isCart = false, onAddCartItem, onUpdateCartAmount}) {
+  const formattedTitle = Utils.formatLongText(article.title, 55);
+
+  const brand = article.brand ? article.brand + ". " : " ";
+  
+  return (
+    <div
+      key={cartId || article.id}
+      className={`
+        relative h-[168px] flex-shrink-0
+        rounded-xl border border-gray-300 bg-white
+        shadow-md hover:shadow-lg hover:border-green-400
+        transition-all overflow-hidden ${isCart && "w-[290px]"}
+      `}
+    >
+
+      {/* Storename for cart items */}
+      {isCart &&
+        <div className={`absolute max-w-[50%] rounded-md top-0 left-1 p-1 text-[14px] font-bold 
+            leading-tight line-clamp-2 z-10 bg-white/70 
+            ${Utils.getStoreBrandStyle(storeName)}`}>
+          {storeName}
+        </div>
+      }
+
+      {/* Image */}
+      <div className="absolute inset-0 flex items-center pr-7 pb-4 justify-center">
+        {article.image && (
+          <img
+            src={article.image}
+            alt={formattedTitle}
+            loading="lazy"
+            decoding="async"
+            className="
+              max-h-[120px] max-w-[85%]
+              object-contain
+            "
+          />
+        )}
+      </div>
+      
+      {/* Price */}
+      <div className="absolute right-4 top-[8px] text-[25px] font-bold text-red-600 leading-none bg-white/70 rounded pl-1 pb-1">
+        {article.price.replace(":-", " kr").replace("/st", "").replace(",00", "kr")}
+      </div>
+
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-white/40 via-white/10 to-transparent" />
+
+      <div className="absolute bottom-1 left-3 bg-white/70 p-[2px] rounded z-10 max-w-[70%]">
+        {/* Title */}
+          <span className="text-md font-semibold leading-tight line-clamp-2">
+            {formattedTitle}
+          </span>
+        {/* Brand */}
+        <div className="text-[11px] text-gray-500 tracking-wide">
+          {brand} {article.amount}
+        </div>
+      </div>
+
+      {/* price/kg NOT DONE*/}
+      {article.comparePrice && (
+        <div className="absolute top-9 right-3 text-[10px] max-w-[30%] text-gray-500">
+          {article.comparePrice}
+        </div>
+      )}
+
+      {/* Cart controls – kept but visually minimal */}
+      <div className="absolute bottom-2 right-2 z-20">
+        {!cartAmount ? (
+          <button
+            className="w-8 h-8 text-[16px] pb-[3px] rounded-full border border-gray-200 text-gray-600 font-bold
+                       hover:bg-gray-200 active:scale-95"
+            onClick={() => onAddCartItem(article, storeName)}
+          >
+            +
+          </button>
+        ) : (
+          <div className="flex items-center bg-white rounded-full shadow-sm">
+            <button
+              className="text-sm hover:bg-gray-200 active:scale-95 px-2 py-1 rounded-full"
+              onClick={() => onUpdateCartAmount(cartId, -1)}
+            >
+              −
+            </button>
+            <span className="text-sm px-1">{cartAmount}</span>
+            <button
+              className="text-sm hover:bg-gray-200 active:scale-95 px-2 py-1 rounded-full"
+              onClick={() => onUpdateCartAmount(cartId, 1)}
+            >
+              +
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
