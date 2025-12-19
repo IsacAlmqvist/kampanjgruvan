@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { CartView } from "../views/CartView";
+import { CartView } from "../views/ShoppingCartView";
 export const Cart = observer(function CartRender(props) {
  return (
     <>
