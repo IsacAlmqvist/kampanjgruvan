@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { ScrollArea, Scrollbar, Thumb, Corner } from "@radix-ui/react-scroll-area";
-import { ArticleCard } from "../components/horizontalScroll";
+import { ArticleCard } from "../components/HorizontalScroll";
 
 export const CartView = observer(function CartRender(props) {
     

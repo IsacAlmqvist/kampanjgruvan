@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite";
 import { useNavigate } from 'react-router-dom';
-import { ScrollAreaHorizontal } from "../components/horizontalScroll";
+import { ScrollAreaHorizontal } from "../components/HorizontalScroll";
 import { Utils } from "../utilities";
 
 export const ArticlesView = observer(function SidebarRender(props) { 
