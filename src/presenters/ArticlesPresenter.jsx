@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { ArticlesView } from "../views/articlesView";
+import { ArticlesView } from "../views/ArticlesView";
 export const Articles = observer(function ArticlesRender(props) {
  return (
     <div className={"mb-8"}>
