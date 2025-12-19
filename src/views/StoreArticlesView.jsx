@@ -1,15 +1,8 @@
 import { observer } from "mobx-react-lite";
-import { useNavigate } from 'react-router-dom';
 import { ScrollAreaHorizontal } from "../components/Scroll";
 import { Utils } from "../utilities";
 
 export const ArticlesView = observer(function SidebarRender(props) { 
-    
-    const navigate = useNavigate();
-
-    function handleDetailsClick() {
-        navigate(`/?action=details&id=${article.id}`);
-    }
 
     function renderStoresCB(store) {
 
@@ -22,7 +15,7 @@ export const ArticlesView = observer(function SidebarRender(props) {
                     >
                         {store.name}
                     </h2>
-                    <div className={`h-[3px] w-24 mt-1 rounded ${Utils.getStoreBrandStyle}`} />
+                    <div className={`h-[3px] w-26 mb-2 mt-[2px] rounded shadow-sm ${Utils.getStoreLineStyle(store.name)}`} />
                 </div>
                 {chooseSuspenseCB(store)}
             </div>

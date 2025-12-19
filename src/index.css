@@ -1,9 +1,1 @@
 @import "tailwindcss";
-
-.select-stores {
-    max-width: 500px;
-}
-.root {
-    display: flex;
-    flex-direction: column;
-}

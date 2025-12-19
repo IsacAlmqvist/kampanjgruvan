@@ -1,8 +1,6 @@
 import { observer } from "mobx-react-lite";
-import { Utils } from "../utilities";
 
 import { categories } from "../constData";
-
 
 // design help from ChatGPT with prompt:
 // design the UI for a "dropdown" filter that toggles 
@@ -60,7 +58,7 @@ export const FilterView = observer(function FilterRender(props) {
                 </div>
             </div>
 
-            {/* FLOATING TAB BUTTON */}
+            {/* FILTER BUTTON*/}
             <button
                 onClick={() => {
                     props.setFilterFocus(!props.filterFocus);

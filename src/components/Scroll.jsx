@@ -102,7 +102,7 @@ export function ScrollAreaHorizontal({storeData, onAddCartItem, filterCategories
       {isCart &&
         <div className={`absolute max-w-[50%] rounded-md top-0 left-1 p-1 text-[14px] font-bold 
             leading-tight line-clamp-2 z-10 bg-white/70 
-            ${Utils.getStoreBrandStyle(storeName)}`}>
+            ${Utils.getStoreTextStyle(storeName)}`}>
           {storeName}
         </div>
       }
@@ -141,14 +141,14 @@ export function ScrollAreaHorizontal({storeData, onAddCartItem, filterCategories
         </div>
       </div>
 
-      {/* price/kg NOT DONE*/}
+      {/* price/kg*/}
       {article.comparePrice && (
         <div className="absolute top-9 right-3 text-[10px] max-w-[30%] text-gray-500">
           {article.comparePrice}
         </div>
       )}
 
-      {/* Cart controls – kept but visually minimal */}
+      {/* Cart controls*/}
       <div className="absolute bottom-2 right-2 z-20">
         {!cartAmount ? (
           <button
