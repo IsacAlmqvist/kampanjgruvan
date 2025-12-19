@@ -56,6 +56,12 @@ const createRouter = (model) => createHashRouter([
 const Root = observer(function Root(props) {
   const { model } = props;
 
+  // This useEffect runs once when the component mounts
+  useEffect(() => {
+    model.handleGetLocation();
+  }, []); // Runs once on mount
+
+  // This useEffect monitors user state changes
   useEffect(() => {
     console.log("User state changed:", model.user);
   }, [model.user]);
