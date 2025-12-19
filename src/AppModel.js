@@ -1,8 +1,7 @@
 import pLimit from "p-limit";
 import { categorizeItems } from "./gemini";
-import { fetchOffers } from "./dataGathering/fetchingEntry";
+import { fetchOffers } from "./fetchingEntry";
 import { allHemkopStores, allIcaStores, allWillysStores, allCoopStores } from "./constData";
-import { loadStore } from "./firestoreModel";
 import { Utils } from "./utilities";
 
 const limit = pLimit(5);
