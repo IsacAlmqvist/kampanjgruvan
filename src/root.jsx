@@ -6,7 +6,7 @@ import { Login } from "./presenters/loginPagePresenter";
 import { Cart } from "./presenters/CartPresenter";
 import { createHashRouter, RouterProvider, redirect } from "react-router-dom";
 import { useEffect } from "react"; 
-import { LikedStores } from "./presenters/likedStoresPresenter";
+import { LikedStores } from "./presenters/LikedStoresPresenter";
 
 const createRouter = (model) => createHashRouter([
   {
