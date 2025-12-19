@@ -13,11 +13,11 @@ export function ScrollAreaHorizontal({storeData, onAddCartItem, filterCategories
     const searchQuery = filterSearch?.toLowerCase() || "";
     const searchHit = article.title.toLowerCase().includes(searchQuery);
 
-    return (
-      (filterCategories[0] === "Visa Alla" ||
-        filterCategories.includes(article.category)) &&
-      searchHit
-    );
+      return (
+        (filterCategories[0] === "Visa Alla" ||
+          filterCategories.includes(article.category)) &&
+        searchHit
+      );
   });
 
   const CARD_WIDTH = 320;
