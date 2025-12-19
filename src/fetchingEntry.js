@@ -1,9 +1,4 @@
 import { category_keywords } from "./constData";
-// import { getHemkopOffers } from "./hemkop";
-// import { scrapeIca } from "./ica";
-// import { getIcaOffers } from "./icaNew";
-// import { getWillysOffers } from "./willys";
-// import { scrapeCoop } from "./coop";
 
 const API_BASE =
   import.meta.env.DEV
@@ -13,7 +8,6 @@ const API_BASE =
 export async function fetchOffers(store) {
     try {
         if(store.name.includes("ICA")){
-            // return await scrapeIca(store);
             return normalizeIca(await getOffers("ica", store.id));
         } else if(store.name.includes("Coop")) {
             return normalizeCoop(await getOffers("coop", store.id));
