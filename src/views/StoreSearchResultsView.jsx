@@ -1,6 +1,11 @@
 import { observer } from "mobx-react-lite";
 
 export const StoreSearchResultsView = observer(function StoreSearchResultsRender(props) {
+
+    let sliceSize = 8;
+
+    if(window.innerWidth < 640) sliceSize = 5;
+    else if(window.innerWidth < 1024) sliceSize = 6;
     
     // styling done by Gemini with prompt (with adjustments afterwards): 
     // can you help me style this so that the search results are in boxes, 
@@ -24,7 +29,7 @@ export const StoreSearchResultsView = observer(function StoreSearchResultsRender
                     lg:grid-cols-4">
                     {props.stores
                         .filter(store => matchesSearch(store.name))
-                        .slice(0, 8)
+                        .slice(0, sliceSize)
                         .map(renderSearchResultCB)}
                 </div>
             </div>

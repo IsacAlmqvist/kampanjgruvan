@@ -116,7 +116,7 @@ export function ScrollAreaHorizontal({storeData, onAddCartItem, filterCategories
             loading="lazy"
             decoding="async"
             className="
-              max-h-[120px] max-w-[85%]
+              max-h-[120px] max-w-[75%]
               object-contain
             "
           />
@@ -125,7 +125,7 @@ export function ScrollAreaHorizontal({storeData, onAddCartItem, filterCategories
       
       {/* Price */}
       <div className="absolute right-4 top-[8px] text-[25px] font-bold text-red-600 leading-none bg-white/70 rounded pl-1 pb-1">
-        {article.price.replace(":-", " kr").replace("/st", "").replace(",00", "kr")}
+        {article.price.replace(":-", " kr").replace("/st", "").replace(",00", " kr")}
       </div>
 
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-white/40 via-white/10 to-transparent" />

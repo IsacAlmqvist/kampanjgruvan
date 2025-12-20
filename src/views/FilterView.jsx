@@ -14,11 +14,11 @@ export const FilterView = observer(function FilterRender(props) {
             {/* DROPDOWN PANEL */}
             <div
                 className={`transition-all duration-200 overflow-hidden
-                    m-0 shadow-lg border border-gray-400
+                    m-0 shadow-md border border-gray-400
                     ${props.filterFocus ? "max-h-[500px]" : "max-h-0"}
                 `}
             >
-                <div className="p-4 bg-gray-100">
+                <div className="p-4 bg-gray-50">
 
                     {/* SEARCH */}
                     <input

@@ -13,19 +13,19 @@ export const LoginView = observer(function LoginView(props) {
     
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-green-50 to-cyan-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
+        <div className="min-h-screen bg-slate-300 flex items-center justify-center p-4">
+            <div className="bg-white rounded-2xl shadow-xl p-12 w-full max-w-sm">
                 {/* Header */}
-                <div className="text-center mb-10">
-                    <div className="flex justify-center mb-4">
+                <div className="text-center mb-8">
+                    {/* <div className="flex justify-center mb-4">
                         <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-cyan-600 rounded-full flex items-center justify-center">
                             <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                             </svg>
                         </div>
-                    </div>
+                    </div> */}
                     <h1 className="text-3xl font-bold text-green-800 mb-2">KampanjGruvan</h1>
-                    <p className="text-gray-600">Logga in med Google eller fortsätt som gäst</p>
+                    <p className="text-gray-600 text-sm">Logga in med Google eller fortsätt som gäst</p>
                 </div>
 
                 {/* Google Login Button */}
@@ -69,16 +69,6 @@ export const LoginView = observer(function LoginView(props) {
                     </button>
                 </div>
 
-                {/* Privacy Notice */}
-                <div className="mt-8 p-4 bg-gray-100 rounded-lg">
-                    <p className="text-xs text-gray-700 text-center">
-                        By continuing, you agree to our{" "}
-                        <button className="text-green-800 hover:text-green-600">Terms</button>
-                        {" "}and acknowledge you've read our{" "}
-                        <button className="text-green-800 hover:text-green-600">Privacy Policy</button>.
-                        We use Firebase Authentication for secure access.
-                    </p>
-                </div>
             </div>
         </div>
     );

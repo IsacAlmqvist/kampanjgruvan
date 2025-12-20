@@ -12,6 +12,7 @@ export const Articles = observer(function ArticlesRender(props) {
             filterSearch={props.model.itemSearchInput}
             cartItems={props.model.cartItems}
             closest={props.model.closestStores}
+            removeStore={(s) => props.model.removeStoreError(s)}
         />
     </div>
     );
