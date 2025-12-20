@@ -7,12 +7,10 @@ export const HeaderView = observer(function HeaderRender(props) {
     const navigate = useNavigate();
     const location = useLocation();
     const isCartPage = location.pathname === "/cart";
-
     return (
         <div 
-            className="flex flex-wrap justify-between gap-5 w-full p-3 bg-green-100"
+            className="flex flex-wrap justify-between gap-3 sm:gap-5 w-full p-3 bg-[#b3e8bb69]"
         >
-
             <div 
                 className="items-center order-1
                     inline-block transform transition-transform 
@@ -48,7 +46,10 @@ export const HeaderView = observer(function HeaderRender(props) {
             </div>
 
             <button
-                onClick={props.handleGetLocation}
+                onClick={() => {
+                    props.handleGetLocation();
+                    window.location.reload();
+                }}
                 className="flex flex-col order-3 items-center px-2 py-1 rounded hover:bg-green-200 transition relative"
                 title={"Hitta min plats"}
             >
@@ -69,8 +70,8 @@ export const HeaderView = observer(function HeaderRender(props) {
 
             <button 
                 onClick={props.user ? logout : ()=> navigate("/login")}
-                className="ml-auto order-4 px-3 py-2 my-auto bg-green-400 text-gray-700 
-                    font-semibold rounded-lg shadow-md text-sm
+                className="ml-auto order-4 px-2 py-2 my-auto bg-green-600 text-gray-700 
+                    font-semibold rounded-md shadow-md text-sm
                     hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-green-300
                     active:bg-green-600 transition-colors duration-150"
             >
@@ -99,7 +100,7 @@ export const HeaderView = observer(function HeaderRender(props) {
                     </svg>
                 )}
                 {!isCartPage && (
-                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
+                    <span className="absolute -top-1 -right-1 bg-green-800 text-white text-xs w-4 h-4 flex items-center justify-center rounded-full">
                         {props.numberOfItemsInCart}
                     </span>
                 )}
