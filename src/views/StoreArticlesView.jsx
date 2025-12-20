@@ -22,39 +22,45 @@ export const ArticlesView = observer(function SidebarRender(props) {
         );
     }
 
-const chooseSuspenseCB = (store) => {
-    if(store.status === "loading") return LoadingDotsCB();
+    const chooseSuspenseCB = (store) => {
+        if(store.status === "loading") return LoadingDotsCB();
 
-    const storeData = props.data.find(s => s.name === store.name);
-    if(store.status === "ready" && storeData) {
-        // Check if store has any filtered articles before rendering
-        const storeArticles = storeData.articles ?? [];
-        const hasFilteredArticles = storeArticles.some(article => {
-            const searchQuery = props.filterSearch?.toLowerCase() || "";
-            const searchHit = article.title.toLowerCase().includes(searchQuery);
+        const storeData = props.data.find(s => s.name === store.name);
+        if(store.status === "ready" && storeData) {
+            // Check if store has any filtered articles before rendering
+            const storeArticles = storeData.articles ?? [];
+            const hasFilteredArticles = storeArticles.some(article => {
+                const searchQuery = props.filterSearch?.toLowerCase() || "";
+                const searchHit = article.title.toLowerCase().includes(searchQuery);
+                return (
+                    (props.filterCategories[0] === "Visa Alla" ||
+                    props.filterCategories.includes(article.category)) &&
+                    searchHit
+                );
+            });
+            
+            if (!hasFilteredArticles) return null;
+            
             return (
-                (props.filterCategories[0] === "Visa Alla" ||
-                props.filterCategories.includes(article.category)) &&
-                searchHit
-            );
-        });
-        
-        if (!hasFilteredArticles) return null;
-        
-        return (
-            <ScrollAreaHorizontal 
-                storeData = {storeData} 
-                onAddCartItem={(item, store) => props.handleAddItemToCart(item, store)}
-                onUpdateCartAmount={(id, increment) => props.handleUpdateCartAmount(id, increment)}
-                filterCategories={props.filterCategories}
-                filterSearch={props.filterSearch}   
-                cartItems={props.cartItems} 
-            />
-        )
-    }
+                <ScrollAreaHorizontal 
+                    storeData = {storeData} 
+                    onAddCartItem={(item, store) => props.handleAddItemToCart(item, store)}
+                    onUpdateCartAmount={(id, increment) => props.handleUpdateCartAmount(id, increment)}
+                    filterCategories={props.filterCategories}
+                    filterSearch={props.filterSearch}   
+                    cartItems={props.cartItems} 
+                />
+            )
+        }
 
-    return <div key={store.id} className="p-3 text-lg">Kunde inte ladda data</div>;
-}
+        // runs after render to have a pure render
+        setTimeout(() => {
+            Utils.quickAlert("Kunde inte hämta erbjudanden från " + store.name);
+            props.removeStore(store);
+        }, 0);
+
+        return <></>;
+    }
 
     const LoadingDotsCB = () => (
         <div className="flex items-center justify-center py-6">
@@ -66,19 +72,6 @@ const chooseSuspenseCB = (store) => {
         </div>
     );
 
-    const ScrapingSuspenseCB = () => (
-        <div className="flex flex-col items-center justify-center gap-3 pb-10">
-            <div className="relative w-10 h-10">
-            <div className="absolute inset-0 rounded-full border-2 border-gray-200" />
-            <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-gray-500 animate-spin" />
-        </div>
-
-            <p className="text-sm text-gray-600 tracking-wide">
-                Hämtar veckans kampanjer
-            </p>
-        </div>
-    );
-
     return (
         <>
             <div className="mb-10">
@@ -87,11 +80,11 @@ const chooseSuspenseCB = (store) => {
             {props.selected.length < 5 && props.closest && 
                 <div className="flex items-center w-[96%] mb-3 gap-3 mx-auto">
 
-                    <h3 className="text-xl md:text-2xl font-bold tracking-wide text-gray-800">
+                    <h3 className="text-2xl font-bold tracking-wide text-gray-800">
                         Erbjudanden nära dig
                     </h3>
 
-                    <div className="align-center mt-1 flex-grow h-[2px] bg-gradient-to-r from-green-500 to-transparent mr-[20%]" />
+                    <div className="align-center mt-1 flex-grow h-[2px] bg-gradient-to-r from-green-500 to-transparent mr-[15%]" />
                 </div>
             }
             {props.closest

@@ -23,33 +23,45 @@ export const Utils = {
     },
 
     async getUserCoords(currentPos) {
-        console.log(currentPos);
-        let pos;
-        try {
+        let pos = null;
+        const MAX_RETRIES = 4;
+        const sleep = (ms) => new Promise(res => setTimeout(res, ms));
+
+        // 4 retries
+        for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+            try {
             pos = await new Promise((resolve, reject) =>
-            navigator.geolocation.getCurrentPosition(resolve, reject, {
+                navigator.geolocation.getCurrentPosition(resolve, reject, {
                 enableHighAccuracy: false,
-                timeout: 10000,
-            })
+                timeout: 20000,
+                })
             );
-        } catch (err) {
-            console.warn("Could not get geolocation, using default:", err);
+            break;
+            } catch (err) {
+                console.warn(`Geolocation attempt ${attempt} failed`, err);
+                if (attempt < MAX_RETRIES) await sleep(800);
+            }
+        }
+
+        if (!pos) {
+            console.warn("Geolocation failed, using default");
             return { ...currentPos, city: null };
         }
 
-        const longitude = pos.coords.longitude;
-        const latitude = pos.coords.latitude;
+        const { longitude, latitude } = pos.coords;
 
         let city = null;
-
         try {
             const res = await fetch(
             `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
             );
             const data = await res.json();
-            city = data.address?.city || data.address?.town || data.address?.village || null;
-        } catch (err) {
-            console.warn("Could not get city from coordinates", err);
+            city =
+            data.address?.city ||
+            data.address?.town ||
+            data.address?.village ||
+            null;
+        } catch {
         }
 
         return { x: longitude, y: latitude, city };
@@ -86,6 +98,20 @@ export const Utils = {
         if (name.includes("hemköp") || name.includes("hemkop")) {return "bg-red-600"}
 
         return "bg-gray-800"
+    },
+
+    quickAlert(message, duration = 2000) {
+        const el = document.createElement("div");
+        el.textContent = message;
+
+        el.className =
+            "fixed bottom-4 right-4 z-50 bg-gray-900 text-white text-sm px-4 py-2 rounded-lg shadow-lg";
+
+        document.body.appendChild(el);
+
+        setTimeout(() => {
+            el.remove();
+        }, duration);
     }
 
 }
