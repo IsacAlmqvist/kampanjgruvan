@@ -76,8 +76,8 @@ export const model = {
                 s.name === store.name ? { ...s, status: "loading" } : s
             );
 
-            const articles = await fetchOffers(store); // unified API fetch
-            if(articles === null || articles == []) return null;
+            const articles = await fetchOffers(store);
+            if(articles === null || articles.length === 0) return null;
 
             const storeData = {
                 id: store.id,
@@ -107,20 +107,24 @@ export const model = {
 
         console.log("fetching closest!!");
     
-        const numDefaults = 4;
+        const numDefaults = 5;
     
         const sorted = Utils.sortStoresByDistance(this.allStores, this.userPosition);
     
-        const unselected = sorted.filter(
-            s => !this.selectedStores.some(sel => sel.id === s.id)
-        );
+        const nextClosest = sorted.slice(0,20).filter(
+            s => !this.selectedStores.some(sel => sel.name === s.name)
+        ).slice(0, numDefaults);
     
-        const defaultsToFetch = unselected.slice(0, numDefaults);
-        this.closestStores = defaultsToFetch;
+        this.closestStores = nextClosest.map(store => ({
+            ...store,
+            status: this.storesData.some(d => d.name === store.name)
+            ? "ready"
+            : "loading",
+        }));
     
         await Promise.all(
-            defaultsToFetch.map(async store => {
-                if (!this.storesData.some(s => s.id === store.id)) {
+            this.closestStores.map(async store => {
+                if (!this.storesData.some(s => s.name === store.name)) {
                     const data = await this.fetchData(store);
                     return data;
                 }
@@ -142,6 +146,12 @@ export const model = {
         this.selectedStores = this.selectedStores.filter(s => s.name !== store.name);
         if(!this.closestStores.some(s => s.name === store.name)) 
             this.storesData = this.storesData.filter(s => s.name !== store.name);
+    },
+
+    removeStoreError(store) {
+        this.selectedStores = this.selectedStores.filter(s => s.name !== store.name);
+        this.closestStores = this.closestStores.filter(s => s.name !== store.name);
+        this.storesData = this.storesData.filter(s => s.name !== store.name);
     },
 
     addCartItem(article, storeName) {
@@ -183,7 +193,6 @@ export const model = {
             alert("Platstjänster stöds inte i din webbläsare");
             return;
         }
-        console.log(this);
 
         try {
             const coords = await Utils.getUserCoords(this.userPosition);
