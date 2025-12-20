@@ -48,7 +48,10 @@ export const HeaderView = observer(function HeaderRender(props) {
             </div>
 
             <button
-                onClick={props.handleGetLocation}
+                onClick={() => {
+                    props.handleGetLocation();
+                    window.location.reload();
+                }}
                 className="flex flex-col order-3 items-center px-2 py-1 rounded hover:bg-green-200 transition relative"
                 title={"Hitta min plats"}
             >
