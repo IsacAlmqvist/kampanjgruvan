@@ -2,12 +2,16 @@ import { observer } from "mobx-react-lite";
 import { loginWithGoogle } from "../firestoreModel";
 import { useNavigate } from "react-router-dom";
 
-export const LoginView = observer(function LoginView(props) { 
-    const handleGoogleLogin = async () => {
-        loginWithGoogle();        
-    };
-
+export const LoginView = observer(function LoginView(props) {
     const navigate = useNavigate();
+
+    function handleGoogleLoginACB() {
+        loginWithGoogle();
+    }
+
+    function handleGuestLoginACB() {
+        navigate("/articles");
+    }
 
     return (
         <div className="min-h-screen bg-theme-50 flex items-center justify-center p-4">
@@ -16,10 +20,9 @@ export const LoginView = observer(function LoginView(props) {
                     <h1 className="text-3xl font-bold text-theme-700 mb-2">KampanjGruvan</h1>
                     <p className="text-theme-500 text-sm">Logga in med Google eller fortsätt som gäst</p>
                 </div>
-
                 <div className="space-y-6">
                     <button
-                        onClick={handleGoogleLogin}
+                        onClick={handleGoogleLoginACB}
                         className="w-full bg-white border-2 border-theme-200 text-theme-700 py-3 px-4 rounded-xl font-medium hover:bg-theme-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-500 transition-all shadow-sm hover:shadow-md flex items-center justify-center space-x-3"
                     >
                         <svg className="w-6 h-6" viewBox="0 0 24 24">
@@ -30,7 +33,6 @@ export const LoginView = observer(function LoginView(props) {
                         </svg>
                         <span className="text-theme-700 font-medium">Fortsätt med Google</span>
                     </button>
-
                     <div className="relative">
                         <div className="absolute inset-0 flex items-center">
                             <div className="w-full border-t border-theme-200"></div>
@@ -39,9 +41,8 @@ export const LoginView = observer(function LoginView(props) {
                             <span className="px-4 bg-white text-theme-500">Eller</span>
                         </div>
                     </div>
-
                     <button
-                        onClick={()=> navigate("/articles")}
+                        onClick={handleGuestLoginACB}
                         className="w-full bg-gradient-to-r from-theme-400 to-theme-600 text-white py-3 px-4 rounded-xl font-medium hover:from-theme-500 hover:to-theme-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-theme-500 transition-all transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2"
                     >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

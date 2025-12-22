@@ -8,71 +8,70 @@ import { createHashRouter, RouterProvider, redirect } from "react-router-dom";
 import { useEffect } from "react"; 
 import { LikedStores } from "./presenters/LikedStoresPresenter";
 
-const createRouter = (model) => createHashRouter([
-  {
-    path: "/",
-    loader: () => {
-        // Check if user is explicitly false/null, not just falsy
+function createRouterCB(model) {
+  return createHashRouter([
+    {
+      path: "/",
+      loader: function rootLoaderACB() {
         if (!model.hasCheckedAuth && !model.user && model.user !== undefined) {
-            model.hasCheckedAuth = true;
-            return redirect("/login");
+          model.hasCheckedAuth = true;
+          return redirect("/login");
         }
         return redirect("/articles");
-    }
-  },
-  {
-    path: "/articles",
-    element: (
-      <>
-        <Header model={model} />
-        <LikedStores model={model}/>
-        <Filter model={model} />
-        <Articles model={model} />
-      </>
-    ),
-  },
-  {
-    path: "/cart",
-    element: (
-      <>
-        <Header model={model} />
-        <Cart model={model} />
-      </>
-    ),
-
-  },
-  {
-    path: "/login",
-    element: <Login model={model} />,
-    loader: () => {
-      if (model.user) {
-        return redirect("/articles");
       }
-      return null;
+    },
+    {
+      path: "/articles",
+      element: (
+        <>
+          <Header model={model} />
+          <LikedStores model={model}/>
+          <Filter model={model} />
+          <Articles model={model} />
+        </>
+      ),
+    },
+    {
+      path: "/cart",
+      element: (
+        <>
+          <Header model={model} />
+          <Cart model={model} />
+        </>
+      ),
+    },
+    {
+      path: "/login",
+      element: <Login model={model} />,
+      loader: function loginLoaderACB() {
+        if (model.user) {
+          return redirect("/articles");
+        }
+        return null;
+      }
     }
-  }
-]);
+  ]);
+}
 
-const Root = observer(function Root(props) {
+export const Root = observer(function Root(props) {
   const { model } = props;
-
-  // This useEffect runs once when the component mounts
-  useEffect(() => {
+  
+  function handleMountACB() {
     model.handleGetLocation();
-  }, []); // Runs once on mount
-
-  // This useEffect monitors user state changes
-  useEffect(() => {
+  }
+  
+  function handleUserChangeCB() {
     console.log("User state changed:", model.user);
-  }, [model.user]);
-
-  const router = createRouter(model);
-
+  }
+  
+  useEffect(handleMountACB, []);
+  useEffect(handleUserChangeCB, [model.user]);
+  
+  const router = createRouterCB(model);
+  
   return (
     <div className="bg-theme-50">
       <RouterProvider router={router} />
     </div>
   );
 });
-
-export { Root };
