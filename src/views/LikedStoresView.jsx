@@ -1,13 +1,7 @@
 import { observer } from "mobx-react-lite";
 
 export const LikedStoresView = observer(function LikedStoresRender(props) {
-
-    return (
-        <div className="flex flex-wrap gap-2 p-2 bg-theme-100 shadow-inner-sm">
-            {props.selectedStores.map(renderSelectedCB)}
-        </div>
-    )
-
+    
     function renderSelectedCB(store) {
         return (
             <div
@@ -21,7 +15,7 @@ export const LikedStoresView = observer(function LikedStoresRender(props) {
                 <button
                     className="px-3 py-1 text-[11px] bg-theme-50 hover:bg-theme-200 rounded-full
                         flex items-center justify-between transition-colors duration-200"
-                    onClick={() => props.removeSelected(store)}
+                    onClick={handleRemoveStoreCB.bind(null, store)}
                 >
                     {store.status !== "ready" ?
                         <div className="animate-spin rounded-full h-5 w-5 border-2 
@@ -33,4 +27,13 @@ export const LikedStoresView = observer(function LikedStoresRender(props) {
         )
     }
 
+    function handleRemoveStoreCB(store) {
+        props.removeSelected(store);
+    }
+    
+    return (
+        <div className="flex flex-wrap gap-2 p-2 bg-theme-100 shadow-inner-sm">
+            {props.selectedStores.map(renderSelectedCB)}
+        </div>
+    )
 })

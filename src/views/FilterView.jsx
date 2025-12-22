@@ -2,9 +2,30 @@ import { observer } from "mobx-react-lite";
 import { categories } from "../constData";
 
 export const FilterView = observer(function FilterRender(props) {
+    
+    function handleItemSearchChangeACB(event) {
+        props.setCurrentItemSearch(event.target.value);
+    }
+    
+    function handleCategoryClickACB(category) {
+        props.setFilterCategory(category);
+    }
+    
+    function handleFilterToggleACB() {
+        props.setFilterFocus(!props.filterFocus);
+        if (!props.filterFocus) {
+            props.setSearchFocus(false);
+        }
+    }
+    
+    function handleCategoryButtonClickACB(cat) {
+        return function categoryButtonClickACB() {
+            handleCategoryClickACB(cat);
+        };
+    }
+
     return (
         <div className="relative w-full -mb-[28px]">
-
             <div
                 className={`transition-all duration-300 overflow-hidden
                     m-0 shadow-lg border border-theme-300
@@ -12,25 +33,22 @@ export const FilterView = observer(function FilterRender(props) {
                     bg-theme-50`}
             >
                 <div className="p-4">
-
                     <input
                         type="text"
                         value={props.itemSearchInput}
-                        onChange={(e) => props.setCurrentItemSearch(e.target.value)}
+                        onChange={handleItemSearchChangeACB}
                         placeholder="Sök produkter..."
                         className="mt-2 w-full px-3 py-[7px] border border-theme-200 rounded-lg
                             focus:outline-none focus:ring-2 focus:ring-theme-300
                             mb-3 bg-white text-theme-800 placeholder-theme-500"
                     />
-
                     <div className="flex flex-wrap gap-2">
-                        {["Visa Alla", ...categories].map((cat) => {
+                        {["Visa Alla", ...categories].map(function categoryMapACB(cat) {
                             const active = props.filterCategories.includes(cat);
-
                             return (
                                 <button
                                     key={cat}
-                                    onClick={() => props.setFilterCategory(cat)}
+                                    onClick={handleCategoryButtonClickACB(cat)}
                                     className={`px-3 py-[7px] rounded-lg text-md font-medium border transition-all duration-150
                                         ${active
                                             ? "bg-theme-200 border-theme-400 text-theme-700 shadow-inner"
@@ -44,12 +62,8 @@ export const FilterView = observer(function FilterRender(props) {
                     </div>
                 </div>
             </div>
-
             <button
-                onClick={() => {
-                    props.setFilterFocus(!props.filterFocus);
-                    !props.filterFocus && props.setSearchFocus(false);
-                }}
+                onClick={handleFilterToggleACB}
                 className={`ml-auto mr-3 hover:bg-theme-100 shadow-lg
                     px-4 py-2 rounded-b-xl border border-t-0 border-theme-300
                     bg-theme-50 flex items-center gap-2 ${props.filterFocus && "-mt-[1px]"} transition-all duration-150`}

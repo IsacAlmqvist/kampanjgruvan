@@ -3,10 +3,44 @@ import { logout } from "../firestoreModel"
 import { useNavigate, useLocation } from "react-router-dom";
 
 export const HeaderView = observer(function HeaderRender(props) {
-
     const navigate = useNavigate();
     const location = useLocation();
     const isCartPage = location.pathname === "/cart";
+
+    function handleLogoClickACB() {
+        navigate("/");
+    }
+
+    function handleSearchInputChangeACB(event) {
+        props.setCurrentSearch(event.target.value);
+    }
+
+    function handleLocationButtonClickACB() {
+        props.handleGetLocation();
+        window.location.reload();
+    }
+
+    function handleLoginLogoutClickACB() {
+        if (props.user) {
+            logout();
+        } else {
+            navigate("/login");
+        }
+    }
+
+    function handleCartIconClickACB() {
+        if (isCartPage) {
+            navigate("/");
+        } else {
+            props.setSearchFocus(false);
+            navigate("/cart");
+        }
+    }
+
+    function handleSearchFocusACB() {
+        props.setSearchFocus(true);
+    }
+
     return (
         <div 
             className="
@@ -19,26 +53,23 @@ export const HeaderView = observer(function HeaderRender(props) {
                 className="items-center order-1 text-theme-600
                     inline-block transform transition-transform 
                     duration-200 hover:scale-102 active:scale-98"
-                onClick={() => navigate("/")}
+                onClick={handleLogoClickACB}
             >
                 <svg width="120" height="66" viewBox="0 0 146 66" xmlns="http://www.w3.org/2000/svg">
-
                     <text x="10" y="30" fontFamily="Arial, sans-serif" fontSize="27" fill="currentColor" className="text-theme-600" fontWeight="bold">
                         <tspan x="10" dy="0">Kampanj</tspan>
                         <tspan x="50" dy="26">Gruvan</tspan>
                     </text>
                 </svg>
             </div>
-
             <div className="flex-grow order-last md:order-2 mx-auto my-auto min-w-[90%] md:min-w-[10%]">
                 <div className="relative">
-
                     <input
                         type="text"
                         placeholder="Sök efter dina favoritbutiker"
                         value={props.searchInput}
-                        onFocus={() => props.setSearchFocus(true)}
-                        onChange={(e) => props.setCurrentSearch(e.target.value)}
+                        onFocus={handleSearchFocusACB}
+                        onChange={handleSearchInputChangeACB}
                         className="
                             w-full pl-8 pr-4 py-3
                             border border-slate-300
@@ -52,12 +83,8 @@ export const HeaderView = observer(function HeaderRender(props) {
                     />
                 </div>
             </div>
-
             <button
-                onClick={() => {
-                    props.handleGetLocation();
-                    window.location.reload();
-                }}
+                onClick={handleLocationButtonClickACB}
                 className="
                     flex flex-col order-3 items-center px-2 py-1 rounded
                     hover:bg-theme-200/70
@@ -74,14 +101,12 @@ export const HeaderView = observer(function HeaderRender(props) {
                 >
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
                 </svg>
-
                 <span className="text-xs text-slate-700 mt-1 whitespace-nowrap">
                     {props.city || "Stockholm"}
                 </span>
             </button>
-
             <button 
-                onClick={props.user ? logout : ()=> navigate("/login")}
+                onClick={handleLoginLogoutClickACB}
                 className="
                     ml-auto order-4 px-3 py-2 my-auto
                     bg-theme-600 text-white
@@ -95,21 +120,13 @@ export const HeaderView = observer(function HeaderRender(props) {
                 {props.user ? "Logga ut" : "Logga in"}
             </button>   
 
-
             <div 
                 className="
                     relative inline-block my-auto mr-3 order-5
                     text-slate-700 hover:text-slate-900
                     active:scale-96 transition
                 "
-                onClick={() => {
-                    if (isCartPage) {
-                        navigate("/");
-                    } else {
-                        props.setSearchFocus(false);
-                        navigate("/cart");
-                    }
-                }}
+                onClick={handleCartIconClickACB}
             >
                 {isCartPage ? (
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-9">
@@ -130,8 +147,6 @@ export const HeaderView = observer(function HeaderRender(props) {
                     </span>
                 )}
             </div>
-
         </div>
     );
-
-})
+});
