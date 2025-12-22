@@ -69,7 +69,7 @@ const Root = observer(function Root(props) {
   const router = createRouter(model);
 
   return (
-    <div className="bg-[#d3e6d630]">
+    <div className="bg-theme-50">
       <RouterProvider router={router} />
     </div>
   );

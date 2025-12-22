@@ -1,4 +1,4 @@
-import { ScrollArea, Scrollbar, Thumb, Corner } from "@radix-ui/react-scroll-area"
+import { ScrollArea, Scrollbar, Thumb} from "@radix-ui/react-scroll-area"
 import { Utils } from "../utilities";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import { useRef } from "react";
@@ -34,6 +34,12 @@ export function ScrollAreaHorizontal({storeData, onAddCartItem, filterCategories
     <ScrollArea
       ref={parentRef}
       className="w-full overflow-x-auto overflow-y-hidden"
+      style={{
+          WebkitMaskImage:
+              "linear-gradient(to right, black 90%, transparent 100%)",
+          maskImage:
+              "linear-gradient(to right, black 90%, transparent 100%)",
+      }}
     >
       <div
         style={{
@@ -124,7 +130,7 @@ export function ScrollAreaHorizontal({storeData, onAddCartItem, filterCategories
       </div>
       
       {/* Price */}
-      <div className="absolute right-4 top-[8px] text-[24px] font-bold text-red-600 max-w-[50%] text-right leading-none bg-white/70 rounded pl-1 pb-1">
+      <div className="absolute right-4 top-[8px] text-[25px] font-bold text-red-600 leading-none bg-white/70 rounded pl-1 pb-1">
         {article.price.replace(":-", " kr").replace("/st", "").replace(",00", " kr")}
       </div>
 

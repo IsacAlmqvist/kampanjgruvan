@@ -5,14 +5,10 @@ import { Utils } from "../utilities";
 export const ArticlesView = observer(function SidebarRender(props) { 
 
     function renderStoresCB(store) {
-
-
         return (
-            <div className="w-[95%] mx-auto" key={store.name}>
+            <div className="w-[98%] ml-auto" key={store.name}>
                 <div className="mb-1 mt-4">
-                    <h2
-                        className={`text-lg md:text-xl font-bold text-gray-800`}
-                    >
+                    <h2 className="text-lg md:text-xl font-bold text-theme-800">
                         {store.name}
                     </h2>
                     <div className={`h-[3px] w-26 mb-2 mt-[2px] rounded shadow-sm ${Utils.getStoreLineStyle(store.name)}`} />
@@ -27,7 +23,6 @@ export const ArticlesView = observer(function SidebarRender(props) {
 
         const storeData = props.data.find(s => s.name === store.name);
         if(store.status === "ready" && storeData) {
-            // Check if store has any filtered articles before rendering
             const storeArticles = storeData.articles ?? [];
             const hasFilteredArticles = storeArticles.some(article => {
                 const searchQuery = props.filterSearch?.toLowerCase() || "";
@@ -38,22 +33,22 @@ export const ArticlesView = observer(function SidebarRender(props) {
                     searchHit
                 );
             });
-            
+
             if (!hasFilteredArticles) return null;
-            
+
             return (
                 <ScrollAreaHorizontal 
-                    storeData = {storeData} 
+                    storeData={storeData} 
                     onAddCartItem={(item, store) => props.handleAddItemToCart(item, store)}
                     onUpdateCartAmount={(id, increment) => props.handleUpdateCartAmount(id, increment)}
                     filterCategories={props.filterCategories}
                     filterSearch={props.filterSearch}   
                     cartItems={props.cartItems} 
+                    className="bg-theme-50 rounded-xl p-2"
                 />
             )
         }
 
-        // runs after render to have a pure render
         setTimeout(() => {
             Utils.quickAlert("Kunde inte hämta erbjudanden från " + store.name);
             props.removeStore(store);
@@ -65,36 +60,32 @@ export const ArticlesView = observer(function SidebarRender(props) {
     const LoadingDotsCB = () => (
         <div className="flex items-center justify-center py-6">
             <div className="flex gap-1">
-            <span className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.3s]" />
-            <span className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.15s]" />
-            <span className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-bounce" />
+                <span className="w-2.5 h-2.5 bg-theme-300 rounded-full animate-bounce [animation-delay:-0.3s]" />
+                <span className="w-2.5 h-2.5 bg-theme-300 rounded-full animate-bounce [animation-delay:-0.15s]" />
+                <span className="w-2.5 h-2.5 bg-theme-300 rounded-full animate-bounce" />
             </div>
         </div>
     );
 
     return (
-        <>
+        <div className="pb-10">
             <div className="mb-10">
                 {props.selected.map(renderStoresCB)}
             </div>
             {props.selected.length < 5 && props.closest && 
                 <div className="flex items-center w-[96%] mb-3 gap-3 mx-auto">
 
-                    <h3 className="text-2xl font-bold tracking-wide text-gray-800">
+                    <h3 className="text-2xl font-bold tracking-wide text-theme-800">
                         Erbjudanden nära dig
                     </h3>
 
-                    <div className="align-center mt-1 flex-grow h-[2px] bg-gradient-to-r from-green-500 to-transparent mr-[15%]" />
+                    <div className="align-center mt-1 flex-grow h-[2px] bg-gradient-to-r from-theme-500 to-transparent mr-[15%]" />
                 </div>
             }
             {props.closest
                 .filter(store => !props.selected.some(s => s.name === store.name))
                 .slice(0, 5 - props.selected.length)
                 .map(renderStoresCB)}
-        </>
+        </div>
     );
-
 });
-
-
-
