@@ -124,7 +124,7 @@ export function ScrollAreaHorizontal({storeData, onAddCartItem, filterCategories
       </div>
       
       {/* Price */}
-      <div className="absolute right-4 top-[8px] text-[25px] font-bold text-red-600 leading-none bg-white/70 rounded pl-1 pb-1">
+      <div className="absolute right-4 top-[8px] text-[24px] font-bold text-red-600 max-w-[50%] text-right leading-none bg-white/70 rounded pl-1 pb-1">
         {article.price.replace(":-", " kr").replace("/st", "").replace(",00", " kr")}
       </div>
 
