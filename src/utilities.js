@@ -44,7 +44,7 @@ export const Utils = {
         }
 
         if (!pos) {
-            console.warn("Geolocation failed, using default");
+            this.quickAlert("Kunde in hämta plats, slå på platstjänster eller sök efter butiker", 4000);
             return { ...currentPos, city: null };
         }
 
