@@ -11,21 +11,33 @@ export const CartView = observer(function CartRender(props) {
         }, {})
     );
     
-    function handleRenderCartRowCB(cartItems) {
+    return (
+        <div className="bg-theme-50 flex flex-col">
+            
+            <div className="my-4 bg-theme-500 text-white font-bold text-xl mx-4 py-3 px-4 mb-6 rounded-lg text-center shadow-md">
+                Dina sparade erbjudanden
+            </div>
+            
+            <div className="pl-4 w-full mx-auto mb-16 flex flex-col">
+                {sortedCart.map(CartRow)}
+            </div>
+        </div>
+    );
+
+    function CartRow(cartItems) {
         return (
-            <ScrollArea
-                key={cartItems[0].storeName}
-                className="py-3 overflow-x-auto overflow-y-hidden"
-                style={{
-                    WebkitMaskImage:
-                        "linear-gradient(to right, black 90%, transparent 100%)",
-                    maskImage:
-                        "linear-gradient(to right, black 90%, transparent 100%)",
-                }}
-            >
-                <div className="flex space-x-4">
-                    {cartItems.map(function(item) {
-                        return (
+            <div key={cartItems[0].storeName}>
+                <ScrollArea
+                    className="py-1 overflow-x-auto overflow-y-hidden"
+                    style={{
+                        WebkitMaskImage:
+                            "linear-gradient(to right, black 90%, transparent 100%)",
+                        maskImage:
+                            "linear-gradient(to right, black 90%, transparent 100%)",
+                    }}
+                >
+                    <div className="flex space-x-4">
+                        {cartItems.map(item => (
                             <ArticleCard
                                 key={item.article.id}
                                 article={item.article}
@@ -33,31 +45,15 @@ export const CartView = observer(function CartRender(props) {
                                 cartAmount={item.amount}
                                 cartId={item.id}
                                 isCart={true}
-                                onAddCartItem={handleAddCartItemCB}
+                                onAddCartItem={() => {}}
                                 onUpdateCartAmount={props.onUpdateCartAmount}
                                 className="min-w-[200px] bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
                             />
-                        );
-                    })}
-                </div>
-                <div className="pointer-events-none absolute right-0 top-0 h-full w-28 bg-gradient-to-l from-theme-50 to-transparent" />
-            </ScrollArea>
+                        ))}
+                    </div>
+                </ScrollArea>
+                <div className="align-center mt-4 mb-2 flex-grow h-[1px] bg-gradient-to-r from-theme-400 to-transparent mr-[15%]" />
+            </div>
         );
     }
-    
-    function handleAddCartItemCB() {
-        // Handle add cart item
-    }
-    
-    return (
-        <div className="bg-theme-50 flex flex-col">
-            <div className="my-4 bg-theme-500 text-white font-bold text-xl mx-4 py-3 px-4 mb-4 rounded-lg text-center shadow-md">
-                Dina sparade erbjudanden
-            </div>
-            
-            <div className="pl-4 w-full mx-auto mb-8 flex flex-col divide-y divide-theme-500/70">
-                {sortedCart.map(handleRenderCartRowCB)}
-            </div>
-        </div>
-    );
 });
