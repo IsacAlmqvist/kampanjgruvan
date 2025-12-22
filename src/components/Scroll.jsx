@@ -42,6 +42,7 @@ export function ScrollAreaHorizontal({storeData, onAddCartItem, filterCategories
       }}
     >
       <div
+        className="mb-1"
         style={{
           width: virtualizer.getTotalSize(),
           height: 170,
@@ -130,8 +131,8 @@ export function ScrollAreaHorizontal({storeData, onAddCartItem, filterCategories
       </div>
       
       {/* Price */}
-      <div className="absolute right-4 top-[8px] text-[25px] font-bold text-red-600 leading-none bg-white/70 rounded pl-1 pb-1">
-        {article.price.replace(":-", " kr").replace("/st", "").replace(",00", " kr")}
+      <div className={`absolute right-4 top-[8px] ${String(article.price).length > 11 ? "text-[20px]" : "text-[26px]"} font-bold text-red-600 leading-none bg-white/70 rounded pl-1 pb-1`}>
+        {article.price.replace(":-", " kr").replace("/st", "").replace(",00", " kr").replace(".9", ".90")}
       </div>
 
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-white/40 via-white/10 to-transparent" />

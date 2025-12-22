@@ -8,13 +8,19 @@ const API_BASE =
 export async function fetchOffers(store) {
     try {
         if(store.name.includes("ICA")){ 
-            console.log((await getOffers("ica", store.id)).filter(i => i.details.name.includes("ill")));
+            // console.log((await getOffers("ica", store.id)).filter(i => i.details.name.includes("ill")));
             return normalizeIca(await getOffers("ica", store.id));
         } else if(store.name.includes("Coop")) {
             return normalizeCoop(await getOffers("coop", store.id));
         } else if(store.name.includes("Willys")) {
             return normalizeWillys(await getOffers("willys", store.id));
         } else if(store.name.includes("Hemköp")) {
+            const arr = (await getOffers("hemkop", store.id));
+            console.log(arr[0]);
+            console.log(arr[1]);
+            console.log(arr[2]);
+            console.log(arr[3]);
+            console.log(arr[4]);
             return normalizeHemkop(await getOffers("hemkop", store.id));
         } else {
             return [];
@@ -82,9 +88,9 @@ function normalizeCoop(arr) {
         }),
         brand: o.content.brand,
         amount: o.content.amountInformation,
-        price: o.priceInformation?.discountValue
+        price: (o.unifiedSplash?.prefix || "") + " " + (o.priceInformation?.discountValue
           ? `${o.priceInformation.discountValue}:-`
-          : null,
+          : null),
         comparePrice: o.content.formattedComparativePriceText || null,
         image: normalizeCoopImage(o.content.imageUrl),
         requirements: [
@@ -110,7 +116,7 @@ function normalizeWillys(arr) {
         }),
         brand: o.manufacturer,
         amount: o.displayVolume,
-        price: promo?.rewardLabel || o.price || null,
+        price: promo?.cartLabel || promo?.rewardLabel || null,
         comparePrice: promo?.comparePrice || null,
         image: o.image?.url || null,
         requirements: [
@@ -137,7 +143,7 @@ function normalizeHemkop(arr) {
         }),
         brand: o.manufacturer,
         amount: o.displayVolume,
-        price: promo?.rewardLabel || null,
+        price: promo?.cartLabel || promo?.rewardLabel || null,
         comparePrice: promo?.comparePrice || null,
         image: o.image?.url || null,
         requirements: [
