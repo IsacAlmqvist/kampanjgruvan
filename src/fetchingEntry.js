@@ -7,7 +7,8 @@ const API_BASE =
 
 export async function fetchOffers(store) {
     try {
-        if(store.name.includes("ICA")){
+        if(store.name.includes("ICA")){ 
+            console.log((await getOffers("ica", store.id)).filter(i => i.details.name.includes("ill")));
             return normalizeIca(await getOffers("ica", store.id));
         } else if(store.name.includes("Coop")) {
             return normalizeCoop(await getOffers("coop", store.id));
@@ -55,7 +56,7 @@ function normalizeIca(arr) {
         brand: o.details.brand,
         amount: o.details.packageInformation,
         price: o.parsedMechanics?.value2
-          ? `${o.parsedMechanics.value1} ${o.parsedMechanics.value2} kr`
+          ? `${o.parsedMechanics.value1} ${o.parsedMechanics.value2} ${o.parsedMechanics.value3} ${o.discountType==="BENFIXED" ? "" : "kr"}`
           : null,
         comparePrice: o.comparisonPrice || null,
         image: o.picture.url,
