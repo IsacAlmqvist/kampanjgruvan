@@ -1,10 +1,9 @@
 import { observer } from "mobx-react-lite";
-import { ScrollArea} from "@radix-ui/react-scroll-area";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { ArticleCard } from "../components/Scroll";
 
 export const CartView = observer(function CartRender(props) {
     
-    // sort by storeName
     const sortedCart = Object.values(
         props.cartItems.reduce((acc, item) => {
             if (!acc[item.storeName]) acc[item.storeName] = [];
@@ -14,35 +13,47 @@ export const CartView = observer(function CartRender(props) {
     );
     
     return (
-        <div className="w-full p-4 bg-gray-50 flex flex-col">
+        <div className="bg-theme-50 flex flex-col">
             
-            <div className="w-full bg-[#34D399] text-white font-bold text-xl py-3 px-4 mb-4 text-center">
+            <div className="my-4 bg-theme-500 text-white font-bold text-xl mx-4 py-3 px-4 mb-4 rounded-lg text-center shadow-md">
                 Dina sparade erbjudanden
             </div>
             
-            <div className="gap-6 w-full mx-auto mb-8">
+            <div className="pl-4 w-full mx-auto mb-8 flex flex-col divide-y divide-theme-500/70">
                 {sortedCart.map(CartRow)}
             </div>
         </div>
-    )
+    );
 
     function CartRow(cartItems) {
         return (
-            <ScrollArea key={cartItems[0].storeName} className="my-4 p-1 w-full overflow-x-auto overflow-y-hidden">
+            <ScrollArea
+                key={cartItems[0].storeName}
+                className="py-3 overflow-x-auto overflow-y-hidden"
+                style={{
+                    WebkitMaskImage:
+                        "linear-gradient(to right, black 90%, transparent 100%)",
+                    maskImage:
+                        "linear-gradient(to right, black 90%, transparent 100%)",
+                }}
+            >
                 <div className="flex space-x-4">
                     {cartItems.map(item => (
-                    <ArticleCard
-                        key={item.article.id}
-                        article={item.article}
-                        storeName={item.storeName}
-                        cartAmount={item.amount}
-                        cartId={item.id}
-                        isCart={true}
-                        onAddCartItem={() => {}}
-                        onUpdateCartAmount={props.onUpdateCartAmount}
-                    />
+                        <ArticleCard
+                            key={item.article.id}
+                            article={item.article}
+                            storeName={item.storeName}
+                            cartAmount={item.amount}
+                            cartId={item.id}
+                            isCart={true}
+                            onAddCartItem={() => {}}
+                            onUpdateCartAmount={props.onUpdateCartAmount}
+                            className="min-w-[200px] bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-200"
+                        />
                     ))}
                 </div>
+
+                <div className="pointer-events-none absolute right-0 top-0 h-full w-28 bg-gradient-to-l from-theme-50 to-transparent" />
             </ScrollArea>
         );
     }
