@@ -71,7 +71,19 @@ export const Root = observer(function Root(props) {
   
   return (
     <div className="bg-theme-50">
+      {model.ready 
+        ?
       <RouterProvider router={router} />
+        :
+      (  
+        <div className="flex items-center justify-center h-[100%]">
+            <div className="flex gap-3">
+                <span className="w-5 h-5 bg-theme-300 rounded-full animate-bounce [animation-delay:-0.3s]" />
+                <span className="w-5 h-5 bg-theme-300 rounded-full animate-bounce [animation-delay:-0.15s]" />
+                <span className="w-5 h-5 bg-theme-300 rounded-full animate-bounce" />
+            </div>
+        </div>
+      )}
     </div>
   );
 });

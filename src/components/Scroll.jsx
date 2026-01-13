@@ -113,19 +113,11 @@ export function ArticleCard({ article, cartId, storeName, cartAmount, isCart = f
   }
   
   function handleDecrementCartAmountACB() {
-    onUpdateCartAmount(cartId, -1);
+    onUpdateCartAmount(cartId, -Utils.getMultiBuyCount(article.price));
   }
   
   function handleIncrementCartAmountACB() {
-    onUpdateCartAmount(cartId, 1);
-  }
-  
-  function getStoreTextStyleCB() {
-    return Utils.getStoreTextStyle(storeName);
-  }
-  
-  function formatPriceCB() {
-    return article.price.replace(":-", " kr").replace("/st", "").replace(",00", " kr");
+    onUpdateCartAmount(cartId, Utils.getMultiBuyCount(article.price));
   }
   
   return (
@@ -138,14 +130,7 @@ export function ArticleCard({ article, cartId, storeName, cartAmount, isCart = f
         transition-all overflow-hidden ${isCart && "w-[290px]"}
       `}
     >
-      {/* Storename for cart items */}
-      {isCart &&
-        <div className={`absolute max-w-[50%] rounded-md top-0 left-1 p-1 text-[14px] font-bold 
-            leading-tight line-clamp-2 z-10 bg-white/70 
-            ${getStoreTextStyleCB()}`}>
-          {storeName}
-        </div>
-      }
+      
       {/* Image */}
       <div className="absolute inset-0 flex items-center pr-7 pb-4 justify-center">
         {article.image && (
@@ -162,7 +147,7 @@ export function ArticleCard({ article, cartId, storeName, cartAmount, isCart = f
         )}
       </div>
       {/* Price */}
-      <div className={`absolute right-4 top-[8px] ${String(article.price).length > 11 ? "text-[20px]" : "text-[26px]"} font-bold text-red-600 leading-none bg-white/70 rounded pl-1 pb-1`}>
+      <div className={`absolute right-4 top-[8px] ${String(article.price).length > 9 ? "text-[20px]" : "text-[26px]"} font-bold text-red-600 leading-none bg-white/70 rounded pl-1 pb-1`}>
         {article.price.replace(":-", " kr").replace("/st", "").replace(",00", " kr").replace(".9", ".90")}
       </div>
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-white/40 via-white/10 to-transparent" />
