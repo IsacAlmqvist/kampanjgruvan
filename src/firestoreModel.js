@@ -48,12 +48,14 @@ export async function connectToPersistence(model, reactionFunction, uid){
             model.selectedStores = userSnap.data()?.selectedStores || [];
             model.cartItems = userSnap.data()?.cartItems || [];
             model.userPosition = userSnap.data()?.userPosition || defaultPos;
+            model.numberOfItemsInCart = userSnap.data()?.numberOfItemsInCart || 0;
         } catch (err) {
             console.log("Error loading user data:", err);
         }
     } else {
         model.selectedStores = [];
         model.userPosition = defaultPos;
+        model.numberOfItemsInCart = 0;
     }
 
     if (model.selectedStores.length > 0) {
@@ -71,6 +73,7 @@ export async function connectToPersistence(model, reactionFunction, uid){
             model.selectedStores,
             model.cartItems,
             model.userPosition,
+            model.numberOfItemsInCart,
         ]},
         function saveModelSideEffectACB(){
             if(!model.ready) return;
@@ -79,36 +82,10 @@ export async function connectToPersistence(model, reactionFunction, uid){
                 setDoc(userDoc, {
                     selectedStores: model.selectedStores,
                     cartItems: model.cartItems,
-                    userPosition: model.userPosition
+                    userPosition: model.userPosition,
+                    numberOfItemsInCart: model.numberOfItemsInCart
                 }, { merge: true });
             }
         }
     )
-}
-
-export async function loadStore(model, store) {
-
-    model.selectedStores = model.selectedStores.map(s =>
-        s.id === store.id ? { ...s, status: "loading" } : s
-    );
-
-    const storeDoc = doc(db, "publicData", store.id);
-    const storeSnap = await getDoc(storeDoc);
-    const loadedData = storeSnap.exists() ? storeSnap.data() : null;
-
-    if(!loadedData) {
-        model.selectedStores = model.selectedStores.map(s =>
-            s.id === store.id ? { ...s, status: "scraping" } : s
-        );
-        const scrapeResult = await model.scrapeInit(store);
-        model.storesData = [scrapeResult, ...model.storesData];
-        await setDoc(storeDoc, scrapeResult, { merge: true });
-    } else {
-        model.storesData = [loadedData, ...model.storesData];
-    }
-
-    // const currentWeek = model.getWeek();
-    // if(storesData[0] && storesData[0]?.week !== currentWeek){
-    //     await deleteDoc(publicDoc);
-    // } else {
 }

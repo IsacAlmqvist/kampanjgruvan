@@ -1,39 +1,93 @@
 import { observer } from "mobx-react-lite";
-
 export const StoreSearchResultsView = observer(function StoreSearchResultsRender(props) {
     
-    // styling done by Gemini with prompt (with adjustments afterwards): 
-    // can you help me style this so that the search results are in boxes, 
-    // like 4 per row, with some shadow, with a like button in them ( i can do the logic of that) 
-    // and that the button is wide with an up arrow
+    function getSliceSizeCB() {
+        let sliceSize = 8;
+        if (window.innerWidth < 640) sliceSize = 5;
+        else if (window.innerWidth < 1024) sliceSize = 6;
+        return sliceSize;
+    }
+    
+    function matchesSearchCB(storeName) {
+        const query = props.searchInput?.toLowerCase() || "";
+        return storeName.toLowerCase().includes(query);
+    }
+    
+    function handleStoreClickCB(store) {
+        const liked = props.selectedStores.find(function findStoreCB(item) {
+            return item.id === store.id;
+        });
+        liked ? props.removeSelected(store) : props.addStore(store);
+    }
+    
+    function handleStoreDivClickCB(store) {
+        return function handleStoreDivClickACB() {
+            handleStoreClickCB(store);
+        };
+    }
+    
+    function renderSearchResultCB(store) {
+        const liked = props.selectedStores.find(function findStoreCB(item) {
+            return item.id === store.id;
+        });
+        
+        return (
+            <div
+                key={store.name} 
+                className="flex justify-between bg-white rounded-xl border border-theme-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                onClick={handleStoreDivClickCB(store)}
+            >
+                <div className="p-4 pr-2 flex items-center">
+                    <h3 className="font-semibold text-gray-800 leading-tight">
+                        {store.name}
+                    </h3>
+                </div>
+                
+                <button
+                    className={`
+                        w-[26%] flex flex-none items-center justify-center rounded-r-xl transition-colors duration-200
+                        ${liked ? "bg-theme-100 text-theme-700" : "bg-theme-50 text-theme-400 hover:bg-theme-100"}
+                    `}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 flex-shrink-0" fill={liked ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" 
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" 
+                        />
+                    </svg>
+                </button>
+            </div> 
+        );
+    }
+    
+    function filterStoresCB(store) {
+        return matchesSearchCB(store.name);
+    }
+    
+    const sliceSize = getSliceSizeCB();
+    
     return (
         <div 
-            className={
-                `w-full bg-gray-50 flex flex-col transition-all duration-200 overflow-hidden
-                ${props.searchFocus ? "max-h-[1000px]" : "max-h-0"}`
-            }
+            className={`
+                w-full bg-theme-50 flex flex-col transition-all duration-200 overflow-hidden
+                ${props.searchFocus ? "max-h-[1000px]" : "max-h-0"}
+            `}
         >
-            
-            {/* Grid Container: 1 column on mobile, 4 columns on medium screens+ */}
             <div className="p-4">
-                <div className="gap-6 w-full mx-auto
-                    grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))]
+                <div className="grid gap-6 w-full mx-auto
                     grid-cols-1
                     sm:grid-cols-2
                     md:grid-cols-3
                     lg:grid-cols-4">
                     {props.stores
-                        .filter(store => matchesSearch(store.name))
-                        .slice(0, 8)
+                        .filter(filterStoresCB)
+                        .slice(0, sliceSize)
                         .map(renderSearchResultCB)}
                 </div>
             </div>
-
             <div className="pt-2 pb-4">
                 <button
-                    className="w-[80%] max-w-7xl mx-auto mt-auto py-2 bg-white border border-gray-200 text-gray-500 rounded-xl
-                        shadow-sm hover:bg-gray-100 hover:text-gray-800 transition-all
-                        duration-200 flex items-center justify-center group"
+                    className="w-[80%] max-w-4xl mx-auto py-2 bg-white border border-theme-200 text-theme-700 rounded-lg
+                        shadow-sm hover:bg-theme-50 transition-all duration-200 flex items-center justify-center group"
                     onClick={props.setSearchFocus}
                 >
                     <span className="font-semibold mr-2">Stäng</span>
@@ -50,48 +104,5 @@ export const StoreSearchResultsView = observer(function StoreSearchResultsRender
                 </button>
             </div>
         </div>
-    )
-
-    function matchesSearch(storeName) {
-        const query = props.searchInput?.toLowerCase() || "";
-
-        return storeName.toLowerCase().includes(query);
-    }
-
-    function renderSearchResultCB(store) {
-
-        const liked = props.selectedStores.find(item => item.id === store.id);
-
-        return (
-            <div
-                key={store.name} 
-                className="flex flex-row justify-between bg-white rounded-2xl shadow-md hover:shadow-xl 
-                    hover:-translate-y-1 transition-all duration-300 overflow-hidden border border-gray-100"
-                onClick={() => {
-                    liked ? props.removeSelected(store) : props.addStore(store)
-                }}
-            >
-                <div 
-                    className="ms-2 p-3 cursor-pointer items-center flex"
-                >
-                    <h3 className="fs-5 font-bold text-gray-800 tracking-tight">
-                        {store.name}
-                    </h3>
-                </div>
-                
-                <button
-                    className="p-4 bg-gray-50 hover:bg-gray-200 border-t border-gray-100
-                        w-[30%] flex items-center justify-center gap-2 text-pink-400 
-                        py-3 rounded-xl transition-colors duration-200"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 flex-shrink-0" fill={liked ? "currentColor" : "none"} viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                        <path strokeLinecap="round" strokeLinejoin="round" 
-                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" 
-                        />
-                    </svg>
-                </button>
-            </div> 
-        )
-    }
-
-})
+    );
+});

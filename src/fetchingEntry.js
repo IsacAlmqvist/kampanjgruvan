@@ -1,25 +1,26 @@
-import { category_keywords } from "../constData";
-// import { getHemkopOffers } from "./hemkop";
-// import { scrapeIca } from "./ica";
-// import { getIcaOffers } from "./icaNew";
-// import { getWillysOffers } from "./willys";
-// import { scrapeCoop } from "./coop";
+import { category_keywords } from "./constData";
 
 const API_BASE =
   import.meta.env.DEV
     ? "http://localhost:3000"
-    : "https://iprog-proxy-2vj79tn2k-isacs-projects-a57141f1.vercel.app";
+    : "";
 
 export async function fetchOffers(store) {
     try {
-        if(store.name.includes("ICA")){
-            // return await scrapeIca(store);
+        if(store.name.includes("ICA")){ 
+            // console.log((await getOffers("ica", store.id)).filter(i => i.details.name.includes("ill")));
             return normalizeIca(await getOffers("ica", store.id));
         } else if(store.name.includes("Coop")) {
             return normalizeCoop(await getOffers("coop", store.id));
         } else if(store.name.includes("Willys")) {
             return normalizeWillys(await getOffers("willys", store.id));
         } else if(store.name.includes("Hemköp")) {
+            const arr = (await getOffers("hemkop", store.id));
+            console.log(arr[0]);
+            console.log(arr[1]);
+            console.log(arr[2]);
+            console.log(arr[3]);
+            console.log(arr[4]);
             return normalizeHemkop(await getOffers("hemkop", store.id));
         } else {
             return [];
@@ -61,7 +62,7 @@ function normalizeIca(arr) {
         brand: o.details.brand,
         amount: o.details.packageInformation,
         price: o.parsedMechanics?.value2
-          ? `${o.parsedMechanics.value1} ${o.parsedMechanics.value2} kr`
+          ? `${o.parsedMechanics.value1} ${o.parsedMechanics.value2} ${o.parsedMechanics.value3} ${o.discountType==="BENFIXED" ? "" : "kr"}`
           : null,
         comparePrice: o.comparisonPrice || null,
         image: o.picture.url,
@@ -87,9 +88,9 @@ function normalizeCoop(arr) {
         }),
         brand: o.content.brand,
         amount: o.content.amountInformation,
-        price: o.priceInformation?.discountValue
+        price: (o.unifiedSplash?.prefix || "") + " " + (o.priceInformation?.discountValue
           ? `${o.priceInformation.discountValue}:-`
-          : null,
+          : null),
         comparePrice: o.content.formattedComparativePriceText || null,
         image: normalizeCoopImage(o.content.imageUrl),
         requirements: [
@@ -115,7 +116,7 @@ function normalizeWillys(arr) {
         }),
         brand: o.manufacturer,
         amount: o.displayVolume,
-        price: promo?.rewardLabel || o.price || null,
+        price: promo?.cartLabel || promo?.rewardLabel || null,
         comparePrice: promo?.comparePrice || null,
         image: o.image?.url || null,
         requirements: [
@@ -142,7 +143,7 @@ function normalizeHemkop(arr) {
         }),
         brand: o.manufacturer,
         amount: o.displayVolume,
-        price: promo?.rewardLabel || null,
+        price: promo?.cartLabel || promo?.rewardLabel || null,
         comparePrice: promo?.comparePrice || null,
         image: o.image?.url || null,
         requirements: [
