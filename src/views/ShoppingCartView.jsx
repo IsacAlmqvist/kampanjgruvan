@@ -65,14 +65,16 @@ export const CartView = observer(function CartRender(props) {
                         ))}
                     </div>
 
-                    <div className="mt-3 pr-4 flex">
-                        <div className="text-[15px] shadow-sm text-theme-600 bg-theme-100 px-3 py-1 rounded-full">
-                            Totalt: <span className="font-semibold">
-                                {Utils.formatOreToSek(totalOre)}
-                            </span>
-                        </div>
-                    </div>
                 </ScrollArea>
+
+                <div className="mt-3 pr-4 flex">
+                    <div className="text-[15px] shadow-sm text-theme-600 bg-theme-100 px-3 py-1 rounded-full">
+                        Totalt: <span className="font-semibold">
+                            {Utils.formatOreToSek(totalOre)}
+                        </span>
+                    </div>
+                </div>
+
                 <div className="align-center mt-3 mb-2 flex-grow h-[1px] bg-gradient-to-r from-theme-400 to-transparent mr-[15%]" />
             </div>
         );
