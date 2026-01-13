@@ -112,8 +112,43 @@ export const Utils = {
         setTimeout(() => {
             el.remove();
         }, duration);
-    }
+    },
 
+    // string parsing written with the help of chatGPT
+    priceStringToOre(priceStr) {
+
+        if (!priceStr) return 0;
+
+        const s = String(priceStr)
+            .toLowerCase()
+            .replace(/\s+/g, " ")
+            .replace(/\d+\s*för\s*/i, "")
+            .trim();
+
+        const normalized = s.replace(":-", ",00");
+
+        const numMatch = normalized.match(/([0-9]+(?:[.,][0-9]{1,2})?)/);
+        if (!numMatch) return 0;
+
+        return(parseSwedishNumberToOre(numMatch[1]));
+    },
+
+    formatOreToSek(ore) {
+        const sek = (ore || 0) / 100;
+        return (
+            sek.toLocaleString("sv-SE", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+            }) + " kr"
+        );
+    },
+
+    getMultiBuyCount(price) {
+        if (!price) return 1;
+
+        const match = String(price).match(/(\d+)\s*för/i);
+        return match ? parseInt(match[1], 10) : 1;
+    }
 }
 
 // haversince distance algorithm
@@ -131,4 +166,18 @@ function distanceKm(a, b) {
         Math.sin(dx / 2) ** 2;
 
     return 2 * R * Math.asin(Math.sqrt(h));
+}
+
+function parseSwedishNumberToOre(numStr) {
+    const cleaned = String(numStr).replace(",", ".").trim();
+
+    const [wholePartRaw, decPartRaw = ""] = cleaned.split(".");
+    const whole = parseInt(wholePartRaw, 10);
+    if (!Number.isFinite(whole)) return 0;
+
+    const dec2 = (decPartRaw + "00").slice(0, 2);
+    const dec = parseInt(dec2, 10);
+    if (!Number.isFinite(dec)) return whole * 100;
+
+    return whole * 100 + dec;
 }

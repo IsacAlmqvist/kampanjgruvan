@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { ArticleCard } from "../components/Scroll";
+import { Utils } from "../utilities";
 
 export const CartView = observer(function CartRender(props) {
     const sortedCart = Object.values(
@@ -25,6 +26,13 @@ export const CartView = observer(function CartRender(props) {
     );
 
     function CartRow(cartItems) {
+
+        const totalOre = cartItems.reduce((sumOre, item) => {
+            const orePerItem = Utils.priceStringToOre(item.article.price);
+            const qty = Number((item.amount / Utils.getMultiBuyCount(item.article.price))) || 0;
+            return sumOre + orePerItem * qty;
+        }, 0);
+
         return (
             <div key={cartItems[0].storeName}>
                 <ScrollArea
@@ -36,6 +44,11 @@ export const CartView = observer(function CartRender(props) {
                             "linear-gradient(to right, black 90%, transparent 100%)",
                     }}
                 >
+                    <div className={`font-bold text-lg pb-1
+                        ${Utils.getStoreTextStyle(cartItems[0].storeName)}`}>
+                    {cartItems[0].storeName}
+                    </div>
+
                     <div className="flex space-x-4">
                         {cartItems.map(item => (
                             <ArticleCard
@@ -51,8 +64,16 @@ export const CartView = observer(function CartRender(props) {
                             />
                         ))}
                     </div>
+
+                    <div className="mt-3 pr-4 flex">
+                        <div className="text-[15px] shadow-sm text-theme-600 bg-theme-100 px-3 py-1 rounded-full">
+                            Totalt: <span className="font-semibold">
+                                {Utils.formatOreToSek(totalOre)}
+                            </span>
+                        </div>
+                    </div>
                 </ScrollArea>
-                <div className="align-center mt-4 mb-2 flex-grow h-[1px] bg-gradient-to-r from-theme-400 to-transparent mr-[15%]" />
+                <div className="align-center mt-3 mb-2 flex-grow h-[1px] bg-gradient-to-r from-theme-400 to-transparent mr-[15%]" />
             </div>
         );
     }

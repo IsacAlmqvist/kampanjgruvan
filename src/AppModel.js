@@ -1,10 +1,6 @@
-import pLimit from "p-limit";
 import { fetchOffers } from "./fetchingEntry";
 import { allHemkopStores, allIcaStores, allWillysStores, allCoopStores } from "./constData";
 import { Utils } from "./utilities";
-
-const limit = pLimit(5);
-const running = new Map();
 
 export const model = {
 
@@ -156,7 +152,9 @@ export const model = {
 
     addCartItem(article, storeName) {
 
-        this.numberOfItemsInCart++;
+        const amount = Utils.getMultiBuyCount(article.price);
+
+        this.numberOfItemsInCart += amount;
 
         const maxId = this.cartItems.length > 0 
             ? Math.max(...this.cartItems.map(i => i.id)) 
@@ -164,7 +162,7 @@ export const model = {
 
         const newItem = {
             id: maxId + 1,
-            amount: 1,
+            amount: amount,
             storeName: storeName, 
             article: article
         };
