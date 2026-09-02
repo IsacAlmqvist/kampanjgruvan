@@ -9,7 +9,7 @@ export default async function handler(req, res) {
       const r = await fetch(url, {
         headers: {
           "Referer": "https://www.coop.se/",
-          "ocp-apim-subscription-key": "3804fe145c4e4629ab9b6c755d2e3cfb"
+          "ocp-apim-subscription-key": "990520e65cc44eef89e9e9045b57f4e9"
         }
       });
       data = await r.json();
