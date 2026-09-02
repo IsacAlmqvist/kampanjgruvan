@@ -61,7 +61,6 @@ export const Root = observer(function Root(props) {
   }
   
   function handleUserChangeCB() {
-    console.log("User state changed:", model.user);
   }
   
   useEffect(handleMountACB, []);

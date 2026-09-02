@@ -38,7 +38,6 @@ export const Utils = {
             );
             break;
             } catch (err) {
-                console.warn(`Geolocation attempt ${attempt} failed`, err);
                 if (attempt < MAX_RETRIES) await sleep(800);
             }
         }

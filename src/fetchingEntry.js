@@ -8,7 +8,6 @@ const API_BASE =
 export async function fetchOffers(store) {
     try {
         if(store.name.includes("ICA")){ 
-            // console.log((await getOffers("ica", store.id)).filter(i => i.details.name.includes("ill")));
             return normalizeIca(await getOffers("ica", store.id));
         } else if(store.name.includes("Coop")) {
             return normalizeCoop(await getOffers("coop", store.id));
@@ -16,17 +15,11 @@ export async function fetchOffers(store) {
             return normalizeWillys(await getOffers("willys", store.id));
         } else if(store.name.includes("Hemköp")) {
             const arr = (await getOffers("hemkop", store.id));
-            console.log(arr[0]);
-            console.log(arr[1]);
-            console.log(arr[2]);
-            console.log(arr[3]);
-            console.log(arr[4]);
             return normalizeHemkop(await getOffers("hemkop", store.id));
         } else {
             return [];
         }
     } catch(err) {
-        console.log("Error scraping from " + store.name + err);
         return [];
     }
 }
@@ -75,7 +68,7 @@ function normalizeIca(arr) {
 }
 
 function normalizeCoop(arr) {
-  return arr.sortingGroups?.[0]?.offers
+  return arr.offers
     .map(o => {
       if (!o.id || !o.content?.title || !o.content?.imageUrl) return null;
       return {

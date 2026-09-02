@@ -3,13 +3,12 @@ export default async function handler(req, res) {
 
   try {
     let data;
-
     if (store === "coop") {
-      const url = `https://external.api.coop.se/dke/offers/${storeId}?api-version=v1&clustered=true`;
+      const url = `https://external.api.coop.se/dke/offers/sorting-groups/${storeId}?api-version=v2&clustered=true`;
       const r = await fetch(url, {
         headers: {
           "Referer": "https://www.coop.se/",
-          "ocp-apim-subscription-key": "990520e65cc44eef89e9e9045b57f4e9"
+          "ocp-apim-subscription-key": "32895bd5b86e4a5ab6e94fb0bc8ae234"
         }
       });
       data = await r.json();
@@ -68,7 +67,6 @@ export default async function handler(req, res) {
     res.status(200).json(data);
 
   } catch (err) {
-    console.error("Offers API error:", err);
     res.status(500).json({ error: "Failed to fetch offers" });
   }
 }

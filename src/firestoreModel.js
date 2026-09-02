@@ -14,14 +14,12 @@ export async function loginWithGoogle() {
     const result = await signInWithPopup(auth, provider);
     return result.user;
   } catch (err) {
-    console.error(err);
   }
 }
 export async function logout() {
   try {
     await signOut(auth);
   } catch (err) {
-    console.error(err);
   }
 }
 
@@ -50,7 +48,6 @@ export async function connectToPersistence(model, reactionFunction, uid){
             model.userPosition = userSnap.data()?.userPosition || defaultPos;
             model.numberOfItemsInCart = userSnap.data()?.numberOfItemsInCart || 0;
         } catch (err) {
-            console.log("Error loading user data:", err);
         }
     } else {
         model.selectedStores = [];

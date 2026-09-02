@@ -73,7 +73,7 @@ export const model = {
             );
 
             const articles = await fetchOffers(store);
-            if(articles === null || articles.length === 0) return null;
+            if(articles === null || articles?.length === 0) return null;
 
             const storeData = {
                 id: store.id,
@@ -93,7 +93,6 @@ export const model = {
             return storeData;
 
         } catch (err) {
-            console.error("Failed to fetch store data:", store.name, err);
             this.selectedStores = this.selectedStores.filter(s => s.name !== store.name);
             return null;
         }
@@ -101,8 +100,6 @@ export const model = {
     
     async fetchClosestStores() {
 
-        console.log("fetching closest!!");
-    
         const numDefaults = 5;
     
         const sorted = Utils.sortStoresByDistance(this.allStores, this.userPosition);
@@ -196,7 +193,6 @@ export const model = {
             const coords = await Utils.getUserCoords(this.userPosition);
             this.userPosition = coords; // { x: longitude, y: latitude, city: "Stockholm" }
         } catch (err) {
-            console.error("Could not get position:", err);
             alert("Tillåt platstjänster");
         }
     }
