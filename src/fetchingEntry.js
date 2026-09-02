@@ -75,7 +75,7 @@ function normalizeIca(arr) {
 }
 
 function normalizeCoop(arr) {
-  return arr
+  return arr.sortingGroups?.[0]?.offers
     .map(o => {
       if (!o.id || !o.content?.title || !o.content?.imageUrl) return null;
       return {
